@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9 1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>SwiftParcel | Home 2 - Express Logistics</title>
+
+    <script src="tailwind.js"></script>
+    <style>
+        /* --- Express Courier & Logistics Theme (Energetic Blue & Express Orange) --- */
+        :root, html[data-theme='light'] {
+            --color-background: #F8FAFC;
+            --color-card-bg: #FFFFFF;
+            --color-primary-text: #0F172A; 
+            --color-secondary-text: #475569; 
+            --color-accent: #2563EB; /* Express Logistics Blue */
+            --color-accent-hover: #1D4ED8;
+            --color-accent-light: #FF6B00; /* Energetic Fast Orange */
+            --color-accent-alpha-10: rgba(37, 99, 235, 0.1);
+            --color-accent-orange-10: rgba(255, 107, 0, 0.12);
+            --color-accent-light-shadow: rgba(37, 99, 235, 0.25);
+            --color-border: #E2E8F0; 
+            --color-hover: #EFF6FF;     
+            --color-footer-bg: #0B132B;
+            --color-footer-text: #CBD5E1; 
+        }
+        html[data-theme='dark'] {
+            --color-background: #0B1120;
+            --color-card-bg: #151F32;
+            --color-primary-text: #F8FAFC;
+            --color-secondary-text: #94A3B8;
+            --color-accent: #3B82F6; 
+            --color-accent-hover: #60A5FA;
+            --color-accent-light: #FB923C; 
+            --color-accent-alpha-10: rgba(59, 130, 246, 0.15);
+            --color-accent-orange-10: rgba(251, 146, 60, 0.15);
+            --color-accent-light-shadow: rgba(59, 130, 246, 0.35);
+            --color-border: #1E293B; 
+            --color-hover: #172554;
+            --color-footer-bg: #060B14;
+            --color-footer-text: #94A3B8;
+        }
+        
+        body {
+            background-color: var(--color-background);
+            color: var(--color-primary-text);
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+        
+        .text-primary-text { color: var(--color-primary-text); }
+        .text-secondary-text { color: var(--color-secondary-text); }
+        .text-accent { color: var(--color-accent); }
+        .text-accent-light { color: var(--color-accent-light); }
+        .bg-background { background-color: var(--color-background); }
+        .bg-card { background-color: var(--color-card-bg); }
+        .bg-hover { background-color: var(--color-hover); }
+        .border-border { border-color: var(--color-border); }
+        /* Clean Form & Contrast Helpers */
+        select option {
+            background-color: var(--color-card-bg);
+            color: var(--color-primary-text);
+        }
+        input::placeholder, textarea::placeholder {
+            color: var(--color-secondary-text);
+            opacity: 0.7;
+        }
+    
+        .bg-accent { background-color: var(--color-accent); }
+        .bg-accent-light { background-color: var(--color-accent-light); }
+        .bg-accent-alpha-10 { background-color: var(--color-accent-alpha-10); }
+
+        #main-footer {
+            background-color: var(--color-footer-bg);
+            color: var(--color-footer-text);
+        }
+        #main-footer .footer-heading {
+            color: #FFFFFF !important;
+        }
+        #main-footer .footer-link:hover {
+            color: #60A5FA;
+            padding-left: 4px;
+            transition: all 0.2s ease;
+        }
+
+        /* Nav Link Underline */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        /* DROPDOWN */
+        .dropdown-wrapper { position: relative; }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            min-width: 230px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.25s ease;
+        }
+        .dropdown-wrapper:hover .dropdown-menu {
+            opacity: 1; visibility: visible; transform: translateY(0);
+            display: block;
+        }
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1.1rem;
+            color: var(--color-primary-text);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .dropdown-menu a:last-child { border-bottom: none; }
+        .dropdown-menu a:hover {
+            background-color: var(--color-hover);
+            color: var(--color-accent);
+            padding-left: 1.35rem;
+        }
+
+        @media (max-width: 1024px) {
+            .dropdown-menu { position: static; display: none; opacity: 1; visibility: visible; transform: none; box-shadow: none; }
+            .dropdown-wrapper:hover .dropdown-menu { display: block; }
+        }
+
+        /* Canonical Button System */
+        .btn-primary, .book-btn {
+            background-color: var(--color-accent);
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary:hover, .book-btn:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px var(--color-accent-light-shadow);
+        }
+        .btn-orange {
+            background-color: var(--color-accent-light);
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-orange:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: var(--color-accent);
+            color: white;
+            box-shadow: 0 4px 12px var(--color-accent-light-shadow);
+        }
+
+        /* Modal styling */
+        .modal-active {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 transition-colors duration-300 shadow-sm border-b border-border bg-card" id="main-header">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[72px]">
+            <!-- Logo Icon & Text -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-accent flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200">
+                    <i class="fa-solid fa-truck-fast text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight text-primary-text leading-tight">
+                        Swift<span class="text-accent">Parcel</span>
+                    </span>
+                    <span class="text-[10px] tracking-wider uppercase font-semibold text-secondary-text">Courier & Express Delivery</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden xl:flex items-center space-x-6">
+                <div class="flex space-x-6 rtl:space-x-reverse rtl:ml-6 text-primary-text font-medium items-center">
+                    
+                    <!-- Home Dropdown -->
+                    <div class="dropdown-wrapper">
+                        <button class="nav-link flex items-center font-medium">
+                            Home
+                            <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="index.html" class="text-primary-text"><i class="fa-solid fa-house text-accent text-xs"></i> Home 1</a>
+                            <a href="home2.html" class="text-primary-text"><i class="fa-solid fa-house-chimney text-accent text-xs"></i> Home 2</a>
+                        </div>
+                    </div>
+
+                    <!-- Other Nav Headings -->
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="calculator.html" class="nav-link">Rate Calculator</a>
+                    <a href="coverage.html" class="nav-link">Coverage</a>
+                    <a href="about.html" class="nav-link active text-accent font-bold">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <!-- Dashboard Dropdown -->
+                    <div class="dropdown-wrapper">
+                        <button class="nav-link flex items-center">
+                            Dashboard
+                            <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="customer.html" onclick="showDashboardView('customer')"><i class="fa-solid fa-user-gear text-accent text-xs"></i> Customer Dashboard</a>
+                            <a href="admin.html" onclick="showDashboardView('admin')"><i class="fa-solid fa-shield-halved text-accent text-xs"></i> Admin Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-px h-6 bg-border mx-3"></div>
+                
+                <!-- Quick Actions: Theme, RTL & Login Portal -->
+                <div class="flex items-center space-x-3">
+                    <button id="theme-toggle" title="Toggle Theme" class="p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
+                        <svg class="w-5 h-5 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg class="w-5 h-5 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <button id="lang-icon" title="Toggle RTL" class="p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                        </svg>
+                    </button>
+                    <div class="flex items-center ml-2">
+                        <a href="login.html" class="book-btn px-5 py-2.5 rounded-xl font-bold text-sm shadow-md flex items-center gap-2">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <span>Login Portal</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Hamburger Open Button -->
+            <div class="xl:hidden flex items-center">
+                <button id="mobile-menu-open" class="text-primary-text hover:text-accent p-2 rounded-xl border border-border">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu-drawer" class="fixed inset-0 z-50 pointer-events-none transition-all duration-300">
+        <div id="drawer-backdrop" class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+        <div id="drawer-content" class="absolute top-0 left-0 right-0 bg-card rounded-b-2xl shadow-2xl p-6 xl:hidden max-h-[90vh] overflow-y-auto transform translate-y-[-100%] transition-transform duration-300 ease-out border-b border-border">
+            <div class="flex justify-between items-center pb-4 border-b border-border">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-accent flex items-center justify-center text-white shadow-sm">
+                        <i class="fa-solid fa-truck-fast text-lg"></i>
+                    </div>
+                    <span class="text-lg font-bold text-primary-text">Swift<span class="text-accent">Parcel</span></span>
+                </a>
+                <button id="mobile-menu-close" class="text-primary-text hover:text-accent p-2 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <nav class="flex flex-col space-y-2 py-4">
+                <!-- Mobile Home Dropdown -->
+                <div>
+                    <button class="block text-primary-text font-semibold text-lg py-2 w-full text-left flex justify-between items-center" id="mobile-homes-toggle">
+                        Home <svg class="w-4 h-4 transform transition-transform duration-200 text-primary-text" id="homes-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mobile-homes-menu" class="hidden pl-4 flex flex-col space-y-2 mt-1 border-l-2 border-border">
+                        <a href="index.html" class="block text-secondary-text hover:text-accent text-base py-1">Home 1</a>
+                        <a href="home2.html" class="block text-secondary-text hover:text-accent text-base py-1">Home 2</a>
+                    </div>
+                </div>
+
+                <a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Services</a>
+                <a href="calculator.html" class="block text-primary-text font-semibold text-lg py-2">Rate Calculator</a>
+                <a href="coverage.html" class="block text-primary-text font-semibold text-lg py-2">Delivery Coverage</a>
+                <a href="about.html" class="block text-accent font-bold text-lg py-2">About Us</a>
+                <a href="contact.html" class="block text-primary-text font-semibold text-lg py-2">Contact</a>
+
+                <!-- Mobile Dashboard Dropdown -->
+                <div>
+                    <button class="block text-primary-text font-semibold text-lg py-2 w-full text-left flex justify-between items-center" id="mobile-dashboard-toggle">
+                        Dashboard
+                        <svg class="w-4 h-4 transform transition-transform duration-200" id="dashboard-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-dashboard-menu" class="hidden pl-4 flex flex-col space-y-2 mt-1 border-l-2 border-border">
+                        <a href="customer.html" onclick="showDashboardView('customer')" class="block text-secondary-text hover:text-accent text-base py-1">Customer Dashboard</a>
+                        <a href="admin.html" onclick="showDashboardView('admin')" class="block text-secondary-text hover:text-accent text-base py-1">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pt-4 border-t border-border mt-2 flex justify-around items-center">
+                <button id="mobile-lang-icon-drawer" class="flex flex-col items-center text-primary-text hover:text-accent">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                    </svg>
+                    <span class="text-xs mt-1 text-secondary-text">RTL Layout</span>
+                </button>
+                <button id="drawer-theme-toggle" class="flex flex-col items-center text-primary-text hover:text-accent">
+                    <svg class="w-6 h-6 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg class="w-6 h-6 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    <span class="text-xs mt-1 text-secondary-text">Dark/Light</span>
+                </button>
+            </div>
+
+            <div class="flex mt-5 w-full">
+                <a href="login.html" class="w-full book-btn text-center py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <span>Customer Login Portal</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+        <!-- MAIN CONTENT — ABOUT PAGE -->
+    <main class="flex-grow">
+
+        <!-- ============================================================
+             SECTION 1 — ABOUT HERO
+             Layout: Split hero (text left, image collage right)
+             ============================================================ -->
+        <section id="about-hero" class="relative min-h-[560px] lg:min-h-[640px] flex items-center justify-center overflow-hidden">
+            <!-- Background Image -->
+            <img src="assets/v1.jpg"
+                alt="SwiftParcel dedicated logistics team and operations specialists"
+                class="absolute inset-0 w-full h-full object-cover" loading="eager">
+
+            <!-- Premium Dark Gradient Overlay -->
+            <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(11,19,43,0.82) 0%, rgba(11,19,43,0.92) 100%);"></div>
+
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center text-white py-20 lg:py-24">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6" style="background-color: rgba(59,130,246,0.25); color:#93C5FD; border:1px solid rgba(147,197,253,0.35);">
+                    <i class="fa-solid fa-circle-info"></i> Delivering Trust Since 2012
+                </span>
+
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto">
+                    Moving Parcels. <span class="text-accent-light">Connecting People.</span>
+                </h1>
+
+                <p class="mt-6 text-base sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
+                    Founded with a single van and one big mission: making courier delivery dependable, transparent, and completely stress-free for businesses and individuals everywhere.
+                </p>
+
+                <!-- Dual Centered CTA -->
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+                    <a href="#our-story" class="btn-orange px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-book-open"></i> Read Our Story
+                    </a>
+                    <a href="contact.html" class="px-7 py-3.5 rounded-xl font-bold text-sm border-2 border-white/70 text-white hover:bg-white hover:text-[#0B132B] transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-headset"></i> Contact Us
+                    </a>
+                </div>
+
+                <!-- Breadcrumbs -->
+                <div class="mt-10 flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-300">
+                    <a href="index.html" class="hover:text-blue-300 transition">Home</a>
+                    <i class="fa-solid fa-chevron-right text-[10px] opacity-60"></i>
+                    <span class="text-white font-semibold">About Us</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 2 — OUR STORY / MISSION (Redesigned Editorial Split Layout)
+             ============================================================ -->
+        <section id="our-story" class="py-20 lg:py-28 bg-hover border-b border-border relative overflow-hidden">
+            <!-- Subtle background decorative accents -->
+            <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-accent/5 blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-accent-light/5 blur-3xl pointer-events-none"></div>
+
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center max-w-6xl mx-auto">
+
+                    <!-- Left Column: Story, Highlights & Milestones -->
+                    <div class="lg:col-span-6 flex flex-col justify-center text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider w-fit">
+                            <i class="fa-solid fa-route"></i>
+                            <span>Our Journey &amp; Legacy</span>
+                        </div>
+
+                        <h2 class="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text leading-tight">
+                            From One Van to a <span class="text-accent">National Network</span>
+                        </h2>
+
+                        <p class="mt-6 text-base sm:text-lg text-secondary-text leading-relaxed font-normal">
+                            What started as a single van operating across one local postal route has evolved into an interconnected nationwide logistics network trusted by millions of senders every day.
+                        </p>
+
+                        <p class="mt-4 text-sm sm:text-base text-secondary-text leading-relaxed font-normal">
+                            Yet our founding pledge remains untouched: treating every parcel with rapid urgency, verified chain-of-custody security, and live telemetry transparency from first mile to doorstep.
+                        </p>
+
+                        <!-- Key Pillars -->
+                        <div class="mt-8 space-y-4">
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-accent text-white flex items-center justify-center shrink-0 shadow-md">
+                                    <i class="fa-solid fa-shield-halved text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-primary-text">Guaranteed Integrity</h4>
+                                    <p class="text-xs text-secondary-text mt-0.5">Tamper-evident seals and photo-verified signatures at every exchange.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-accent-light text-white flex items-center justify-center shrink-0 shadow-md">
+                                    <i class="fa-solid fa-microchip text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-primary-text">Proprietary Dispatch Intelligence</h4>
+                                    <p class="text-xs text-secondary-text mt-0.5">Automated route optimization cutting delivery delays by over 42%.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4 Impact Metric Cards -->
+                        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <div class="p-3.5 rounded-2xl bg-card border border-border text-center shadow-sm">
+                                <p class="text-xl sm:text-2xl font-black text-accent">180+</p>
+                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">City Hubs</p>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-card border border-border text-center shadow-sm">
+                                <p class="text-xl sm:text-2xl font-black text-accent-light">500+</p>
+                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">Team Experts</p>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-card border border-border text-center shadow-sm">
+                                <p class="text-xl sm:text-2xl font-black text-accent">2.4M+</p>
+                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">Deliveries</p>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-card border border-border text-center shadow-sm">
+                                <p class="text-xl sm:text-2xl font-black text-accent-light">18</p>
+                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">Countries</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Visual Showcase with Overlapping Feature Cards -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3] group">
+                            <img src="assets/df.jpg"
+                                alt="SwiftParcel logistics fleet and warehouse operations" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                                loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+
+                            <!-- Bottom banner inside image (high-contrast in both light and dark themes) -->
+                            <div class="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 p-3.5 sm:p-4 rounded-2xl bg-[#0B132B]/90 backdrop-blur-md border border-white/20 shadow-2xl flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-accent text-white flex items-center justify-center font-bold text-base shadow shrink-0">
+                                        <i class="fa-solid fa-award"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs sm:text-sm font-bold text-white tracking-wide">Top-Rated Express Carrier</p>
+                                        <p class="text-[10px] sm:text-[11px] text-gray-300 mt-0.5 font-medium">Recognized for 99.4% on-time SLA fulfillment</p>
+                                    </div>
+                                </div>
+                                <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-extrabold uppercase tracking-wider shrink-0">
+                                    Certified
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Stat Badge (Top Right) -->
+                        <div class="absolute -top-6 -right-3 sm:-right-6 bg-card border border-border shadow-xl rounded-2xl px-5 py-3.5 flex items-center gap-3 z-20">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-base font-extrabold text-primary-text leading-none">12+ Years</p>
+                                <p class="text-[11px] text-secondary-text font-medium mt-1">Operational Excellence</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 3 — CORE VALUES
+             Layout: 3-column value cards with big icons
+             ============================================================ -->
+        <section id="values" class="py-20 lg:py-24 bg-background border-b border-border">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Centered Heading -->
+                <div class="max-w-2xl mx-auto text-center mb-14">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Our Values</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">What We Stand For</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Three principles guide every decision we make and every parcel we move.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+
+                    <!-- Value 1 -->
+                    <article class="bg-card border border-border rounded-3xl p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-6">
+                            <i class="fa-solid fa-bolt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-primary-text">Uncompromised Speed</h3>
+                        <p class="mt-4 text-sm text-secondary-text leading-relaxed">We obsess over every minute. Faster pickups, smarter routes, and next-day delivery — without ever sacrificing safety or care.</p>
+                    </article>
+
+                    <!-- Value 2 -->
+                    <article class="bg-card border border-border rounded-3xl p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-accent-light text-white flex items-center justify-center shadow-lg mb-6">
+                            <i class="fa-solid fa-eye text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-primary-text">Radical Transparency</h3>
+                        <p class="mt-4 text-sm text-secondary-text leading-relaxed">No hidden fees, no vague timelines, no "your parcel is delayed" excuses. Every step is tracked, priced, and shared with you.</p>
+                    </article>
+
+                    <!-- Value 3 -->
+                    <article class="bg-card border border-border rounded-3xl p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-6">
+                            <i class="fa-solid fa-heart text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-primary-text">People First</h3>
+                        <p class="mt-4 text-sm text-secondary-text leading-relaxed">Behind every parcel is a customer, a courier, and a community. We invest in our team and treat every shipment like it's our own.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 4 — MILESTONES TIMELINE
+             Layout: Vertical numbered timeline (unique)
+             ============================================================ -->
+        <section id="milestones" class="py-20 lg:py-24 bg-hover border-b border-border">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Centered Heading -->
+                <div class="max-w-2xl mx-auto text-center mb-16">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Milestones</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Our Journey So Far</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Twelve years of growth, one parcel at a time.</p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="relative max-w-4xl mx-auto">
+
+                    <!-- Center line -->
+                    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-border"></div>
+
+                    <!-- Milestone 1 -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16">
+                        <div class="md:text-right md:pr-10 text-center">
+                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold uppercase tracking-wider mb-3">2012</span>
+                            <h3 class="text-lg font-extrabold text-primary-text">Humble Beginnings</h3>
+                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">SwiftParcel launches with one van, two couriers, and a promise: same-day delivery done right.</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent text-white items-center justify-center shadow-lg border-4 border-hover">
+                            <i class="fa-solid fa-flag text-sm"></i>
+                        </div>
+                        <div class="md:pl-10"></div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16">
+                        <div class="md:text-right md:pr-10 md:order-1 text-center"></div>
+                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent-light text-white items-center justify-center shadow-lg border-4 border-hover">
+                            <i class="fa-solid fa-truck text-sm"></i>
+                        </div>
+                        <div class="md:pl-10 md:order-2 text-center md:text-left">
+                            <span class="inline-block px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-extrabold uppercase tracking-wider mb-3">2016</span>
+                            <h3 class="text-lg font-extrabold text-primary-text">National Expansion</h3>
+                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">We cross 50+ cities, opening regional hubs and launching our first nationwide domestic service.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16">
+                        <div class="md:text-right md:pr-10 text-center">
+                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold uppercase tracking-wider mb-3">2019</span>
+                            <h3 class="text-lg font-extrabold text-primary-text">Real-Time Tracking Launch</h3>
+                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">We roll out live GPS tracking on every parcel — a first for our industry in the region.</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent text-white items-center justify-center shadow-lg border-4 border-hover">
+                            <i class="fa-solid fa-satellite-dish text-sm"></i>
+                        </div>
+                        <div class="md:pl-10"></div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16">
+                        <div class="md:text-right md:pr-10 md:order-1 text-center"></div>
+                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent-light text-white items-center justify-center shadow-lg border-4 border-hover">
+                            <i class="fa-solid fa-plane text-sm"></i>
+                        </div>
+                        <div class="md:pl-10 md:order-2 text-center md:text-left">
+                            <span class="inline-block px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-extrabold uppercase tracking-wider mb-3">2022</span>
+                            <h3 class="text-lg font-extrabold text-primary-text">Going International</h3>
+                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">We extend our network to 18 countries, offering express air freight on every continent.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5 -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+                        <div class="md:text-right md:pr-10 text-center">
+                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold uppercase tracking-wider mb-3">2026</span>
+                            <h3 class="text-lg font-extrabold text-primary-text">2.4M Parcels and Counting</h3>
+                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">Today we serve over 12,000 businesses and individuals, with 500+ team members across 180+ cities.</p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent text-white items-center justify-center shadow-lg border-4 border-hover">
+                            <i class="fa-solid fa-trophy text-sm"></i>
+                        </div>
+                        <div class="md:pl-10"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 5 — LEADERSHIP TEAM
+             Layout: 4-column team cards
+             ============================================================ -->
+        <section id="team" class="py-20 lg:py-24 bg-background border-b border-border">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Centered Heading -->
+                <div class="max-w-2xl mx-auto text-center mb-14">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Leadership</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Meet the People Behind SwiftParcel</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">A passionate team of logistics veterans, engineers, and customer champions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+                    <!-- Team 1 -->
+                    <article class="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/f1.jpg"
+                                alt="CEO portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-primary-text text-lg">Arjun Mehta</h3>
+                            <p class="text-xs text-accent font-semibold uppercase tracking-wider mt-1">Founder &amp; CEO</p>
+                            <div class="flex justify-center gap-3 mt-4 text-secondary-text text-sm">
+                                <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Team 2 -->
+                    <article class="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/f2.jpg"
+                                alt="COO portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-primary-text text-lg">Priya Sharma</h3>
+                            <p class="text-xs text-accent font-semibold uppercase tracking-wider mt-1">Chief Operating Officer</p>
+                            <div class="flex justify-center gap-3 mt-4 text-secondary-text text-sm">
+                                <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Team 3 -->
+                    <article class="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/f3.jpg"
+                                alt="CTO portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-primary-text text-lg">Rahul Verma</h3>
+                            <p class="text-xs text-accent font-semibold uppercase tracking-wider mt-1">Chief Technology Officer</p>
+                            <div class="flex justify-center gap-3 mt-4 text-secondary-text text-sm">
+                                <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="hover:text-accent transition"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Team 4 -->
+                    <article class="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/f4.jpg"
+                                alt="Customer Success Lead portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-primary-text text-lg">Aisha Kapoor</h3>
+                            <p class="text-xs text-accent font-semibold uppercase tracking-wider mt-1">Customer Success Lead</p>
+                            <div class="flex justify-center gap-3 mt-4 text-secondary-text text-sm">
+                                <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             SECTION 6 — FINAL CTA / CLOSING
+             Layout: Centered gradient CTA card with decorative circles
+             ============================================================ -->
+        <section id="cta-about" class="py-20 lg:py-24 bg-hover">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-border">
+                    <!-- Gradient background -->
+                    <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 60%, var(--color-accent-light) 100%);"></div>
+
+                    <!-- Decorative circles -->
+                    <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 pointer-events-none"></div>
+                    <div class="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-white/10 pointer-events-none"></div>
+
+                    <div class="relative px-6 sm:px-12 lg:px-20 py-14 lg:py-20 text-center text-white">
+
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 border border-white/30">
+                            <i class="fa-solid fa-handshake text-2xl"></i>
+                        </div>
+
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight max-w-3xl mx-auto">
+                            Join the SwiftParcel Family Today
+                        </h2>
+
+                        <p class="mt-5 text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+                            Whether you're shipping one parcel or a thousand, we'd love to help. Get in touch or book your first pickup — your first shipment is on us.
+                        </p>
+
+                        <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap xl:flex-nowrap gap-3.5 justify-center items-stretch sm:items-center max-w-lg mx-auto">
+                            <a href="#calculator" class="bg-white text-[#0B132B] hover:bg-gray-100 px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition flex-1 sm:flex-initial text-center whitespace-nowrap">
+                                <i class="fa-solid fa-rocket text-accent"></i> <span>Start Shipping Free</span>
+                            </a>
+                            <a href="contact.html" class="border-2 border-white/80 bg-white/10 hover:bg-white hover:text-[#0B132B] px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition flex-1 sm:flex-initial text-center whitespace-nowrap">
+                                <i class="fa-solid fa-envelope"></i> <span>Contact Our Team</span>
+                            </a>
+                        </div>
+
+                        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-white/90">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> 12+ years trusted</span>
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> 500+ team members</span>
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> 2.4M+ deliveries</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <!-- LOGIN MODAL (Interactive Customer Portal) -->
+    <div id="login-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-card w-full max-w-md rounded-2xl border border-border shadow-2xl p-6 sm:p-8 space-y-6 relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeLoginModal()" class="absolute top-5 right-5 text-secondary-text hover:text-accent p-1.5 rounded-lg">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center mx-auto text-xl shadow-md">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-primary-text">Customer Portal Login</h3>
+                <p class="text-xs text-secondary-text">Access pickup scheduling, live GPS feeds, and bills</p>
+            </div>
+
+            <form onsubmit="handlePortalLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Account ID / Email</label>
+                    <input type="text" value="customer@swiftparcel.com" required
+                        class="w-full px-4 py-2.5 bg-background rounded-xl border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Password</label>
+                    <input type="password" value="••••••••••••" required
+                        class="w-full px-4 py-2.5 bg-background rounded-xl border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" checked class="rounded text-accent focus:ring-accent">
+                        <span class="text-secondary-text">Remember device</span>
+                    </label>
+                    <a href="#" class="text-accent hover:underline font-semibold">Forgot PIN?</a>
+                </div>
+                <button type="submit" class="btn-primary w-full py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <span>Log In to Dashboard</span>
+                </button>
+            </form>
+            <p class="text-center text-xs text-secondary-text">
+                Don't have a corporate courier account? <a href="#calculator" onclick="closeLoginModal()" class="text-accent font-semibold hover:underline">Register Today</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- MAIN FOOTER (Courier & Parcel Delivery Topic) -->
+    <footer id="main-footer" class="pt-16 pb-8 transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
+                
+                <!-- Brand column -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md">
+                            <i class="fa-solid fa-truck-fast text-lg"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-extrabold tracking-tight text-white leading-tight">
+                                Swift<span class="text-blue-400">Parcel</span>
+                            </span>
+                            <span class="text-[10px] tracking-wider uppercase font-semibold text-gray-400">Courier & Express Delivery</span>
+                        </div>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-sm text-gray-400">
+                        Pioneering reliable, time-definite door-to-door courier services. Fast parcel pickup, real-time telemetry tracking, nationwide logistics coverage, and seamless digital invoices.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-whatsapp text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Shipping Services Column -->
+                <div>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Delivery Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#services" class="footer-link">Local City Courier</a></li>
+                        <li><a href="#services" class="footer-link">Domestic Standard Shipping</a></li>
+                        <li><a href="#services" class="footer-link">Priority Express Air Cargo</a></li>
+                        <li><a href="#services" class="footer-link">Same-Day Critical Drop</a></li>
+                        <li><a href="#coverage" class="footer-link">Heavy Freight Logistics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Navigation Column -->
+                <div>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Customer Portal</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#dashboard" onclick="switchDashboardTab('book-pickup')" class="footer-link">Book Doorstep Pickup</a></li>
+                        <li><a href="#dashboard" onclick="switchDashboardTab('tracking-tab')" class="footer-link">Live Parcel Tracking</a></li>
+                        <li><a href="#dashboard" onclick="switchDashboardTab('history-tab')" class="footer-link">Shipment History</a></li>
+                        <li><a href="#dashboard" onclick="switchDashboardTab('invoices-tab')" class="footer-link">Download Invoices</a></li>
+                        <li><a href="#calculator" class="footer-link">Instant Rate Calculator</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter & Dispatch Alerts -->
+                <div>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Courier Alerts</h4>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">Subscribe for route alerts, holiday shipping schedules, and fuel surcharge updates.</p>
+                    <form onsubmit="handleNewsletter(event)" class="flex flex-col space-y-3">
+                        <input type="email" required placeholder="business@company.com" class="p-3 text-xs rounded-xl bg-gray-900 border border-gray-800 focus:outline-none focus:border-blue-500 text-white" />
+                        <button type="submit" class="btn-primary font-bold py-2.5 rounded-xl text-xs shadow-md">Subscribe to Alerts</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Compliance -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-xs gap-4">
+                <div>© 2026 SwiftParcel Delivery Services Inc. All rights reserved.</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Carriage</a>
+                    <a href="#" class="hover:text-gray-300">Security & Compliance</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGISTICS INTERACTION JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+
+            // Mobile Drawer Control
+            const menuDrawer = document.getElementById('mobile-menu-drawer');
+            const menuContent = document.getElementById('drawer-content');
+            const menuBackdrop = document.getElementById('drawer-backdrop');
+
+            const openDrawer = () => {
+                menuDrawer.classList.remove('pointer-events-none');
+                menuContent.classList.remove('translate-y-[-100%]');
+                menuBackdrop.classList.add('opacity-50', 'pointer-events-auto');
+                document.body.style.overflow = 'hidden';
+            };
+            const closeDrawer = () => {
+                menuContent.classList.add('translate-y-[-100%]');
+                menuBackdrop.classList.remove('opacity-50', 'pointer-events-auto');
+                setTimeout(() => { menuDrawer.classList.add('pointer-events-none'); document.body.style.overflow = ''; }, 300);
+            };
+
+            document.getElementById('mobile-menu-open')?.addEventListener('click', openDrawer);
+            document.getElementById('mobile-menu-close')?.addEventListener('click', closeDrawer);
+            menuBackdrop?.addEventListener('click', closeDrawer);
+
+            // Drawer Accordions
+            const setupAccordion = (toggleId, menuId, iconId) => {
+                const toggle = document.getElementById(toggleId);
+                toggle?.addEventListener('click', () => {
+                    const menu = document.getElementById(menuId);
+                    const icon = document.getElementById(iconId);
+                    menu?.classList.toggle('hidden');
+                    icon?.classList.toggle('rotate-180');
+                });
+            };
+            setupAccordion('mobile-homes-toggle', 'mobile-homes-menu', 'homes-icon');
+            setupAccordion('mobile-dashboard-toggle', 'mobile-dashboard-menu', 'dashboard-icon');
+
+            // Theme Toggle
+            const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('drawer-theme-toggle')];
+            const applyTheme = (theme) => {
+                html.setAttribute('data-theme', theme);
+                document.querySelectorAll('.light-icon').forEach(i => i.classList.toggle('hidden', theme === 'dark'));
+                document.querySelectorAll('.dark-icon').forEach(i => i.classList.toggle('hidden', theme === 'light'));
+            };
+            themeToggles.forEach(btn => btn?.addEventListener('click', () => {
+                const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                localStorage.setItem('theme', next);
+                applyTheme(next);
+            }));
+            applyTheme(localStorage.getItem('theme') || 'light');
+
+            // RTL Toggle
+            const langToggles = [document.getElementById('lang-icon'), document.getElementById('mobile-lang-icon-drawer')];
+            langToggles.forEach(btn => btn?.addEventListener('click', () => {
+                const current = localStorage.getItem('language') === 'ar' ? 'en' : 'ar';
+                localStorage.setItem('language', current);
+                html.setAttribute('dir', current === 'ar' ? 'rtl' : 'ltr');
+            }));
+            html.setAttribute('dir', localStorage.getItem('language') === 'ar' ? 'rtl' : 'ltr');
+        });
+
+        // Switch between Customer Dashboard and Admin Dashboard views
+        function showDashboardView(view) {
+            const customerContainer = document.getElementById('customer-dashboard-container');
+            const adminContainer = document.getElementById('admin-dashboard-container');
+            const btnCustomer = document.getElementById('btn-view-customer');
+            const btnAdmin = document.getElementById('btn-view-admin');
+            const heading = document.getElementById('dashboard-heading');
+            const subheading = document.getElementById('dashboard-subheading');
+            const badge = document.getElementById('dashboard-badge');
+
+            if (view === 'admin') {
+                customerContainer?.classList.add('hidden');
+                adminContainer?.classList.remove('hidden');
+
+                btnAdmin.className = "px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-accent text-white shadow transition flex items-center gap-2";
+                btnCustomer.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
+
+                heading.innerText = "Admin Fleet & Logistics Control";
+                subheading.innerText = "Monitor live courier dispatch queues, van telemetry, hub status, and daily operations revenue.";
+                badge.innerHTML = `<i class="fa-solid fa-shield-halved"></i> Central Operations Control`;
+            } else {
+                customerContainer?.classList.remove('hidden');
+                adminContainer?.classList.add('hidden');
+
+                btnCustomer.className = "px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-accent text-white shadow transition flex items-center gap-2";
+                btnAdmin.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
+
+                heading.innerText = "Customer Dashboard";
+                subheading.innerText = "Book pickups, track parcels in real time, view shipment history, and download official invoices directly from your self-service portal.";
+                badge.innerHTML = `<i class="fa-solid fa-gauge-high"></i> Customer Portal Hub`;
+            }
+
+            // Scroll to dashboard smoothly
+            const dashElem = document.getElementById('dashboard');
+            dashElem?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Dashboard Tabs Functionality
+        function switchDashboardTab(tabId) {
+            showDashboardView('customer');
+            const tabs = ['book-pickup', 'tracking-tab', 'history-tab', 'invoices-tab'];
+            tabs.forEach(t => {
+                const content = document.getElementById(`tab-content-${t}`);
+                const btn = document.getElementById(`tab-btn-${t}`);
+                if (content && btn) {
+                    if (t === tabId) {
+                        content.classList.remove('hidden');
+                        btn.className = "dashboard-tab-btn flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-accent text-white shadow-sm transition";
+                    } else {
+                        content.classList.add('hidden');
+                        btn.className = "dashboard-tab-btn flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm text-secondary-text hover:text-accent hover:bg-card transition";
+                    }
+                }
+            });
+        }
+
+        // Quick Track Form
+        function handleQuickTrack(e) {
+            e.preventDefault();
+            const trackId = document.getElementById('quick-track-input').value.trim();
+            if (trackId) {
+                document.getElementById('dash-track-id').value = trackId;
+                switchDashboardTab('tracking-tab');
+                const target = document.getElementById('dashboard');
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Rate Calculator
+        function calculateShippingRate(e) {
+            e.preventDefault();
+            const weight = parseFloat(document.getElementById('calc-weight').value) || 1;
+            const service = document.getElementById('calc-service').value;
+            const packageType = document.getElementById('calc-package').value;
+
+            let baseRate = 8.5;
+            let multiplier = 2.5;
+
+            if (service === 'local') {
+                baseRate = 6.0;
+                multiplier = 1.8;
+            } else if (service === 'express') {
+                baseRate = 18.0;
+                multiplier = 4.2;
+            }
+
+            if (packageType === 'fragile') baseRate += 5.0;
+            if (packageType === 'document') baseRate = Math.max(5.0, baseRate - 3.0);
+
+            const total = (baseRate + (weight * multiplier)).toFixed(2);
+            document.getElementById('calc-price-output').innerText = `$${total}`;
+        }
+
+        // Book Pickup Handler
+        function handleBookPickup(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('pickup-alert');
+            alertBox.classList.remove('hidden');
+            setTimeout(() => {
+                alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        // Refresh Tracking
+        function refreshTracking() {
+            const btn = event.currentTarget;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Syncing...</span>`;
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fa-solid fa-rotate-right"></i> <span>Refresh</span>`;
+                alert('Live GPS signal updated: Van #42 is 1.8 miles from delivery address.');
+            }, 600);
+        }
+
+        // Download Invoice Simulation
+        function downloadInvoice(invId, trackNo, amount) {
+            const blob = new Blob([
+                `SWIFTPARCEL COURIER & DELIVERY SERVICES\n=========================================\nINVOICE: ${invId}\nTRACKING NO: ${trackNo}\nTOTAL CHARGED: ${amount}\nSTATUS: PAID IN FULL\nDATE: ${new Date().toLocaleDateString()}\n\nThank you for choosing SwiftParcel!`
+            ], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `${invId}-SwiftParcel.txt`;
+            link.click();
+        }
+
+        function downloadAllInvoices() {
+            alert('Compressing all customer invoices into SwiftParcel-Billing-Q3.zip...');
+            downloadInvoice('INV-BATCH-2026', 'ALL-SHIPMENTS', '$184.70');
+        }
+
+        // Contact & Newsletter forms
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const badge = document.getElementById('contact-success');
+            badge.classList.remove('hidden');
+            e.target.reset();
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            alert('Subscribed to SwiftParcel Dispatch & Service Alerts!');
+            e.target.reset();
+        }
+
+        // Login Modal Controls
+        function openLoginModal() { window.location.href = 'login.html'; }
+
+        function closeLoginModal() {
+            const modal = document.getElementById('login-modal');
+            modal.classList.remove('modal-active');
+            modal.querySelector('div').classList.add('scale-95');
+            modal.querySelector('div').classList.remove('scale-100');
+            document.body.style.overflow = '';
+        }
+
+        function handlePortalLogin(e) {
+            e.preventDefault();
+            closeLoginModal();
+            switchDashboardTab('tracking-tab');
+            document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

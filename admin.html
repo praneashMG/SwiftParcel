@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9 1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>" type="image/svg+xml">
+    <title>SwiftParcel · Admin Fleet & Logistics Control</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: ['class', '[data-theme="dark"]'],
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'var(--color-background)',
+                        'card-bg': 'var(--color-card-bg)',
+                        'primary-text': 'var(--color-primary-text)',
+                        'secondary-text': 'var(--color-secondary-text)',
+                        accent: 'var(--color-accent)',
+                        'accent-hover': 'var(--color-accent-hover)',
+                        'accent-light': 'var(--color-accent-light)',
+                        border: 'var(--color-border)',
+                        hover: 'var(--color-hover)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --- Express Courier & Logistics Theme (Energetic Blue & Express Orange) --- */
+        :root, html[data-theme='light'] {
+            --color-background: #F8FAFC;
+            --color-card-bg: #FFFFFF;
+            --color-primary-text: #0F172A;
+            --color-secondary-text: #475569;
+            --color-accent: #2563EB;
+            --color-accent-hover: #1D4ED8;
+            --color-accent-light: #FF6B00;
+            --color-accent-alpha-10: rgba(37, 99, 235, 0.1);
+            --color-accent-orange-10: rgba(255, 107, 0, 0.12);
+            --color-accent-light-shadow: rgba(37, 99, 235, 0.25);
+            --color-border: #E2E8F0;
+            --color-hover: #EFF6FF;
+            --color-footer-bg: #0B132B;
+            --color-footer-text: #CBD5E1;
+            --color-sidebar-bg: #FFFFFF;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-danger: #ef4444;
+        }
+        html[data-theme='dark'] {
+            --color-background: #0B1120;
+            --color-card-bg: #151F32;
+            --color-primary-text: #F8FAFC;
+            --color-secondary-text: #94A3B8;
+            --color-accent: #3B82F6;
+            --color-accent-hover: #60A5FA;
+            --color-accent-light: #FB923C;
+            --color-accent-alpha-10: rgba(59, 130, 246, 0.15);
+            --color-accent-orange-10: rgba(251, 146, 60, 0.15);
+            --color-accent-light-shadow: rgba(59, 130, 246, 0.35);
+            --color-border: #1E293B;
+            --color-hover: #172554;
+            --color-footer-bg: #060B14;
+            --color-footer-text: #94A3B8;
+            --color-sidebar-bg: #0F1B2F;
+            --color-success: #34d399;
+            --color-warning: #fbbf24;
+            --color-danger: #f87171;
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-primary-text);
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        .text-primary-text { color: var(--color-primary-text); }
+        .text-secondary-text { color: var(--color-secondary-text); }
+        .text-accent { color: var(--color-accent); }
+        .text-accent-light { color: var(--color-accent-light); }
+        .bg-background { background-color: var(--color-background); }
+        .bg-card { background-color: var(--color-card-bg); }
+        .bg-hover { background-color: var(--color-hover); }
+        .border-border { border-color: var(--color-border); }
+        .bg-accent { background-color: var(--color-accent); }
+        .bg-accent-light { background-color: var(--color-accent-light); }
+        .bg-accent-alpha-10 { background-color: var(--color-accent-alpha-10); }
+
+        /* Nav Link Underline */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        /* DROPDOWN */
+        .dropdown-wrapper { position: relative; }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            min-width: 230px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.25s ease;
+        }
+        .dropdown-wrapper:hover .dropdown-menu {
+            opacity: 1; visibility: visible; transform: translateY(0);
+            display: block;
+        }
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1.1rem;
+            color: var(--color-primary-text);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .dropdown-menu a:last-child { border-bottom: none; }
+        .dropdown-menu a:hover {
+            background-color: var(--color-hover);
+            color: var(--color-accent);
+            padding-left: 1.35rem;
+        }
+
+        @media (max-width: 1024px) {
+            .dropdown-menu { position: static; display: none; opacity: 1; visibility: visible; transform: none; box-shadow: none; }
+            .dropdown-wrapper:hover .dropdown-menu { display: block; }
+        }
+
+        /* Sidebar link */
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.85rem;
+            color: var(--color-secondary-text);
+            transition: all 0.18s ease;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: var(--color-accent);
+            color: #FFFFFF !important;
+            box-shadow: 0 6px 16px -6px var(--color-accent-light-shadow);
+        }
+        .sidebar-link:hover i, .sidebar-link.active i,
+        .sidebar-link:hover span, .sidebar-link.active span { 
+            color: #FFFFFF !important; 
+        }
+        .sidebar-link.logout {
+            color: var(--color-danger) !important;
+        }
+        .sidebar-link.logout i, .sidebar-link.logout span {
+            color: var(--color-danger);
+            transition: color 0.18s ease;
+        }
+        .sidebar-link.logout:hover { 
+            background-color: #EF4444 !important;
+            color: #FFFFFF !important;
+            box-shadow: 0 6px 16px -6px rgba(239, 68, 68, 0.45);
+        }
+        .sidebar-link.logout:hover i,
+        .sidebar-link.logout:hover span {
+            color: #FFFFFF !important;
+        }
+
+        /* Cards */
+        .dashboard-card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 1.25rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .dashboard-card:hover { border-color: var(--color-accent); box-shadow: 0 12px 28px -12px var(--color-accent-light-shadow); }
+
+        .stat-card {
+            background-color: var(--color-card-bg);
+            border-radius: 1.25rem;
+            border: 1px solid var(--color-border);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px -10px var(--color-accent-light-shadow);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .btn-primary, .book-btn {
+            background-color: var(--color-accent);
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary:hover, .book-btn:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px var(--color-accent-light-shadow);
+        }
+        .btn-orange {
+            background-color: var(--color-accent-light);
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-orange:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: var(--color-accent);
+            color: white;
+            box-shadow: 0 4px 12px var(--color-accent-light-shadow);
+        }
+
+        .data-table th {
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-secondary-text);
+            text-align: left;
+            padding: 0.75rem 0.5rem;
+        }
+        .data-table td {
+            padding: 1rem 0.5rem;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.875rem;
+        }
+
+        .pulse-dot {
+            width: 8px; height: 8px;
+            background-color: var(--color-success);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(16,185,129,0.5);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse { 70% { box-shadow: 0 0 0 6px rgba(16,185,129,0); } }
+
+        /* Mobile sidebar */
+        #mobile-overlay {
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 55;
+        }
+        #mobile-overlay.active { opacity: 1; pointer-events: auto; }
+        @media (max-width: 1023px) {
+            #sidebar-container { transform: translateX(-100%); transition: transform 0.3s ease-in-out; }
+            #sidebar-container.open-sidebar-mobile { transform: translateX(0); }
+        }
+
+        .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s, transform 0.5s; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        h1,h2,h3,h4,h5,h6 { font-weight: 700 !important; }
+        p:not(.font-medium) { font-weight: 400 !important; }
+
+        /* Form input */
+        .form-input, .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.85rem;
+            border: 1.5px solid var(--color-border);
+            background: var(--color-card-bg);
+            color: var(--color-primary-text);
+            font-size: 0.875rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .form-input:focus, .form-select:focus {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px var(--color-accent-alpha-10);
+        }
+        select option { background-color: var(--color-card-bg); color: var(--color-primary-text); }
+
+        .custom-scrollbar::-webkit-scrollbar { height: 6px; width: 6px; }
+        /* ==========================================================
+           RESPONSIVENESS: 1024x768 (Tablet Landscape/Portrait), 390px & 360px (Mobile)
+        ========================================================== */
+        /* Tablet & 1024x768 adjustments */
+        @media (max-width: 1024px) {
+            .container { max-width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+            #sidebar-container { 
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                height: 100vh !important;
+                max-height: 100vh !important;
+                width: 19rem !important;
+                max-width: 85vw !important;
+                z-index: 60 !important;
+                transform: translateX(-100%);
+                transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            #sidebar-container.open-sidebar-mobile {
+                transform: translateX(0) !important;
+            }
+            /* Show hamburger on 1024px tablet viewports */
+            #mobile-menu-toggle { display: inline-flex !important; }
+        }
+
+        /* 1024x768 Specific landscape/vertical tweaks */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .stat-card p.text-3xl { font-size: 1.65rem !important; }
+            h1.text-3xl, h1.text-2xl { font-size: 1.5rem !important; }
+            .data-table th, .data-table td { padding: 0.65rem 0.5rem; }
+        }
+
+        /* 390px Mobile Viewport */
+        @media (max-width: 390px) {
+            body { font-size: 14px; }
+            .dashboard-card { border-radius: 1rem; }
+            .stat-card { border-radius: 1rem; }
+            .stat-card p.text-3xl { font-size: 1.4rem !important; }
+            .stat-card p.text-2xl { font-size: 1.2rem !important; }
+            h1.text-2xl { font-size: 1.2rem !important; }
+            h1.text-3xl { font-size: 1.3rem !important; }
+            h2.text-xl { font-size: 1.05rem !important; }
+            h3.text-lg { font-size: 0.975rem !important; }
+            .data-table th { font-size: 0.6rem; padding: 0.5rem 0.35rem; }
+            .data-table td { font-size: 0.75rem; padding: 0.75rem 0.35rem; }
+            .sidebar-link { padding: 0.65rem 0.85rem; font-size: 0.8125rem; }
+            .btn-primary, .btn-orange, .btn-outline { font-size: 0.75rem; padding: 0.6rem 0.85rem !important; }
+            .form-input, .form-select { font-size: 0.8rem; padding: 0.6rem 0.8rem; }
+        }
+
+        /* 360px Mobile Viewport */
+        @media (max-width: 360px) {
+            body { font-size: 13px; }
+            .stat-card p.text-3xl { font-size: 1.25rem !important; }
+            .stat-card p.text-2xl { font-size: 1.15rem !important; }
+            h1.text-3xl, h1.text-2xl { font-size: 1.15rem !important; }
+            .sidebar-link { padding: 0.6rem 0.75rem; font-size: 0.78rem; }
+            .sidebar-link i { font-size: 0.85rem; }
+            .form-input, .form-select { font-size: 0.75rem; padding: 0.55rem 0.7rem; }
+            .status-badge { font-size: 0.6rem; padding: 0.2rem 0.55rem; }
+            .btn-primary, .btn-orange, .btn-outline { font-size: 0.7rem; padding: 0.5rem 0.75rem !important; }
+        }
+    </style>
+</head>
+
+<body class="antialiased flex flex-col min-h-screen w-full">
+
+    <!-- ==========================================================
+         HEADER / TOP BAR (Dedicated Dashboard Topbar matching design)
+    ========================================================== -->
+    <header class="border-b border-border bg-card sticky top-0 z-50 w-full shadow-sm">
+        <div class="container mx-auto px-3 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-2">
+
+            <!-- Left: hamburger (mobile) + logo -->
+            <div class="flex items-center gap-2">
+                <button id="mobile-menu-toggle" class="lg:hidden p-1.5 -ml-1 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition" title="Open Menu">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-accent flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200">
+                        <i class="fa-solid fa-truck-fast text-base sm:text-xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-base sm:text-xl font-extrabold tracking-tight text-primary-text leading-tight">
+                            Swift<span class="text-accent">Parcel</span>
+                        </span>
+                        <span class="text-[9px] sm:text-[10px] tracking-wider uppercase font-semibold text-secondary-text">Admin Dashboard</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right: actions (Theme toggle, RTL toggle, User profile badge) -->
+            <div class="flex items-center gap-1 sm:gap-2">
+                <button id="theme-toggle" title="Toggle Theme" class="p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                <button id="lang-toggle" title="Toggle RTL" class="hidden sm:block p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                    </svg>
+                </button>
+                <div class="flex items-center gap-2 pl-2 border-l border-border">
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-accent-alpha-10 flex items-center justify-center text-accent font-bold text-xs">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="hidden sm:block text-xs leading-tight">
+                        <p class="font-bold text-primary-text">John Carter</p>
+                        <p class="text-secondary-text">ID: #SP-2043</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 z-[55] lg:hidden"></div>
+
+    <!-- MAIN LAYOUT -->
+    <main class="container mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-6 flex-grow w-full">
+        <div class="flex flex-col lg:flex-row gap-5 lg:gap-8">
+
+            <!-- SIDEBAR -->
+            <aside id="sidebar-container"
+                   class="fixed lg:static top-0 left-0 h-full lg:h-auto w-72 sm:w-80 z-[60] lg:z-10 transform lg:translate-x-0 transition-transform duration-300 lg:flex-shrink-0">
+                <div class="dashboard-card p-4 sm:p-5 lg:sticky lg:top-24 h-full lg:h-auto border-r lg:border border-border lg:rounded-2xl rounded-none overflow-y-auto bg-card">
+
+                    <!-- Mobile close -->
+                    <div class="flex lg:hidden justify-between items-center mb-5 px-1">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
+                                <i class="fas fa-shield-halved text-white text-xs"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-accent">Admin Console</span>
+                        </div>
+                        <button id="close-sidebar" class="p-2 hover:bg-hover rounded-lg text-secondary-text">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <!-- Admin Profile Card -->
+                    <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border">
+                        <div class="w-11 h-11 rounded-xl bg-accent flex items-center justify-center text-white text-lg shrink-0 shadow-md">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-bold text-primary-text truncate text-sm">Logistics Ops HQ</p>
+                            <p class="text-[10px] text-secondary-text flex items-center gap-1">
+                                <span class="pulse-dot inline-block"></span> Fleet Supervisor
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <nav class="flex flex-col gap-1">
+                        <p class="text-[10px] uppercase tracking-widest text-secondary-text font-bold mt-1 mb-2 px-3">Logistics Management</p>
+                        <a href="#" data-section="overview" class="sidebar-link active">
+                            <i class="fas fa-gauge-high w-5"></i><span>Fleet Overview</span>
+                        </a>
+                        <a href="#" data-section="dispatch" class="sidebar-link">
+                            <i class="fas fa-truck-ramp-box"></i><span>Dispatch Queue</span>
+                        </a>
+                        <a href="#" data-section="hubs" class="sidebar-link">
+                            <i class="fas fa-warehouse"></i><span>Hub Operations</span>
+                        </a>
+                        <a href="#" data-section="drivers" class="sidebar-link">
+                            <i class="fas fa-users-gear"></i><span>Driver Telemetry</span>
+                        </a>
+                        <a href="#" data-section="revenue" class="sidebar-link">
+                            <i class="fas fa-chart-line"></i><span>Revenue & Analytics</span>
+                        </a>
+                        <a href="customer.html" class="sidebar-link">
+                            <i class="fas fa-user-gear"></i><span>Customer Portal View</span>
+                        </a>
+                        <a href="login.html" class="sidebar-link logout mt-3">
+                            <i class="fas fa-sign-out-alt"></i><span>Sign Out Admin</span>
+                        </a>
+                    </nav>
+
+                    <!-- Fast Ops Action -->
+                    <div class="mt-5 pt-4 border-t border-border">
+                        <div class="rounded-xl p-4 bg-hover">
+                            <p class="text-[10px] uppercase tracking-wider text-secondary-text font-bold mb-2">Central Ops Emergency</p>
+                            <button onclick="alert('Priority broadcast dispatched to all active 1,248 courier drivers.')" class="btn-orange w-full py-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 shadow">
+                                <i class="fa-solid fa-bullhorn"></i> Fleet Alert Broadcast
+                            </button>
+                            <p class="text-[10px] text-secondary-text mt-2 text-center">Direct telemetry channel</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- CONTENT SECTIONS -->
+            <div class="flex-1 min-w-0">
+
+                <!-- SECTION 1: OVERVIEW -->
+                <div id="overview" class="admin-section space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-alpha-10 text-accent font-semibold text-xs uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-shield-halved"></i> Central Operations Control
+                            </span>
+                            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-primary-text">Admin Fleet & Logistics Control</h1>
+                            <p class="text-secondary-text text-xs sm:text-sm mt-1">Real-time driver assignments, van telemetry, hub status, and daily operations revenue.</p>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <button onclick="alert('Refreshing global telemetry signals...')" class="btn-outline px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-rotate"></i> <span>Sync Telemetry</span>
+                            </button>
+                            <a href="customer.html" class="btn-primary px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 shadow">
+                                <i class="fa-solid fa-user"></i> <span>Customer View</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 4 Top KPI Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+                        <div class="p-5 rounded-2xl bg-card border border-border shadow-sm">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs font-bold text-secondary-text uppercase tracking-wider">Total Active Fleet</p>
+                                    <p class="text-2xl sm:text-3xl font-black text-primary-text mt-1">1,248 Vans</p>
+                                </div>
+                                <span class="p-3 rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-300 text-lg">
+                                    <i class="fa-solid fa-truck-moving"></i>
+                                </span>
+                            </div>
+                            <span class="text-xs font-semibold text-emerald-600 mt-2 block"><i class="fa-solid fa-arrow-trend-up"></i> 94.2% Fleet In Service</span>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-card border border-border shadow-sm">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs font-bold text-secondary-text uppercase tracking-wider">Today's Parcels</p>
+                                    <p class="text-2xl sm:text-3xl font-black text-primary-text mt-1">18,420</p>
+                                </div>
+                                <span class="p-3 rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-950 dark:text-orange-300 text-lg">
+                                    <i class="fa-solid fa-box"></i>
+                                </span>
+                            </div>
+                            <span class="text-xs font-semibold text-accent mt-2 block"><i class="fa-solid fa-circle-check"></i> 14,810 Dispatched</span>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-card border border-border shadow-sm">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs font-bold text-secondary-text uppercase tracking-wider">Hub Operations</p>
+                                    <p class="text-2xl sm:text-3xl font-black text-primary-text mt-1">45 Hubs</p>
+                                </div>
+                                <span class="p-3 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-300 text-lg">
+                                    <i class="fa-solid fa-warehouse"></i>
+                                </span>
+                            </div>
+                            <span class="text-xs font-semibold text-emerald-600 mt-2 block"><i class="fa-solid fa-check"></i> All Operating Normally</span>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-card border border-border shadow-sm">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs font-bold text-secondary-text uppercase tracking-wider">Revenue Today</p>
+                                    <p class="text-2xl sm:text-3xl font-black text-primary-text mt-1">$142,850</p>
+                                </div>
+                                <span class="p-3 rounded-xl bg-purple-100 text-purple-600 dark:bg-purple-950 dark:text-purple-300 text-lg">
+                                    <i class="fa-solid fa-sack-dollar"></i>
+                                </span>
+                            </div>
+                            <span class="text-xs font-semibold text-emerald-600 mt-2 block"><i class="fa-solid fa-arrow-trend-up"></i> +12.4% vs last week</span>
+                        </div>
+                    </div>
+
+                    <!-- Dispatch Fleet & Driver Management Table -->
+                    <div class="bg-card rounded-2xl border border-border shadow-sm p-5 sm:p-6 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-primary-text flex items-center gap-2">
+                                    <i class="fa-solid fa-satellite-dish text-accent"></i> Live Courier Dispatch Queue
+                                </h3>
+                                <p class="text-xs text-secondary-text">Real-time driver assignments, route telemetry, and delivery deadlines.</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="alert('Exporting fleet telemetry report (CSV)...')" class="btn-outline px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+                                    <i class="fa-solid fa-download"></i> Export CSV
+                                </button>
+                                <button onclick="alert('Assigning pending packages to nearest regional drivers...')" class="btn-primary px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+                                    <i class="fa-solid fa-robot"></i> Auto-Assign Drivers
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto border border-border rounded-xl">
+                            <table class="w-full text-left text-sm min-w-[700px]">
+                                <thead>
+                                    <tr class="border-b border-border text-xs font-bold text-secondary-text uppercase bg-background/50">
+                                        <th class="p-3">Batch ID</th>
+                                        <th class="p-3">Courier Driver</th>
+                                        <th class="p-3">Vehicle #</th>
+                                        <th class="p-3">Assigned Parcels</th>
+                                        <th class="p-3">Sector / Hub</th>
+                                        <th class="p-3">Dispatch Status</th>
+                                        <th class="p-3 text-right">Admin Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-border">
+                                    <tr class="hover:bg-hover transition">
+                                        <td class="p-3 font-mono font-bold text-accent">#BATCH-991</td>
+                                        <td class="p-3 font-semibold text-primary-text">Marcus Vance</td>
+                                        <td class="p-3 text-xs text-secondary-text font-mono">VAN-NY-42</td>
+                                        <td class="p-3 font-bold text-primary-text">42 Parcels (88% done)</td>
+                                        <td class="p-3 text-xs text-secondary-text">Midtown Manhattan</td>
+                                        <td class="p-3"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">En Route</span></td>
+                                        <td class="p-3 text-right">
+                                            <button onclick="alert('Tracking Telemetry for Driver Marcus Vance: Lat 40.758896, Lng -73.985130 (Speed 24 mph)')" class="text-xs font-bold text-accent hover:underline">Inspect Route</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-hover transition">
+                                        <td class="p-3 font-mono font-bold text-accent">#BATCH-990</td>
+                                        <td class="p-3 font-semibold text-primary-text">Sarah Jenkins</td>
+                                        <td class="p-3 text-xs text-secondary-text font-mono">EV-BOS-19</td>
+                                        <td class="p-3 font-bold text-primary-text">35 Parcels (100% done)</td>
+                                        <td class="p-3 text-xs text-secondary-text">Boston Seaport Hub</td>
+                                        <td class="p-3"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Completed</span></td>
+                                        <td class="p-3 text-right">
+                                            <button onclick="alert('Viewing driver summary for Sarah Jenkins: 35/35 delivered, 0 exceptions.')" class="text-xs font-bold text-secondary-text hover:text-accent">Audit Log</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-hover transition">
+                                        <td class="p-3 font-mono font-bold text-accent">#BATCH-989</td>
+                                        <td class="p-3 font-semibold text-primary-text">Derrick Hall</td>
+                                        <td class="p-3 text-xs text-secondary-text font-mono">VAN-CHI-08</td>
+                                        <td class="p-3 font-bold text-primary-text">56 Parcels (Loading)</td>
+                                        <td class="p-3 text-xs text-secondary-text">Chicago O'Hare Terminal</td>
+                                        <td class="p-3"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">Loading Cargo</span></td>
+                                        <td class="p-3 text-right">
+                                            <button onclick="alert('Cargo manifest approved for Dispatch #BATCH-989')" class="text-xs font-bold text-accent hover:underline">Authorize</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-hover transition">
+                                        <td class="p-3 font-mono font-bold text-accent">#BATCH-988</td>
+                                        <td class="p-3 font-semibold text-primary-text">Elena Rostova</td>
+                                        <td class="p-3 text-xs text-secondary-text font-mono">VAN-LA-14</td>
+                                        <td class="p-3 font-bold text-primary-text">28 Parcels (72% done)</td>
+                                        <td class="p-3 text-xs text-secondary-text">Los Angeles Port Sector</td>
+                                        <td class="p-3"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">En Route</span></td>
+                                        <td class="p-3 text-right">
+                                            <button onclick="alert('Tracking Telemetry for Driver Elena Rostova: Lat 34.0522, Lng -118.2437 (Speed 19 mph)')" class="text-xs font-bold text-accent hover:underline">Inspect Route</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Operational Grid: Hub Map + Fleet Status -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                        <div class="bg-card rounded-2xl border border-border p-5 space-y-4">
+                            <h3 class="font-bold text-sm sm:text-base text-primary-text flex items-center gap-2">
+                                <i class="fa-solid fa-map-location-dot text-accent"></i> Key Logistics Hub Status
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="p-3 rounded-xl bg-background border border-border flex justify-between items-center">
+                                    <div>
+                                        <p class="font-bold text-xs text-primary-text">North-East Central Hub (JFK)</p>
+                                        <p class="text-[11px] text-secondary-text">Throughput: 6,840 parcels/day · 98% efficiency</p>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Optimal</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-background border border-border flex justify-between items-center">
+                                    <div>
+                                        <p class="font-bold text-xs text-primary-text">Midwest Distribution Hub (ORD)</p>
+                                        <p class="text-[11px] text-secondary-text">Throughput: 5,120 parcels/day · Sort line 3 active</p>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Optimal</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-background border border-border flex justify-between items-center">
+                                    <div>
+                                        <p class="font-bold text-xs text-primary-text">West Coast Seaport Hub (LAX)</p>
+                                        <p class="text-[11px] text-secondary-text">Throughput: 4,920 parcels/day · Surcharge updated</p>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">High Volume</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-card rounded-2xl border border-border p-5 space-y-4">
+                            <h3 class="font-bold text-sm sm:text-base text-primary-text flex items-center gap-2">
+                                <i class="fa-solid fa-microchip text-accent-light"></i> Automated Dispatch Rules
+                            </h3>
+                            <div class="space-y-3 text-xs">
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-background border border-border">
+                                    <div>
+                                        <p class="font-bold text-primary-text">Dynamic Traffic Rerouting</p>
+                                        <p class="text-secondary-text text-[11px]">Automatically avoid severe highway bottlenecks</p>
+                                    </div>
+                                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-toggle-on text-xl"></i></span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-background border border-border">
+                                    <div>
+                                        <p class="font-bold text-primary-text">Auto-Reassign Exceptions</p>
+                                        <p class="text-secondary-text text-[11px]">Forward failed deliveries to secondary attempt queue</p>
+                                    </div>
+                                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-toggle-on text-xl"></i></span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 rounded-xl bg-background border border-border">
+                                    <div>
+                                        <p class="font-bold text-primary-text">SMS Customer ETA Updates</p>
+                                        <p class="text-secondary-text text-[11px]">Send 30-minute arrival window automatically</p>
+                                    </div>
+                                    <span class="text-emerald-600 font-bold"><i class="fa-solid fa-toggle-on text-xl"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: DISPATCH QUEUE -->
+                <div id="dispatch" class="admin-section hidden space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-primary-text">Active Courier Dispatch Queue</h2>
+                        <p class="text-secondary-text text-xs sm:text-sm mt-1">Live routing and package status for all regional delivery batches.</p>
+                    </div>
+
+                    <div class="bg-card rounded-2xl border border-border p-5 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <input type="text" placeholder="Search batch ID, driver, or hub..." class="form-input max-w-sm">
+                            <div class="flex items-center gap-2">
+                                <select class="form-select text-xs">
+                                    <option>All Statuses</option>
+                                    <option>En Route</option>
+                                    <option>Loading Cargo</option>
+                                    <option>Completed</option>
+                                </select>
+                                <button onclick="alert('Exporting filtered queue...')" class="btn-primary px-4 py-2 rounded-xl text-xs font-bold">Export</button>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto border border-border rounded-xl">
+                            <table class="w-full text-left text-sm min-w-[650px]">
+                                <thead>
+                                    <tr class="border-b border-border text-xs font-bold text-secondary-text uppercase bg-background/50">
+                                        <th class="p-3">Batch ID</th>
+                                        <th class="p-3">Assigned Van</th>
+                                        <th class="p-3">Driver</th>
+                                        <th class="p-3">Destination</th>
+                                        <th class="p-3">Parcels</th>
+                                        <th class="p-3">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-border">
+                                    <tr class="hover:bg-hover">
+                                        <td class="p-3 font-mono font-bold text-accent">#BATCH-991</td>
+                                        <td class="p-3 text-xs font-mono">VAN-NY-42</td>
+                                        <td class="p-3 font-semibold">Marcus Vance</td>
+                                        <td class="p-3 text-xs">Midtown Manhattan</td>
+                                        <td class="p-3 font-bold">42</td>
+                                        <td class="p-3"><span class="px-2 py-0.5 rounded text-xs font-bold bg-amber-100 text-amber-800">En Route</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-hover">
+                                        <td class="p-3 font-mono font-bold text-accent">#BATCH-990</td>
+                                        <td class="p-3 text-xs font-mono">EV-BOS-19</td>
+                                        <td class="p-3 font-semibold">Sarah Jenkins</td>
+                                        <td class="p-3 text-xs">Boston Seaport</td>
+                                        <td class="p-3 font-bold">35</td>
+                                        <td class="p-3"><span class="px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-800">Completed</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-hover">
+                                        <td class="p-3 font-mono font-bold text-accent">#BATCH-989</td>
+                                        <td class="p-3 text-xs font-mono">VAN-CHI-08</td>
+                                        <td class="p-3 font-semibold">Derrick Hall</td>
+                                        <td class="p-3 text-xs">Chicago Loop</td>
+                                        <td class="p-3 font-bold">56</td>
+                                        <td class="p-3"><span class="px-2 py-0.5 rounded text-xs font-bold bg-blue-100 text-blue-800">Loading</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: HUBS -->
+                <div id="hubs" class="admin-section hidden space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-primary-text">Automated Sorting Hubs</h2>
+                        <p class="text-secondary-text text-xs sm:text-sm mt-1">Status of our 45 automated regional distribution centers.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div class="bg-card rounded-2xl border border-border p-5 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-bold text-primary-text">Hub #01 - JFK New York</h3>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                            </div>
+                            <p class="text-xs text-secondary-text">Capacity: 10,000 / day</p>
+                            <p class="text-xs text-secondary-text">Load: 88% current capacity</p>
+                            <p class="text-xs font-bold text-emerald-600">Status: All 8 sort belts active</p>
+                        </div>
+                        <div class="bg-card rounded-2xl border border-border p-5 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-bold text-primary-text">Hub #02 - ORD Chicago</h3>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                            </div>
+                            <p class="text-xs text-secondary-text">Capacity: 8,500 / day</p>
+                            <p class="text-xs text-secondary-text">Load: 64% current capacity</p>
+                            <p class="text-xs font-bold text-emerald-600">Status: Normal operations</p>
+                        </div>
+                        <div class="bg-card rounded-2xl border border-border p-5 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-bold text-primary-text">Hub #03 - LAX Los Angeles</h3>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                            </div>
+                            <p class="text-xs text-secondary-text">Capacity: 7,500 / day</p>
+                            <p class="text-xs text-secondary-text">Load: 72% current capacity</p>
+                            <p class="text-xs font-bold text-emerald-600">Status: Normal operations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: DRIVERS -->
+                <div id="drivers" class="admin-section hidden space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-primary-text">Driver Telemetry & Fleet Tracking</h2>
+                        <p class="text-secondary-text text-xs sm:text-sm mt-1">Live GPS coordinates, fuel burn, and safety score indices.</p>
+                    </div>
+
+                    <div class="bg-card rounded-2xl border border-border p-5 space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="p-4 rounded-xl bg-background border border-border space-y-2">
+                                <p class="font-bold text-sm text-primary-text">Marcus Vance (Van #42)</p>
+                                <p class="text-xs text-secondary-text">Speed: 24 mph · Fuel: 78%</p>
+                                <p class="text-xs font-bold text-accent">Safety Score: 98/100</p>
+                                <button onclick="alert('Pinging Driver Marcus Vance...')" class="btn-primary w-full py-1.5 rounded-lg text-xs font-bold mt-2">Ping Driver</button>
+                            </div>
+                            <div class="p-4 rounded-xl bg-background border border-border space-y-2">
+                                <p class="font-bold text-primary-text text-sm">Sarah Jenkins (EV #19)</p>
+                                <p class="text-xs text-secondary-text">Battery: 82% · At Hub</p>
+                                <p class="text-xs font-bold text-accent">Safety Score: 99/100</p>
+                                <button onclick="alert('Viewing Shift Completion Report...')" class="btn-outline w-full py-1.5 rounded-lg text-xs font-bold mt-2">View Report</button>
+                            </div>
+                            <div class="p-4 rounded-xl bg-background border border-border space-y-2">
+                                <p class="font-bold text-primary-text text-sm">Derrick Hall (Van #08)</p>
+                                <p class="text-xs text-secondary-text">Speed: 0 mph · Cargo Bay</p>
+                                <p class="text-xs font-bold text-accent">Safety Score: 96/100</p>
+                                <button onclick="alert('Authorizing departure...')" class="btn-primary w-full py-1.5 rounded-lg text-xs font-bold mt-2">Authorize</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 5: REVENUE -->
+                <div id="revenue" class="admin-section hidden space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-primary-text">Revenue & Operating Analytics</h2>
+                        <p class="text-secondary-text text-xs sm:text-sm mt-1">Courier billing totals, margins, and volume metrics.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="stat-card p-5">
+                            <p class="text-xs font-bold text-secondary-text uppercase">Today's Revenue</p>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-primary-text mt-1">$142,850</p>
+                            <p class="text-xs text-emerald-600 font-bold mt-1">+12.4% vs last week</p>
+                        </div>
+                        <div class="stat-card p-5">
+                            <p class="text-xs font-bold text-secondary-text uppercase">Avg. Rate Per Parcel</p>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-primary-text mt-1">$7.75</p>
+                            <p class="text-xs text-secondary-text mt-1">Across all tiers</p>
+                        </div>
+                        <div class="stat-card p-5">
+                            <p class="text-xs font-bold text-secondary-text uppercase">On-Time Delivery Rate</p>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-emerald-600 mt-1">99.4%</p>
+                            <p class="text-xs text-secondary-text mt-1">Industry standard: 95%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOOTER -->
+                <footer class="mt-10 text-center text-[10px] text-secondary-text border-t border-border pt-6 pb-10">
+                    <p class="uppercase tracking-widest font-bold">© 2026 SwiftParcel · Admin Logistics Control Center</p>
+                    <div class="flex justify-center gap-5 mt-3">
+                        <a href="customer.html" class="hover:text-accent transition">Customer Portal</a>
+                        <a href="index.html" class="hover:text-accent transition">Home Page</a>
+                        <a href="services.html" class="hover:text-accent transition">Services</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script>
+        (function () {
+            const html = document.documentElement;
+
+            /* ============ THEME ============ */
+            const themeBtns = [document.getElementById('theme-toggle'), document.getElementById('drawer-theme-toggle')];
+            const lightIcons = document.querySelectorAll('.light-icon');
+            const darkIcons = document.querySelectorAll('.dark-icon');
+
+            function setTheme(theme) {
+                html.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                lightIcons.forEach(i => i.classList.toggle('hidden', theme === 'dark'));
+                darkIcons.forEach(i => i.classList.toggle('hidden', theme === 'light'));
+            }
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+
+            themeBtns.forEach(btn => {
+                btn?.addEventListener('click', () => {
+                    const cur = html.getAttribute('data-theme');
+                    setTheme(cur === 'light' ? 'dark' : 'light');
+                });
+            });
+
+            /* ============ RTL ============ */
+            const langBtns = [document.getElementById('lang-icon'), document.getElementById('mobile-lang-icon-drawer')];
+            function setDir(dir) {
+                html.setAttribute('dir', dir);
+                localStorage.setItem('language', dir === 'rtl' ? 'ar' : 'en');
+            }
+            const savedDir = localStorage.getItem('language') === 'ar' ? 'rtl' : 'ltr';
+            setDir(savedDir);
+
+            langBtns.forEach(btn => {
+                btn?.addEventListener('click', () => {
+                    const cur = html.getAttribute('dir');
+                    setDir(cur === 'ltr' ? 'rtl' : 'ltr');
+                });
+            });
+
+            /* ============ MOBILE SIDEBAR ============ */
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            const closeSide = document.getElementById('close-sidebar');
+            const sidebar = document.getElementById('sidebar-container');
+            const overlay = document.getElementById('mobile-overlay');
+
+            function toggleMobile(open) {
+                if (open) {
+                    sidebar.classList.add('open-sidebar-mobile');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    sidebar.classList.remove('open-sidebar-mobile');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+            menuToggle?.addEventListener('click', () => toggleMobile(true));
+            closeSide?.addEventListener('click', () => toggleMobile(false));
+            overlay?.addEventListener('click', () => toggleMobile(false));
+
+            /* ============ NAVIGATION ============ */
+            const sections = ['overview', 'dispatch', 'hubs', 'drivers', 'revenue'];
+            const links = document.querySelectorAll('.sidebar-link[data-section]');
+
+            window.activateSection = function (sectionId) {
+                sections.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.classList.add('hidden');
+                });
+                const target = document.getElementById(sectionId);
+                if (target) target.classList.remove('hidden');
+
+                links.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.section === sectionId) link.classList.add('active');
+                });
+                if (window.innerWidth < 1024) toggleMobile(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sec = link.dataset.section;
+                    if (sec) activateSection(sec);
+                });
+            });
+            activateSection('overview');
+        })();
+    </script>
+</body>
+</html>
