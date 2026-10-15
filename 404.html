@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9 1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>SwiftParcel | Page Not Found</title>
+
+    <script src="tailwind.js"></script>
+    <style>
+        /* --- Express Courier & Logistics Theme (Energetic Blue & Express Orange) --- */
+        :root, html[data-theme='light'] {
+            --color-background: #F8FAFC;
+            --color-card-bg: #FFFFFF;
+            --color-primary-text: #0F172A; 
+            --color-secondary-text: #475569; 
+            --color-accent: #2563EB;
+            --color-accent-hover: #1D4ED8;
+            --color-accent-light: #FF6B00;
+            --color-accent-alpha-10: rgba(37, 99, 235, 0.1);
+            --color-accent-orange-10: rgba(255, 107, 0, 0.12);
+            --color-accent-light-shadow: rgba(37, 99, 235, 0.25);
+            --color-border: #E2E8F0; 
+            --color-hover: #EFF6FF;     
+        }
+        html[data-theme='dark'] {
+            --color-background: #0B1120;
+            --color-card-bg: #151F32;
+            --color-primary-text: #F8FAFC;
+            --color-secondary-text: #94A3B8;
+            --color-accent: #3B82F6; 
+            --color-accent-hover: #60A5FA;
+            --color-accent-light: #FB923C; 
+            --color-accent-alpha-10: rgba(59, 130, 246, 0.15);
+            --color-accent-orange-10: rgba(251, 146, 60, 0.15);
+            --color-accent-light-shadow: rgba(59, 130, 246, 0.35);
+            --color-border: #1E293B; 
+            --color-hover: #172554;
+        }
+        
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            background-color: var(--color-background);
+            color: var(--color-primary-text);
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .text-primary-text { color: var(--color-primary-text); }
+        .text-secondary-text { color: var(--color-secondary-text); }
+        .text-accent { color: var(--color-accent); }
+        .text-accent-light { color: var(--color-accent-light); }
+        .bg-background { background-color: var(--color-background); }
+        .bg-card { background-color: var(--color-card-bg); }
+        .bg-hover { background-color: var(--color-hover); }
+        .border-border { border-color: var(--color-border); }
+    
+        .bg-accent { background-color: var(--color-accent); }
+        .bg-accent-light { background-color: var(--color-accent-light); }
+        .bg-accent-alpha-10 { background-color: var(--color-accent-alpha-10); }
+        .bg-accent-orange-10 { background-color: var(--color-accent-orange-10); }
+
+        /* Button System */
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px var(--color-accent-light-shadow);
+        }
+        .btn-orange {
+            background-color: var(--color-accent-light);
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-orange:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: var(--color-accent);
+            color: white;
+            box-shadow: 0 4px 12px var(--color-accent-light-shadow);
+        }
+
+        /* 404 Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .float-icon {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+        .pulse-ring {
+            animation: pulse-ring 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col">
+
+    <!-- MINIMAL TOP BAR: Logo + Theme/RTL Icons only -->
+    <header class="w-full border-b border-border bg-card/90 backdrop-blur-sm shrink-0">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200">
+                    <i class="fa-solid fa-truck-fast text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-extrabold tracking-tight text-primary-text leading-tight">
+                        Swift<span class="text-accent">Parcel</span>
+                    </span>
+                    <span class="text-[9px] tracking-wider uppercase font-semibold text-secondary-text">Courier &amp; Express Delivery</span>
+                </div>
+            </a>
+
+            <!-- Theme + RTL icons only -->
+            <div class="flex items-center space-x-2">
+                <button id="theme-toggle" title="Toggle Theme" class="p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
+                    <svg class="w-5 h-5 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg class="w-5 h-5 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                <button id="lang-icon" title="Toggle RTL" class="p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT — 404 PAGE (fills remaining height, centered, no scroll) -->
+    <main class="flex-1 flex items-center justify-center relative overflow-hidden px-4">
+        <!-- Decorative background glows -->
+        <div class="absolute top-0 left-0 w-72 h-72 rounded-full opacity-10 blur-3xl pointer-events-none" style="background-color: var(--color-accent);"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 rounded-full opacity-10 blur-3xl pointer-events-none" style="background-color: var(--color-accent-light);"></div>
+
+        <div class="relative max-w-2xl w-full text-center py-4">
+
+            <!-- Animated Parcel Icon with Pulse Ring -->
+            <div class="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-5 flex items-center justify-center">
+                <span class="absolute inset-0 rounded-full bg-accent-alpha-10 pulse-ring"></span>
+                <span class="absolute inset-0 rounded-full bg-accent-orange-10 pulse-ring" style="animation-delay: 0.8s;"></span>
+                <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-card border border-border shadow-lg flex items-center justify-center float-icon">
+                    <i class="fa-solid fa-box-open text-2xl sm:text-3xl text-accent"></i>
+                </div>
+                <span class="absolute -top-1.5 -right-1.5 w-8 h-8 rounded-full bg-accent-light text-white text-[10px] font-extrabold flex items-center justify-center shadow-md border-2 border-card">404</span>
+            </div>
+
+            <!-- Heading -->
+            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3">
+                <i class="fa-solid fa-location-crosshairs mr-1"></i> Delivery Route Not Found
+            </span>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary-text leading-none">
+                Parcel <span class="text-accent">Off-Route</span>
+            </h1>
+
+            <p class="mt-3 text-sm sm:text-base text-secondary-text max-w-md mx-auto leading-relaxed">
+                This page has been moved, renamed, or is temporarily out for delivery. Let's get you back on track.
+            </p>
+
+            <!-- Action buttons -->
+            <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center">
+                <a href="index.html" class="btn-primary px-6 py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Back to Home</span>
+                </a>
+                <a href="contact.html" class="btn-outline px-6 py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>Contact Support</span>
+                </a>
+            </div>
+
+            <!-- Quick tracking prompt -->
+            <div class="mt-6">
+                <form onsubmit="handleTrackRedirect(event)" class="max-w-md mx-auto bg-card border border-border rounded-xl p-1.5 flex flex-col sm:flex-row gap-1.5 shadow-sm">
+                    <div class="relative flex-grow flex items-center">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 text-secondary-text text-xs pointer-events-none"></i>
+                        <input id="notfound-track-input" type="text" placeholder="Enter tracking number…"
+                            class="w-full pl-10 pr-3 py-2.5 rounded-lg bg-background text-sm text-primary-text focus:outline-none focus:ring-2 focus:ring-accent border border-border">
+                    </div>
+                    <button type="submit" class="btn-primary px-5 py-2.5 rounded-lg font-bold text-xs shadow-md flex items-center justify-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <span>Track</span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+
+            // Theme Toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const applyTheme = (theme) => {
+                html.setAttribute('data-theme', theme);
+                document.querySelectorAll('.light-icon').forEach(i => i.classList.toggle('hidden', theme === 'dark'));
+                document.querySelectorAll('.dark-icon').forEach(i => i.classList.toggle('hidden', theme === 'light'));
+            };
+            themeToggle?.addEventListener('click', () => {
+                const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                localStorage.setItem('theme', next);
+                applyTheme(next);
+            });
+            applyTheme(localStorage.getItem('theme') || 'light');
+
+            // RTL Toggle
+            const langToggle = document.getElementById('lang-icon');
+            langToggle?.addEventListener('click', () => {
+                const current = localStorage.getItem('language') === 'ar' ? 'en' : 'ar';
+                localStorage.setItem('language', current);
+                html.setAttribute('dir', current === 'ar' ? 'rtl' : 'ltr');
+            });
+            html.setAttribute('dir', localStorage.getItem('language') === 'ar' ? 'rtl' : 'ltr');
+        });
+
+        // 404 track redirect simulation
+        function handleTrackRedirect(e) {
+            e.preventDefault();
+            const trackId = document.getElementById('notfound-track-input').value.trim();
+            if (trackId) {
+                alert(`🔍 Searching for parcel: ${trackId}\n\nWe couldn't find that shipment. Redirecting you to the tracking dashboard...`);
+                setTimeout(() => {
+                    window.location.href = 'customer.html';
+                }, 800);
+            } else {
+                alert('Please enter a valid tracking number.');
+            }
+        }
+    </script>
+</body>
+</html>
