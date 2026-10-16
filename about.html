@@ -523,39 +523,80 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Centered Heading -->
-                <div class="max-w-2xl mx-auto text-center mb-14">
+                <div class="max-w-2xl mx-auto text-center mb-10">
                     <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Our Values</span>
                     <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">What We Stand For</h2>
                     <p class="mt-4 text-base sm:text-lg text-secondary-text">Three principles guide every decision we make and every parcel we move.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                <!-- Values Responsive Tabs: Scrollable or wrap smoothly, centered on md/tablet and desktop -->
+                <div class="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar pb-3 mb-10 gap-2 sm:gap-3 px-1">
+                    <button type="button" onclick="filterValuesTab('all')" id="val-tab-all"
+                        class="val-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap bg-accent text-white shadow-md flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-xs"></i>
+                        <span>All Values</span>
+                        <span class="ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-white/20 text-white">3</span>
+                    </button>
+                    <button type="button" onclick="filterValuesTab('speed')" id="val-tab-speed"
+                        class="val-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-xs text-accent"></i>
+                        <span>Uncompromised Speed</span>
+                    </button>
+                    <button type="button" onclick="filterValuesTab('transparency')" id="val-tab-transparency"
+                        class="val-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-eye text-xs text-accent-light"></i>
+                        <span>Radical Transparency</span>
+                    </button>
+                    <button type="button" onclick="filterValuesTab('people')" id="val-tab-people"
+                        class="val-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-heart text-xs text-accent"></i>
+                        <span>People First</span>
+                    </button>
+                </div>
 
-                    <!-- Value 1 -->
-                    <article class="bg-card border border-border rounded-3xl p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-6">
-                            <i class="fa-solid fa-bolt text-2xl"></i>
+                <!-- Values Cards Container (Optimized for Mobile, Tablet md:grid-cols-3, and Desktop lg:gap-8) -->
+                <div id="values-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-5 lg:gap-8 max-w-6xl mx-auto items-stretch transition-all duration-300">
+
+                    <!-- Value 1: Uncompromised Speed -->
+                    <article data-value-type="speed" class="value-card bg-card border border-border rounded-3xl p-6 sm:p-7 md:p-6 lg:p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
+                        <div>
+                            <div class="w-14 h-14 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5 md:mb-5 lg:mb-6">
+                                <i class="fa-solid fa-bolt text-xl lg:text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg md:text-lg lg:text-xl font-extrabold text-primary-text">Uncompromised Speed</h3>
+                            <p class="mt-3 md:mt-3 lg:mt-4 text-xs sm:text-sm md:text-xs lg:text-sm text-secondary-text leading-relaxed">We obsess over every minute. Faster pickups, smarter routes, and next-day delivery — without ever sacrificing safety or care.</p>
                         </div>
-                        <h3 class="text-xl font-extrabold text-primary-text">Uncompromised Speed</h3>
-                        <p class="mt-4 text-sm text-secondary-text leading-relaxed">We obsess over every minute. Faster pickups, smarter routes, and next-day delivery — without ever sacrificing safety or care.</p>
+                        <div class="mt-5 md:mt-5 lg:mt-6 pt-4 border-t border-border/60 text-xs font-semibold text-accent flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-circle-check text-xs"></i> 99.8% On-Time Target
+                        </div>
                     </article>
 
-                    <!-- Value 2 -->
-                    <article class="bg-card border border-border rounded-3xl p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-accent-light text-white flex items-center justify-center shadow-lg mb-6">
-                            <i class="fa-solid fa-eye text-2xl"></i>
+                    <!-- Value 2: Radical Transparency -->
+                    <article data-value-type="transparency" class="value-card bg-card border border-border rounded-3xl p-6 sm:p-7 md:p-6 lg:p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
+                        <div>
+                            <div class="w-14 h-14 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-accent-light text-white flex items-center justify-center shadow-lg mb-5 md:mb-5 lg:mb-6">
+                                <i class="fa-solid fa-eye text-xl lg:text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg md:text-lg lg:text-xl font-extrabold text-primary-text">Radical Transparency</h3>
+                            <p class="mt-3 md:mt-3 lg:mt-4 text-xs sm:text-sm md:text-xs lg:text-sm text-secondary-text leading-relaxed">No hidden fees, no vague timelines, no "your parcel is delayed" excuses. Every step is tracked, priced, and shared with you.</p>
                         </div>
-                        <h3 class="text-xl font-extrabold text-primary-text">Radical Transparency</h3>
-                        <p class="mt-4 text-sm text-secondary-text leading-relaxed">No hidden fees, no vague timelines, no "your parcel is delayed" excuses. Every step is tracked, priced, and shared with you.</p>
+                        <div class="mt-5 md:mt-5 lg:mt-6 pt-4 border-t border-border/60 text-xs font-semibold text-accent-light flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-circle-check text-xs"></i> Live Milestones &amp; GPS
+                        </div>
                     </article>
 
-                    <!-- Value 3 -->
-                    <article class="bg-card border border-border rounded-3xl p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-6">
-                            <i class="fa-solid fa-heart text-2xl"></i>
+                    <!-- Value 3: People First -->
+                    <article data-value-type="people" class="value-card bg-card border border-border rounded-3xl p-6 sm:p-7 md:p-6 lg:p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
+                        <div>
+                            <div class="w-14 h-14 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5 md:mb-5 lg:mb-6">
+                                <i class="fa-solid fa-heart text-xl lg:text-2xl"></i>
+                            </div>
+                            <h3 class="text-lg md:text-lg lg:text-xl font-extrabold text-primary-text">People First</h3>
+                            <p class="mt-3 md:mt-3 lg:mt-4 text-xs sm:text-sm md:text-xs lg:text-sm text-secondary-text leading-relaxed">Behind every parcel is a customer, a courier, and a community. We invest in our team and treat every shipment like it's our own.</p>
                         </div>
-                        <h3 class="text-xl font-extrabold text-primary-text">People First</h3>
-                        <p class="mt-4 text-sm text-secondary-text leading-relaxed">Behind every parcel is a customer, a courier, and a community. We invest in our team and treat every shipment like it's our own.</p>
+                        <div class="mt-5 md:mt-5 lg:mt-6 pt-4 border-t border-border/60 text-xs font-semibold text-accent flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-circle-check text-xs"></i> 24/7 Dedicated Support
+                        </div>
                     </article>
 
                 </div>
@@ -1005,6 +1046,46 @@
             // Scroll to dashboard smoothly
             const dashElem = document.getElementById('dashboard');
             dashElem?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Values Section Tab Filtering Functionality
+        function filterValuesTab(tab) {
+            const tabs = ['all', 'speed', 'transparency', 'people'];
+            const container = document.getElementById('values-cards-container');
+            const cards = document.querySelectorAll('.value-card');
+
+            // Update Tab Button Styles
+            tabs.forEach(t => {
+                const btn = document.getElementById(`val-tab-${t}`);
+                if (btn) {
+                    if (t === tab) {
+                        btn.className = "val-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap bg-accent text-white shadow-md flex items-center gap-2";
+                        const badge = btn.querySelector('span:last-child');
+                        if (badge && t === 'all') badge.className = "ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-white/20 text-white";
+                    } else {
+                        btn.className = "val-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2";
+                        const badge = btn.querySelector('span:last-child');
+                        if (badge && t === 'all') badge.className = "ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-accent/10 text-accent";
+                    }
+                }
+            });
+
+            // Adjust grid layout classes when single card is shown vs all
+            if (tab === 'all') {
+                container.className = "grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch transition-all duration-300";
+            } else {
+                container.className = "grid grid-cols-1 max-w-md mx-auto items-stretch transition-all duration-300";
+            }
+
+            // Show / Hide matching cards
+            cards.forEach(card => {
+                const type = card.getAttribute('data-value-type');
+                if (tab === 'all' || type === tab) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
         }
 
         // Dashboard Tabs Functionality

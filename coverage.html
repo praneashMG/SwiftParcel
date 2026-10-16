@@ -489,137 +489,190 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Centered Heading -->
-                <div class="max-w-2xl mx-auto text-center mb-14">
+                <div class="max-w-2xl mx-auto text-center mb-10">
                     <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Regional Network</span>
                     <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Where We Deliver</h2>
                     <p class="mt-4 text-base sm:text-lg text-secondary-text">Explore our regional hubs and city coverage across the country.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Where We Deliver Responsive Tabs (Scrollable on mobile, centered on tablet/desktop) -->
+                <div class="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar pb-3 mb-10 gap-2 sm:gap-2.5 px-1">
+                    <button type="button" onclick="filterCoverageRegion('all')" id="cov-tab-all"
+                        class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap bg-accent text-white shadow-md flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-xs"></i>
+                        <span>All Regions</span>
+                        <span class="ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-white/20 text-white">6</span>
+                    </button>
+                    <button type="button" onclick="filterCoverageRegion('north')" id="cov-tab-north"
+                        class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-compass text-xs text-accent"></i>
+                        <span>North</span>
+                    </button>
+                    <button type="button" onclick="filterCoverageRegion('west')" id="cov-tab-west"
+                        class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-sun text-xs text-accent-light"></i>
+                        <span>West</span>
+                    </button>
+                    <button type="button" onclick="filterCoverageRegion('south')" id="cov-tab-south"
+                        class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-umbrella-beach text-xs text-accent"></i>
+                        <span>South</span>
+                    </button>
+                    <button type="button" onclick="filterCoverageRegion('east')" id="cov-tab-east"
+                        class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-water text-xs text-accent-light"></i>
+                        <span>East</span>
+                    </button>
+                    <button type="button" onclick="filterCoverageRegion('central')" id="cov-tab-central"
+                        class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-xs text-accent"></i>
+                        <span>Central</span>
+                    </button>
+                    <button type="button" onclick="filterCoverageRegion('international')" id="cov-tab-international"
+                        class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-globe text-xs text-accent-light"></i>
+                        <span>International</span>
+                    </button>
+                </div>
+
+                <!-- Regional Network Cards (Responsive: 1 col on mobile, 2 cols on tablet, 3 cols on desktop) -->
+                <div id="coverage-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto transition-all duration-300">
 
                     <!-- North -->
-                    <div class="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
-                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
-                            <div class="w-11 h-11 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center">
-                                <i class="fa-solid fa-compass"></i>
+                    <div data-region="north" class="region-card bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg hover:border-accent/40 transition flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
+                                <div class="w-11 h-11 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-compass"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-extrabold text-primary-text">North Region</h3>
+                                    <p class="text-xs text-secondary-text">28 cities · 4 major hubs</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-extrabold text-primary-text">North Region</h3>
-                                <p class="text-xs text-secondary-text">28 cities · 4 major hubs</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Delhi NCR</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Chandigarh</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Jaipur</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Lucknow</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Dehradun</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+23 more</span>
                             </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Delhi NCR</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Chandigarh</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Jaipur</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Lucknow</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Dehradun</span>
-                            <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+23 more</span>
                         </div>
                     </div>
 
                     <!-- West -->
-                    <div class="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
-                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
-                            <div class="w-11 h-11 rounded-xl bg-accent-orange-10 text-accent-light flex items-center justify-center">
-                                <i class="fa-solid fa-sun"></i>
+                    <div data-region="west" class="region-card bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg hover:border-accent-light/40 transition flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
+                                <div class="w-11 h-11 rounded-xl bg-accent-orange-10 text-accent-light flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-sun"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-extrabold text-primary-text">West Region</h3>
+                                    <p class="text-xs text-secondary-text">34 cities · 5 major hubs</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-extrabold text-primary-text">West Region</h3>
-                                <p class="text-xs text-secondary-text">34 cities · 5 major hubs</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Mumbai</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Pune</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Ahmedabad</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Surat</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Goa</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+29 more</span>
                             </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Mumbai</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Pune</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Ahmedabad</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Surat</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Goa</span>
-                            <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+29 more</span>
                         </div>
                     </div>
 
                     <!-- South -->
-                    <div class="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
-                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
-                            <div class="w-11 h-11 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center">
-                                <i class="fa-solid fa-umbrella-beach"></i>
+                    <div data-region="south" class="region-card bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg hover:border-accent/40 transition flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
+                                <div class="w-11 h-11 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-umbrella-beach"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-extrabold text-primary-text">South Region</h3>
+                                    <p class="text-xs text-secondary-text">42 cities · 6 major hubs</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-extrabold text-primary-text">South Region</h3>
-                                <p class="text-xs text-secondary-text">42 cities · 6 major hubs</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Bengaluru</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Chennai</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Hyderabad</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Kochi</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Coimbatore</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+37 more</span>
                             </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Bengaluru</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Chennai</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Hyderabad</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Kochi</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Coimbatore</span>
-                            <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+37 more</span>
                         </div>
                     </div>
 
                     <!-- East -->
-                    <div class="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
-                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
-                            <div class="w-11 h-11 rounded-xl bg-accent-orange-10 text-accent-light flex items-center justify-center">
-                                <i class="fa-solid fa-water"></i>
+                    <div data-region="east" class="region-card bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg hover:border-accent-light/40 transition flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
+                                <div class="w-11 h-11 rounded-xl bg-accent-orange-10 text-accent-light flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-water"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-extrabold text-primary-text">East Region</h3>
+                                    <p class="text-xs text-secondary-text">26 cities · 4 major hubs</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-extrabold text-primary-text">East Region</h3>
-                                <p class="text-xs text-secondary-text">26 cities · 4 major hubs</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Kolkata</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Bhubaneswar</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Patna</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Guwahati</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Ranchi</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+21 more</span>
                             </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Kolkata</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Bhubaneswar</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Patna</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Guwahati</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Ranchi</span>
-                            <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+21 more</span>
                         </div>
                     </div>
 
                     <!-- Central -->
-                    <div class="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
-                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
-                            <div class="w-11 h-11 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center">
-                                <i class="fa-solid fa-location-dot"></i>
+                    <div data-region="central" class="region-card bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg hover:border-accent/40 transition flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
+                                <div class="w-11 h-11 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-extrabold text-primary-text">Central Region</h3>
+                                    <p class="text-xs text-secondary-text">31 cities · 4 major hubs</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-extrabold text-primary-text">Central Region</h3>
-                                <p class="text-xs text-secondary-text">31 cities · 4 major hubs</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Bhopal</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Indore</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Nagpur</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Raipur</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Gwalior</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+26 more</span>
                             </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Bhopal</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Indore</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Nagpur</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Raipur</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Gwalior</span>
-                            <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+26 more</span>
                         </div>
                     </div>
 
                     <!-- International -->
-                    <div class="bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
-                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
-                            <div class="w-11 h-11 rounded-xl bg-accent-orange-10 text-accent-light flex items-center justify-center">
-                                <i class="fa-solid fa-globe"></i>
+                    <div data-region="international" class="region-card bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg hover:border-accent-light/40 transition flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4 pb-4 border-b border-border">
+                                <div class="w-11 h-11 rounded-xl bg-accent-orange-10 text-accent-light flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-extrabold text-primary-text">International</h3>
+                                    <p class="text-xs text-secondary-text">18 countries served</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-extrabold text-primary-text">International</h3>
-                                <p class="text-xs text-secondary-text">18 countries served</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">USA</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">UK</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">UAE</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Singapore</span>
+                                <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Australia</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+13 more</span>
                             </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">USA</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">UK</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">UAE</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Singapore</span>
-                            <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Australia</span>
-                            <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+13 more</span>
                         </div>
                     </div>
 
@@ -790,40 +843,50 @@
         <section id="cta-coverage" class="py-20 lg:py-24 bg-background">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="relative max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-border">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch">
-
-                        <!-- Image side -->
-                        <div class="relative min-h-[280px] lg:min-h-full order-first lg:order-last">
-                            <img src="assets/tt2.jpg"
-                                alt="Courier delivering parcel to customer"
-                                class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-                        </div>
+                <div class="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-xl border border-border bg-card">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[460px] lg:min-h-[440px]">
 
                         <!-- Text side -->
-                        <div class="p-8 sm:p-12 lg:p-14 flex flex-col justify-center text-center lg:text-left bg-card">
-                            <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">Coverage Nationwide</span>
-                            <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text leading-tight">
+                        <div class="lg:col-span-7 p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-center text-center lg:text-left bg-card z-10">
+                            <div>
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
+                                    <i class="fa-solid fa-earth-americas text-[11px]"></i> Coverage Nationwide
+                                </span>
+                            </div>
+
+                            <h2 class="mt-4 text-3xl sm:text-4xl lg:text-[40px] font-extrabold tracking-tight text-primary-text leading-[1.18]">
                                 Wherever You Are, <span class="text-accent">We'll Reach You</span>
                             </h2>
-                            <p class="mt-5 text-base sm:text-lg text-secondary-text leading-relaxed max-w-xl mx-auto lg:mx-0">
-                                With 180+ cities and 12,000+ pincodes covered, SwiftParcel connects every corner of the country — and 18 countries abroad — to your doorstep.
+
+                            <p class="mt-4 text-sm sm:text-base text-secondary-text leading-relaxed max-w-lg mx-auto lg:mx-0">
+                                With 180+ cities and 12,000+ pincodes covered, SwiftParcel connects every corner of the country — and 18 countries abroad — right to your doorstep.
                             </p>
 
-                            <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap xl:flex-nowrap gap-3.5 justify-center lg:justify-start items-stretch sm:items-center">
-                                <a href="#calculator" class="btn-primary px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2 flex-1 sm:flex-initial text-center whitespace-nowrap">
-                                    <i class="fa-solid fa-calculator"></i> <span>Get Instant Quote</span>
+                            <!-- CTA Buttons -->
+                            <div class="mt-7 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start items-stretch sm:items-center">
+                                <a href="calculator.html" class="btn-primary px-6 py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2 hover:shadow-lg transition">
+                                    <i class="fa-solid fa-calculator text-xs"></i> <span>Get Instant Quote</span>
                                 </a>
-                                <a href="contact.html" class="btn-outline px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 flex-1 sm:flex-initial text-center whitespace-nowrap">
-                                    <i class="fa-solid fa-headset"></i> <span>Contact Support</span>
+                                <a href="contact.html" class="btn-outline px-6 py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition">
+                                    <i class="fa-solid fa-headset text-xs"></i> <span>Contact Support</span>
                                 </a>
                             </div>
 
-                            <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-xs text-secondary-text">
-                                <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-accent"></i> 12,000+ pincodes</span>
-                                <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-accent"></i> 18 countries</span>
-                                <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-accent"></i> 24/7 support</span>
+                            <!-- Highlights Checkmarks -->
+                            <div class="mt-7 pt-6 border-t border-border/70 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs font-medium text-secondary-text">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-accent text-xs"></i> 12,000+ pincodes</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-accent text-xs"></i> 18 countries</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-accent text-xs"></i> 24/7 dispatch</span>
                             </div>
+                        </div>
+
+                        <!-- Image side -->
+                        <div class="lg:col-span-5 relative min-h-[260px] sm:min-h-[320px] lg:min-h-full overflow-hidden order-first lg:order-last">
+                            <img src="assets/tt2.jpg"
+                                alt="Express delivery truck on highway"
+                                class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy">
+                            <!-- Subtle left overlay gradient on desktop for smooth transition into card -->
+                            <div class="hidden lg:block absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-card to-transparent pointer-events-none"></div>
                         </div>
 
                     </div>
@@ -1052,6 +1115,46 @@
             // Scroll to dashboard smoothly
             const dashElem = document.getElementById('dashboard');
             dashElem?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Where We Deliver Regional Tabs Filtering Functionality
+        function filterCoverageRegion(region) {
+            const tabs = ['all', 'north', 'west', 'south', 'east', 'central', 'international'];
+            const container = document.getElementById('coverage-cards-container');
+            const cards = document.querySelectorAll('.region-card');
+
+            // Update Tab Button Styles
+            tabs.forEach(t => {
+                const btn = document.getElementById(`cov-tab-${t}`);
+                if (btn) {
+                    if (t === region) {
+                        btn.className = "cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap bg-accent text-white shadow-md flex items-center gap-2";
+                        const badge = btn.querySelector('span:last-child');
+                        if (badge && t === 'all') badge.className = "ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-white/20 text-white";
+                    } else {
+                        btn.className = "cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2";
+                        const badge = btn.querySelector('span:last-child');
+                        if (badge && t === 'all') badge.className = "ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-accent/10 text-accent";
+                    }
+                }
+            });
+
+            // Adjust layout when single region is shown vs all
+            if (region === 'all') {
+                container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto transition-all duration-300";
+            } else {
+                container.className = "grid grid-cols-1 max-w-md mx-auto items-stretch transition-all duration-300";
+            }
+
+            // Show / Hide matching cards
+            cards.forEach(card => {
+                const reg = card.getAttribute('data-region');
+                if (region === 'all' || reg === region) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
         }
 
         // Dashboard Tabs Functionality

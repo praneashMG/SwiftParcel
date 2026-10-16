@@ -407,17 +407,42 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Centered Heading -->
-                <div class="max-w-2xl mx-auto text-center mb-14">
+                <div class="max-w-2xl mx-auto text-center mb-10">
                     <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Delivery Options</span>
                     <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Pick the Perfect Speed for Every Parcel</h2>
                     <p class="mt-4 text-base sm:text-lg text-secondary-text">Three flagship delivery modes built to match any urgency, budget, or shipment size.</p>
                 </div>
 
-                <!-- 3 Big service cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+                <!-- Service Category Tabs (Responsive: horizontally scrollable on mobile, centered flex on md+) -->
+                <div class="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar pb-3 mb-10 gap-2 sm:gap-3 px-1">
+                    <button type="button" onclick="filterServicesTab('all')" id="svc-tab-all"
+                        class="svc-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap bg-accent text-white shadow-md flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-xs"></i>
+                        <span>All Services</span>
+                        <span class="ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-white/20 text-white">3</span>
+                    </button>
+                    <button type="button" onclick="filterServicesTab('standard')" id="svc-tab-standard"
+                        class="svc-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-truck text-xs text-accent"></i>
+                        <span>Domestic Standard</span>
+                    </button>
+                    <button type="button" onclick="filterServicesTab('express')" id="svc-tab-express"
+                        class="svc-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-plane-departure text-xs text-accent-light"></i>
+                        <span>Priority Express Air</span>
+                    </button>
+                    <button type="button" onclick="filterServicesTab('sameday')" id="svc-tab-sameday"
+                        class="svc-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-xs text-accent"></i>
+                        <span>Local City Same-Day</span>
+                    </button>
+                </div>
 
-                    <!-- Service 1 -->
-                    <article class="relative bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full">
+                <!-- 3 Big service cards (Filtered via Tabs) -->
+                <div id="services-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch transition-all duration-300">
+
+                    <!-- Service 1: Domestic Standard -->
+                    <article data-service-type="standard" class="service-card relative bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full">
                         <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-accent text-white text-[10px] font-extrabold uppercase tracking-wider shadow">Most Popular</span>
                         <div class="aspect-[16/10] overflow-hidden shrink-0">
                             <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80"
@@ -443,8 +468,8 @@
                         </div>
                     </article>
 
-                    <!-- Service 2 -->
-                    <article class="relative bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full">
+                    <!-- Service 2: Priority Express Air -->
+                    <article data-service-type="express" class="service-card relative bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full">
                         <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-accent-light text-white text-[10px] font-extrabold uppercase tracking-wider shadow">Fastest</span>
                         <div class="aspect-[16/10] overflow-hidden shrink-0">
                             <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80"
@@ -470,8 +495,8 @@
                         </div>
                     </article>
 
-                    <!-- Service 3 -->
-                    <article class="relative bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full md:col-span-2 lg:col-span-1">
+                    <!-- Service 3: Local City Same-Day -->
+                    <article data-service-type="sameday" class="service-card relative bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full md:col-span-2 lg:col-span-1">
                         <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-accent text-white text-[10px] font-extrabold uppercase tracking-wider shadow">Best Value</span>
                         <div class="aspect-[16/10] overflow-hidden shrink-0">
                             <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1000&q=80"
@@ -1114,6 +1139,53 @@
             // Scroll to dashboard smoothly
             const dashElem = document.getElementById('dashboard');
             dashElem?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Core Services Tab Filtering Functionality
+        function filterServicesTab(tab) {
+            const tabs = ['all', 'standard', 'express', 'sameday'];
+            const container = document.getElementById('services-cards-container');
+            const cards = document.querySelectorAll('.service-card');
+
+            // Update Tab Button Styles
+            tabs.forEach(t => {
+                const btn = document.getElementById(`svc-tab-${t}`);
+                if (btn) {
+                    if (t === tab) {
+                        btn.className = "svc-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap bg-accent text-white shadow-md flex items-center gap-2";
+                        // Update badge color inside if present
+                        const badge = btn.querySelector('span:last-child');
+                        if (badge && t === 'all') badge.className = "ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-white/20 text-white";
+                    } else {
+                        btn.className = "svc-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2";
+                        const badge = btn.querySelector('span:last-child');
+                        if (badge && t === 'all') badge.className = "ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-accent/10 text-accent";
+                    }
+                }
+            });
+
+            // Adjust grid layout classes when single card is shown vs all
+            if (tab === 'all') {
+                container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch transition-all duration-300";
+            } else {
+                container.className = "grid grid-cols-1 max-w-md mx-auto items-stretch transition-all duration-300";
+            }
+
+            // Show / Hide matching cards with smooth fade
+            cards.forEach(card => {
+                const type = card.getAttribute('data-service-type');
+                if (tab === 'all' || type === tab) {
+                    card.classList.remove('hidden');
+                    // Ensure full width in single card container mode
+                    if (tab !== 'all') {
+                        card.classList.remove('md:col-span-2', 'lg:col-span-1');
+                    } else {
+                        if (type === 'sameday') card.classList.add('md:col-span-2', 'lg:col-span-1');
+                    }
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
         }
 
         // Dashboard Tabs Functionality

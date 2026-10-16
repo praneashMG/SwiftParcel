@@ -532,67 +532,67 @@
                             <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-alpha-10 text-accent font-semibold text-xs uppercase tracking-wider mb-2">
                                 <i class="fa-solid fa-shield-halved"></i> Central Operations Control
                             </span>
-                            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-primary-text">Admin Fleet & Logistics Control</h1>
+                            <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-primary-text">Admin Fleet & Logistics Control</h1>
                             <p class="text-secondary-text text-xs sm:text-sm mt-1">Real-time driver assignments, van telemetry, hub status, and daily operations revenue.</p>
                         </div>
-                        <div class="flex items-center gap-2 shrink-0">
-                            <button onclick="alert('Refreshing global telemetry signals...')" class="btn-outline px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2">
+                        <div class="flex items-center gap-2 shrink-0 self-start sm:self-auto">
+                            <button onclick="alert('Refreshing global telemetry signals...')" class="btn-outline px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold flex items-center gap-1.5 sm:gap-2">
                                 <i class="fa-solid fa-rotate"></i> <span>Sync Telemetry</span>
                             </button>
-                            <a href="customer.html" class="btn-primary px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 shadow">
+                            <a href="customer.html" class="btn-primary px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold flex items-center gap-1.5 sm:gap-2 shadow">
                                 <i class="fa-solid fa-user"></i> <span>Customer View</span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- 4 Top KPI Cards -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-                        <div class="p-5 rounded-2xl bg-card border border-border shadow-sm">
+                    <!-- 4 Top KPI Cards (Responsive: 1 col on mobile, 2 cols on tablet, 4 cols on desktop) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4">
+                        <div class="p-4 sm:p-5 rounded-2xl bg-card border border-border shadow-sm hover:border-accent/40 transition">
                             <div class="flex justify-between items-start">
                                 <div>
                                     <p class="text-xs font-bold text-secondary-text uppercase tracking-wider">Total Active Fleet</p>
                                     <p class="text-2xl sm:text-3xl font-black text-primary-text mt-1">1,248 Vans</p>
                                 </div>
-                                <span class="p-3 rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-300 text-lg">
+                                <span class="p-2.5 sm:p-3 rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-300 text-base sm:text-lg">
                                     <i class="fa-solid fa-truck-moving"></i>
                                 </span>
                             </div>
                             <span class="text-xs font-semibold text-emerald-600 mt-2 block"><i class="fa-solid fa-arrow-trend-up"></i> 94.2% Fleet In Service</span>
                         </div>
 
-                        <div class="p-5 rounded-2xl bg-card border border-border shadow-sm">
+                        <div class="p-4 sm:p-5 rounded-2xl bg-card border border-border shadow-sm hover:border-accent-light/40 transition">
                             <div class="flex justify-between items-start">
                                 <div>
                                     <p class="text-xs font-bold text-secondary-text uppercase tracking-wider">Today's Parcels</p>
                                     <p class="text-2xl sm:text-3xl font-black text-primary-text mt-1">18,420</p>
                                 </div>
-                                <span class="p-3 rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-950 dark:text-orange-300 text-lg">
+                                <span class="p-2.5 sm:p-3 rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-950 dark:text-orange-300 text-base sm:text-lg">
                                     <i class="fa-solid fa-box"></i>
                                 </span>
                             </div>
                             <span class="text-xs font-semibold text-accent mt-2 block"><i class="fa-solid fa-circle-check"></i> 14,810 Dispatched</span>
                         </div>
 
-                        <div class="p-5 rounded-2xl bg-card border border-border shadow-sm">
+                        <div class="p-4 sm:p-5 rounded-2xl bg-card border border-border shadow-sm hover:border-accent/40 transition">
                             <div class="flex justify-between items-start">
                                 <div>
                                     <p class="text-xs font-bold text-secondary-text uppercase tracking-wider">Hub Operations</p>
                                     <p class="text-2xl sm:text-3xl font-black text-primary-text mt-1">45 Hubs</p>
                                 </div>
-                                <span class="p-3 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-300 text-lg">
+                                <span class="p-2.5 sm:p-3 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-300 text-base sm:text-lg">
                                     <i class="fa-solid fa-warehouse"></i>
                                 </span>
                             </div>
                             <span class="text-xs font-semibold text-emerald-600 mt-2 block"><i class="fa-solid fa-check"></i> All Operating Normally</span>
                         </div>
 
-                        <div class="p-5 rounded-2xl bg-card border border-border shadow-sm">
+                        <div class="p-4 sm:p-5 rounded-2xl bg-card border border-border shadow-sm hover:border-accent-light/40 transition">
                             <div class="flex justify-between items-start">
                                 <div>
                                     <p class="text-xs font-bold text-secondary-text uppercase tracking-wider">Revenue Today</p>
                                     <p class="text-2xl sm:text-3xl font-black text-primary-text mt-1">$142,850</p>
                                 </div>
-                                <span class="p-3 rounded-xl bg-purple-100 text-purple-600 dark:bg-purple-950 dark:text-purple-300 text-lg">
+                                <span class="p-2.5 sm:p-3 rounded-xl bg-purple-100 text-purple-600 dark:bg-purple-950 dark:text-purple-300 text-base sm:text-lg">
                                     <i class="fa-solid fa-sack-dollar"></i>
                                 </span>
                             </div>
@@ -601,46 +601,47 @@
                     </div>
 
                     <!-- Dispatch Fleet & Driver Management Table -->
-                    <div class="bg-card rounded-2xl border border-border shadow-sm p-5 sm:p-6 space-y-4">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="bg-card rounded-2xl border border-border shadow-sm p-4 sm:p-6 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                             <div>
-                                <h3 class="text-lg font-bold text-primary-text flex items-center gap-2">
+                                <h3 class="text-base sm:text-lg font-bold text-primary-text flex items-center gap-2">
                                     <i class="fa-solid fa-satellite-dish text-accent"></i> Live Courier Dispatch Queue
                                 </h3>
-                                <p class="text-xs text-secondary-text">Real-time driver assignments, route telemetry, and delivery deadlines.</p>
+                                <p class="text-xs text-secondary-text mt-0.5">Real-time driver assignments, route telemetry, and delivery deadlines.</p>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <button onclick="alert('Exporting fleet telemetry report (CSV)...')" class="btn-outline px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
-                                    <i class="fa-solid fa-download"></i> Export CSV
+                            <div class="flex items-center gap-2 self-start sm:self-auto flex-wrap">
+                                <button onclick="alert('Exporting fleet telemetry report (CSV)...')" class="btn-outline px-3 sm:px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
+                                    <i class="fa-solid fa-download"></i> <span>Export CSV</span>
                                 </button>
-                                <button onclick="alert('Assigning pending packages to nearest regional drivers...')" class="btn-primary px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5">
-                                    <i class="fa-solid fa-robot"></i> Auto-Assign Drivers
+                                <button onclick="alert('Assigning pending packages to nearest regional drivers...')" class="btn-primary px-3 sm:px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow">
+                                    <i class="fa-solid fa-robot"></i> <span>Auto-Assign Drivers</span>
                                 </button>
                             </div>
                         </div>
 
-                        <div class="overflow-x-auto border border-border rounded-xl">
-                            <table class="w-full text-left text-sm min-w-[700px]">
+                        <!-- Responsive Table Container with Horizontal Scroll Hint and Touch Momentum -->
+                        <div class="overflow-x-auto border border-border rounded-xl -mx-1 sm:mx-0">
+                            <table class="w-full text-left text-xs sm:text-sm min-w-[680px]">
                                 <thead>
-                                    <tr class="border-b border-border text-xs font-bold text-secondary-text uppercase bg-background/50">
-                                        <th class="p-3">Batch ID</th>
-                                        <th class="p-3">Courier Driver</th>
-                                        <th class="p-3">Vehicle #</th>
-                                        <th class="p-3">Assigned Parcels</th>
-                                        <th class="p-3">Sector / Hub</th>
-                                        <th class="p-3">Dispatch Status</th>
-                                        <th class="p-3 text-right">Admin Action</th>
+                                    <tr class="border-b border-border text-[11px] sm:text-xs font-bold text-secondary-text uppercase bg-background/60">
+                                        <th class="p-2.5 sm:p-3 whitespace-nowrap">Batch ID</th>
+                                        <th class="p-2.5 sm:p-3 whitespace-nowrap">Courier Driver</th>
+                                        <th class="p-2.5 sm:p-3 whitespace-nowrap">Vehicle #</th>
+                                        <th class="p-2.5 sm:p-3 whitespace-nowrap">Assigned Parcels</th>
+                                        <th class="p-2.5 sm:p-3 whitespace-nowrap">Sector / Hub</th>
+                                        <th class="p-2.5 sm:p-3 whitespace-nowrap">Dispatch Status</th>
+                                        <th class="p-2.5 sm:p-3 text-right whitespace-nowrap">Admin Action</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-border">
-                                    <tr class="hover:bg-hover transition">
-                                        <td class="p-3 font-mono font-bold text-accent">#BATCH-991</td>
-                                        <td class="p-3 font-semibold text-primary-text">Marcus Vance</td>
-                                        <td class="p-3 text-xs text-secondary-text font-mono">VAN-NY-42</td>
-                                        <td class="p-3 font-bold text-primary-text">42 Parcels (88% done)</td>
-                                        <td class="p-3 text-xs text-secondary-text">Midtown Manhattan</td>
-                                        <td class="p-3"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">En Route</span></td>
-                                        <td class="p-3 text-right">
+                                    <tr class="hover:bg-hover/80 transition">
+                                        <td class="p-2.5 sm:p-3 font-mono font-bold text-accent whitespace-nowrap">#BATCH-991</td>
+                                        <td class="p-2.5 sm:p-3 font-semibold text-primary-text whitespace-nowrap">Marcus Vance</td>
+                                        <td class="p-2.5 sm:p-3 text-xs text-secondary-text font-mono whitespace-nowrap">VAN-NY-42</td>
+                                        <td class="p-2.5 sm:p-3 font-bold text-primary-text whitespace-nowrap">42 Parcels <span class="text-xs font-normal text-secondary-text">(88% done)</span></td>
+                                        <td class="p-2.5 sm:p-3 text-xs text-secondary-text whitespace-nowrap">Midtown Manhattan</td>
+                                        <td class="p-2.5 sm:p-3 whitespace-nowrap"><span class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">En Route</span></td>
+                                        <td class="p-2.5 sm:p-3 text-right whitespace-nowrap">
                                             <button onclick="alert('Tracking Telemetry for Driver Marcus Vance: Lat 40.758896, Lng -73.985130 (Speed 24 mph)')" class="text-xs font-bold text-accent hover:underline">Inspect Route</button>
                                         </td>
                                     </tr>
