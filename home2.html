@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9 1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>" type="image/svg+xml">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z'/></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>SwiftParcel - Express Logistics</title>
+    <title>Stationery & Office Supplies Store</title>
 
     <script src="tailwind.js"></script>
     <style>
-        /* --- Express Courier & Logistics Theme (Energetic Blue & Express Orange) --- */
+        /* --- Stationery & Office Supplies Theme --- */
         :root, html[data-theme='light'] {
             --color-background: #F8FAFC;
             --color-card-bg: #FFFFFF;
@@ -200,21 +200,21 @@
     <header class="sticky top-0 z-50 transition-colors duration-300 shadow-sm border-b border-border bg-card" id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[72px]">
             <!-- Logo Icon & Text -->
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-accent flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200">
-                    <i class="fa-solid fa-truck-fast text-xl"></i>
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-accent flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform duration-200">
+                    <i class="fa-solid fa-pen-nib text-sm sm:text-base"></i>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-xl font-extrabold tracking-tight text-primary-text leading-tight">
-                        Swift<span class="text-accent">Parcel</span>
+                    <span class="text-sm sm:text-base font-bold tracking-tight text-primary-text leading-tight">
+                        Stationery<span class="text-accent">Hub</span>
                     </span>
-                    <span class="text-[10px] tracking-wider uppercase font-semibold text-secondary-text">Courier & Express Delivery</span>
+                    <span class="text-[8.5px] sm:text-[9px] tracking-wider uppercase font-semibold text-secondary-text">Office & Stationery</span>
                 </div>
             </a>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden xl:flex items-center space-x-6">
-                <div class="flex space-x-6 rtl:space-x-reverse rtl:ml-6 text-primary-text font-medium items-center">
+            <!-- Desktop Centered Navigation Links -->
+            <div class="hidden xl:flex items-center justify-center flex-1 mx-6">
+                <div class="flex space-x-7 rtl:space-x-reverse text-primary-text font-medium items-center">
                     
                     <!-- Home Dropdown -->
                     <div class="dropdown-wrapper">
@@ -229,29 +229,17 @@
                     </div>
 
                     <!-- Other Nav Headings -->
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="calculator.html" class="nav-link">Rate Calculator</a>
-                    <a href="coverage.html" class="nav-link">Coverage</a>
+                    <a href="services.html" class="nav-link">Products</a>
+                    <a href="offers.html" class="nav-link">Offers</a>
+                    <a href="coverage.html" class="nav-link">Bulk Orders</a>
                     <a href="about.html" class="nav-link">About Us</a>
                     <a href="contact.html" class="nav-link">Contact</a>
-
-                    <!-- Dashboard Dropdown -->
-                    <div class="dropdown-wrapper">
-                        <button class="nav-link flex items-center">
-                            Dashboard
-                            <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="customer.html" onclick="showDashboardView('customer')"><i class="fa-solid fa-user-gear text-accent text-xs"></i> Customer Dashboard</a>
-                            <a href="admin.html" onclick="showDashboardView('admin')"><i class="fa-solid fa-shield-halved text-accent text-xs"></i> Admin Dashboard</a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="w-px h-6 bg-border mx-3"></div>
-                
-                <!-- Quick Actions: Theme, RTL & Login Portal -->
-                <div class="flex items-center space-x-3">
+            </div>
+
+            <!-- Quick Actions: Theme, RTL & Login Portal -->
+            <div class="hidden xl:flex items-center space-x-3 shrink-0">
                     <button id="theme-toggle" title="Toggle Theme" class="p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
                         <svg class="w-5 h-5 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                         <svg class="w-5 h-5 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
@@ -267,7 +255,6 @@
                             <span>Login Portal</span>
                         </a>
                     </div>
-                </div>
             </div>
 
             <!-- Mobile Hamburger Open Button -->
@@ -286,9 +273,12 @@
             <div class="flex justify-between items-center pb-4 border-b border-border">
                 <a href="index.html" class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-lg bg-accent flex items-center justify-center text-white shadow-sm">
-                        <i class="fa-solid fa-truck-fast text-lg"></i>
+                        <i class="fa-solid fa-pen-nib text-lg"></i>
                     </div>
-                    <span class="text-lg font-bold text-primary-text">Swift<span class="text-accent">Parcel</span></span>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-bold text-primary-text leading-tight">Stationery<span class="text-accent">Hub</span></span>
+                        <span class="text-[9px] tracking-wider uppercase font-semibold text-secondary-text">Office & Stationery</span>
+                    </div>
                 </a>
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent p-2 rounded-lg">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -307,25 +297,11 @@
                     </div>
                 </div>
 
-                <a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Services</a>
-                <a href="calculator.html" class="block text-primary-text font-semibold text-lg py-2">Rate Calculator</a>
-                <a href="coverage.html" class="block text-primary-text font-semibold text-lg py-2">Delivery Coverage</a>
+                <a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Products</a>
+                <a href="offers.html" class="block text-primary-text font-semibold text-lg py-2">Offers</a>
+                <a href="coverage.html" class="block text-primary-text font-semibold text-lg py-2">Bulk Orders</a>
                 <a href="about.html" class="block text-primary-text font-semibold text-lg py-2">About Us</a>
                 <a href="contact.html" class="block text-primary-text font-semibold text-lg py-2">Contact</a>
-
-                <!-- Mobile Dashboard Dropdown -->
-                <div>
-                    <button class="block text-primary-text font-semibold text-lg py-2 w-full text-left flex justify-between items-center" id="mobile-dashboard-toggle">
-                        Dashboard
-                        <svg class="w-4 h-4 transform transition-transform duration-200" id="dashboard-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-dashboard-menu" class="hidden pl-4 flex flex-col space-y-2 mt-1 border-l-2 border-border">
-                        <a href="customer.html" onclick="showDashboardView('customer')" class="block text-secondary-text hover:text-accent text-base py-1">Customer Dashboard</a>
-                        <a href="admin.html" onclick="showDashboardView('admin')" class="block text-secondary-text hover:text-accent text-base py-1">Admin Dashboard</a>
-                    </div>
-                </div>
             </nav>
 
             <div class="pt-4 border-t border-border mt-2 flex justify-around items-center">
@@ -360,8 +336,8 @@
              ============================================================ -->
         <section id="hero" class="relative min-h-[600px] lg:min-h-[720px] flex items-center justify-center overflow-hidden">
             <!-- Background Image -->
-            <img src="assets/b1.jpg"
-                alt="Courier loading parcels into delivery van"
+            <img src="assets/a1.jpg"
+                alt="Organized stationery and premium office supplies workspace"
                 class="absolute inset-0 w-full h-full object-cover" loading="eager">
 
             <!-- Overlay Gradient (works in both light & dark) -->
@@ -369,43 +345,43 @@
 
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center text-white py-20">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6" style="background-color: rgba(59,130,246,0.25); color:#93C5FD; border:1px solid rgba(147,197,253,0.3);">
-                    <i class="fa-solid fa-star"></i> Rated 4.9/5 by 12,000+ Shippers
+                    <i class="fa-solid fa-star"></i> Rated 4.9/5 by 12,000+ Corporate Clients &amp; Students
                 </span>
 
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto">
-                    Delivering <span class="text-accent-light">Parcels</span> Faster Than Anyone Else
+                    Supplying <span class="text-accent-light">Every Office</span> with Quality &amp; Precision
                 </h1>
 
                 <p class="mt-6 text-base sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
-                    From a single envelope to a full freight load — SwiftParcel gets it there on time, every time, with live GPS tracking and full insurance.
+                    From everyday writing instruments to bulk paper reams and professional filing systems — StationeryHub equips modern workspaces and creative studios.
                 </p>
 
                 <!-- Dual CTA -->
                 <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
                     <a href="#calculator" class="btn-orange px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-calculator"></i> Calculate Rate
+                        <i class="fa-solid fa-boxes-stacked"></i> Calculate Bulk Order
                     </a>
                     <a href="#services" class="px-7 py-3.5 rounded-xl font-bold text-sm border-2 border-white/70 text-white hover:bg-white hover:text-[#0B132B] transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-truck-fast"></i> Our Services
+                        <i class="fa-solid fa-layer-group"></i> Browse Categories
                     </a>
                 </div>
 
-                <!-- Centered inline track bar -->
-                <form onsubmit="handleQuickTrack(event)" class="mt-10 max-w-2xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-2 flex flex-col sm:flex-row gap-2">
+                <!-- Centered inline search bar -->
+                <form onsubmit="handleProductSearch(event)" class="mt-10 max-w-2xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-2 flex flex-col sm:flex-row gap-2">
                     <div class="relative flex-grow">
-                        <i class="fa-solid fa-barcode absolute top-1/2 -translate-y-1/2 left-4 text-gray-300 text-sm pointer-events-none"></i>
-                        <input id="quick-track-input" type="text" placeholder="Enter tracking number (e.g. SP-8421-56)"
+                        <i class="fa-solid fa-magnifying-glass absolute top-1/2 -translate-y-1/2 left-4 text-gray-200 text-sm pointer-events-none"></i>
+                        <input id="quick-track-input" type="text" placeholder="Search pens, journals, A4 copy reams, lever arch files..."
                             class="w-full pl-11 pr-4 py-3 rounded-xl bg-transparent text-sm text-white placeholder-gray-300 focus:outline-none">
                     </div>
                     <button type="submit" class="btn-primary px-6 py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2 whitespace-nowrap">
-                        <i class="fa-solid fa-location-crosshairs"></i> Track Now
+                        <i class="fa-solid fa-arrow-right"></i> Search Store
                     </button>
                 </form>
             </div>
         </section>
 
         <!-- ============================================================
-             SECTION 2 — SERVICES (Overlapping cards + image collage)
+             SECTION 2 — SERVICES / CATEGORIES (Overlapping cards + image collage)
              Layout: Horizontal cards with side icon (vs index vertical image top)
              ============================================================ -->
         <section id="services" class="py-20 lg:py-24 bg-background relative">
@@ -413,9 +389,9 @@
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-14">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Shipping Solutions</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Choose the Service That Fits Your Parcel</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Every shipment is different — so we engineered five delivery modes to match any speed, size, and budget.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Product Categories</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Explore Premium Office Essentials</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Curated collections designed to inspire productivity, organizational excellence, and effortless everyday writing.</p>
                 </div>
 
                 <!-- Services Stack (horizontal cards) -->
@@ -424,63 +400,63 @@
                     <!-- Service 1 -->
                     <article class="bg-card border border-border rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-5 shadow-sm hover:shadow-xl hover:border-accent transition-all duration-300">
                         <div class="w-full sm:w-40 h-32 sm:h-28 rounded-xl overflow-hidden flex-shrink-0">
-                            <img src="assets/b2.jpg"
-                                alt="Same day courier delivery" class="w-full h-full object-cover" loading="lazy">
+                            <img src="assets/w1.jpg"
+                                alt="Writing instruments collection" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div class="flex-grow text-center sm:text-left">
                             <div class="flex items-center justify-center sm:justify-start gap-3 mb-2">
                                 <div class="w-9 h-9 rounded-lg bg-accent-alpha-10 text-accent flex items-center justify-center">
-                                    <i class="fa-solid fa-bolt text-sm"></i>
+                                    <i class="fa-solid fa-pen-fancy text-sm"></i>
                                 </div>
-                                <h3 class="text-lg font-bold text-primary-text">Same-Day Delivery</h3>
+                                <h3 class="text-lg font-bold text-primary-text">Writing Instruments</h3>
                             </div>
-                            <p class="text-sm text-secondary-text leading-relaxed">Book before 2 PM and we deliver the same day within the metro area. Perfect for urgent documents and time-critical items.</p>
+                            <p class="text-sm text-secondary-text leading-relaxed">Precision ballpoint pens, rollerballs, calligraphy fountain pens, permanent markers, and ergonomic highlighters from top world brands.</p>
                         </div>
                         <div class="text-center sm:text-right flex-shrink-0">
-                            <p class="text-xs text-secondary-text uppercase tracking-wider font-semibold">From</p>
-                            <p class="text-2xl font-extrabold text-accent">$9<span class="text-sm text-secondary-text font-medium">.99</span></p>
+                            <p class="text-xs text-secondary-text uppercase tracking-wider font-semibold">Starting At</p>
+                            <p class="text-2xl font-extrabold text-accent">$2<span class="text-sm text-secondary-text font-medium">.49</span></p>
                         </div>
                     </article>
 
                     <!-- Service 2 -->
                     <article class="bg-card border border-border rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-5 shadow-sm hover:shadow-xl hover:border-accent transition-all duration-300">
                         <div class="w-full sm:w-40 h-32 sm:h-28 rounded-xl overflow-hidden flex-shrink-0">
-                            <img src="assets/b3.jpg"
-                                alt="Express overnight parcel service" class="w-full h-full object-cover" loading="lazy">
+                            <img src="assets/w2.jpg"
+                                alt="Notebooks and executive journals" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div class="flex-grow text-center sm:text-left">
                             <div class="flex items-center justify-center sm:justify-start gap-3 mb-2">
                                 <div class="w-9 h-9 rounded-lg bg-accent-orange-10 text-accent-light flex items-center justify-center">
-                                    <i class="fa-solid fa-moon text-sm"></i>
+                                    <i class="fa-solid fa-book-open text-sm"></i>
                                 </div>
-                                <h3 class="text-lg font-bold text-primary-text">Overnight Express</h3>
+                                <h3 class="text-lg font-bold text-primary-text">Notebooks &amp; Planners</h3>
                             </div>
-                            <p class="text-sm text-secondary-text leading-relaxed">Collected today, delivered tomorrow by 10 AM. Guaranteed next-day service across all 180+ covered cities.</p>
+                            <p class="text-sm text-secondary-text leading-relaxed">Executive hardcover journals, wirebound project notepads, undated productivity planners, and fountain-pen-friendly dot grid notebooks.</p>
                         </div>
                         <div class="text-center sm:text-right flex-shrink-0">
-                            <p class="text-xs text-secondary-text uppercase tracking-wider font-semibold">From</p>
-                            <p class="text-2xl font-extrabold text-accent">$18<span class="text-sm text-secondary-text font-medium">.50</span></p>
+                            <p class="text-xs text-secondary-text uppercase tracking-wider font-semibold">Starting At</p>
+                            <p class="text-2xl font-extrabold text-accent">$4<span class="text-sm text-secondary-text font-medium">.99</span></p>
                         </div>
                     </article>
 
                     <!-- Service 3 -->
                     <article class="bg-card border border-border rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-5 shadow-sm hover:shadow-xl hover:border-accent transition-all duration-300">
                         <div class="w-full sm:w-40 h-32 sm:h-28 rounded-xl overflow-hidden flex-shrink-0">
-                            <img src="assets/b4.jpg"
-                                alt="Heavy freight logistics truck" class="w-full h-full object-cover" loading="lazy">
+                            <img src="assets/w3.jpg"
+                                alt="Filing folders and storage binders" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div class="flex-grow text-center sm:text-left">
                             <div class="flex items-center justify-center sm:justify-start gap-3 mb-2">
                                 <div class="w-9 h-9 rounded-lg bg-accent-alpha-10 text-accent flex items-center justify-center">
-                                    <i class="fa-solid fa-truck-ramp-box text-sm"></i>
+                                    <i class="fa-solid fa-folder-open text-sm"></i>
                                 </div>
-                                <h3 class="text-lg font-bold text-primary-text">Heavy Freight Logistics</h3>
+                                <h3 class="text-lg font-bold text-primary-text">Filing &amp; Organization</h3>
                             </div>
-                            <p class="text-sm text-secondary-text leading-relaxed">Pallets, oversized cargo, and multi-ton shipments moved through our dedicated freight network with full tracking.</p>
+                            <p class="text-sm text-secondary-text leading-relaxed">Heavy-duty lever arch files, expanding document wallets, desktop magazine holders, index tabs, and archival storage boxes.</p>
                         </div>
                         <div class="text-center sm:text-right flex-shrink-0">
-                            <p class="text-xs text-secondary-text uppercase tracking-wider font-semibold">Quote</p>
-                            <p class="text-2xl font-extrabold text-accent">Custom</p>
+                            <p class="text-xs text-secondary-text uppercase tracking-wider font-semibold">Starting At</p>
+                            <p class="text-2xl font-extrabold text-accent">$3<span class="text-sm text-secondary-text font-medium">.80</span></p>
                         </div>
                     </article>
 
@@ -488,7 +464,7 @@
 
                 <div class="mt-12 text-center">
                     <a href="services.html" class="btn-outline inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm">
-                        <i class="fa-solid fa-list-check"></i> View All Services
+                        <i class="fa-solid fa-store"></i> View All Product Categories
                     </a>
                 </div>
             </div>
@@ -504,26 +480,26 @@
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-16">
                     <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Why Choose Us</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">The SwiftParcel Advantage</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Three reasons why businesses big and small keep trusting us with their parcels.</p>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">The StationeryHub Standard</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Three pillars that make us the go-to stationery and supply partner for offices, schools, and design firms.</p>
                 </div>
 
                 <!-- Row 1 — Image Left -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16 lg:mb-20">
                     <div class="rounded-3xl overflow-hidden shadow-lg aspect-[4/3] border border-border order-1">
-                        <img src="assets/c1.jpg"
-                            alt="Real time parcel scanning technology" class="w-full h-full object-cover" loading="lazy">
+                        <img src="assets/stationery_h2_desk.jpg"
+                            alt="High grade curated stationery supplies" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="text-center lg:text-left order-2">
-                        <span class="inline-block text-xs font-extrabold tracking-widest text-accent uppercase">01 — Transparency</span>
-                        <h3 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-text">Real-Time Visibility From Pickup to Drop-Off</h3>
+                        <span class="inline-block text-xs font-extrabold tracking-widest text-accent uppercase">01 — Authenticity &amp; Grade</span>
+                        <h3 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-text">100% Genuine, Premium Quality Supplies</h3>
                         <p class="mt-5 text-secondary-text leading-relaxed">
-                            Every scan, every mile, every handoff is captured live. You and your customer see the exact same journey — no more "where is my parcel?" calls.
+                            We source straight from leading global manufacturers. Every ream of paper is jam-resistant, pens write smoothly from first touch, and binders withstand heavy daily archiving.
                         </p>
                         <ul class="mt-6 space-y-3 text-sm text-secondary-text max-w-md mx-auto lg:mx-0">
-                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Live GPS map + SMS/email alerts at every milestone</span></li>
-                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Photo proof of delivery uploaded automatically</span></li>
-                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Full shipment history accessible from your dashboard</span></li>
+                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Acid-free paper stock that preserves ink without bleed-through</span></li>
+                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Strict quality checks on mechanical pencils, staplers, and punches</span></li>
+                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Eco-friendly, recycled and FSC-certified product lines available</span></li>
                         </ul>
                     </div>
                 </div>
@@ -531,39 +507,39 @@
                 <!-- Row 2 — Image Right -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16 lg:mb-20">
                     <div class="text-center lg:text-left order-2 lg:order-1">
-                        <span class="inline-block text-xs font-extrabold tracking-widest text-accent-light uppercase">02 — Reliability</span>
-                        <h3 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-text">99.2% On-Time Delivery, Backed by Insurance</h3>
+                        <span class="inline-block text-xs font-extrabold tracking-widest text-accent-light uppercase">02 — Wholesale Pricing</span>
+                        <h3 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-text">Volume Discounts Backed by Price Match Guarantee</h3>
                         <p class="mt-5 text-secondary-text leading-relaxed">
-                            Our route-optimised fleet and 180+ city hub network deliver on schedule — and if anything ever goes wrong, every parcel is insured up to $5,000.
+                            Equip entire corporate departments, educational institutions, or legal chambers without exceeding your quarterly stationery budget.
                         </p>
                         <ul class="mt-6 space-y-3 text-sm text-secondary-text max-w-md mx-auto lg:mx-0">
-                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Automatic $5,000 coverage on every shipment</span></li>
-                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Fully trained, uniformed couriers you can trust</span></li>
-                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Money-back guarantee on missed delivery windows</span></li>
+                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Tiered wholesale discounts up to 35% on reams and bulk packs</span></li>
+                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Customized B2B corporate billing accounts with net-30 terms</span></li>
+                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Zero-hassle exchange on damaged transit or manufacturing flaws</span></li>
                         </ul>
                     </div>
                     <div class="rounded-3xl overflow-hidden shadow-lg aspect-[4/3] border border-border order-1 lg:order-2">
-                        <img src="assets/c2.jpg"
-                            alt="Smiling courier handing parcel to happy customer" class="w-full h-full object-cover" loading="lazy">
+                        <img src="assets/stationery_h2_office.jpg"
+                            alt="Modern office with organized supplies" class="w-full h-full object-cover" loading="lazy">
                     </div>
                 </div>
 
                 <!-- Row 3 — Image Left -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                     <div class="rounded-3xl overflow-hidden shadow-lg aspect-[4/3] border border-border">
-                        <img src="assets/c3.jpg"
-                            alt="Business team managing shipments from dashboard" class="w-full h-full object-cover" loading="lazy">
+                        <img src="assets/stationery_h2_workspace.jpg"
+                            alt="Corporate desk setup and filing" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="text-center lg:text-left">
-                        <span class="inline-block text-xs font-extrabold tracking-widest text-accent uppercase">03 — Scale</span>
-                        <h3 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-text">From One Envelope to 10,000 Parcels a Day</h3>
+                        <span class="inline-block text-xs font-extrabold tracking-widest text-accent uppercase">03 — Rapid Delivery</span>
+                        <h3 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-text">Next-Day Doorstep Supply for Active Teams</h3>
                         <p class="mt-5 text-secondary-text leading-relaxed">
-                            Whether you're shipping a birthday gift or running an e-commerce empire, our platform scales instantly — with bulk booking, API access, and monthly invoicing built in.
+                            Never run out of printer toner, legal pads, or packaging tape before crucial presentations. Our optimized inventory hubs dispatch orders in record time.
                         </p>
                         <ul class="mt-6 space-y-3 text-sm text-secondary-text max-w-md mx-auto lg:mx-0">
-                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Bulk CSV upload &amp; REST API for automated shipping</span></li>
-                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Consolidated monthly invoices &amp; expense reports</span></li>
-                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Dedicated account manager for enterprise clients</span></li>
+                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Same-day dispatch for corporate orders placed before 1 PM</span></li>
+                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Free national delivery on enterprise orders over $75</span></li>
+                            <li class="flex items-start gap-3 justify-center lg:justify-start text-left"><i class="fa-solid fa-circle-check text-accent mt-0.5"></i><span>Dedicated account manager for ongoing corporate restocking</span></li>
                         </ul>
                     </div>
                 </div>
@@ -580,9 +556,9 @@
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-14">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Instant Pricing</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Calculate Your Shipping Rate</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Get a transparent quote in seconds — no signup, no hidden fees, no surprises.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Instant Quote</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Bulk Order Cost Estimator</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Estimate instant wholesale pricing for your office supplies and corporate bulk requirements.</p>
                 </div>
 
                 <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
@@ -593,38 +569,38 @@
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Service Type</label>
+                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Category</label>
                                     <select id="calc-service" class="w-full px-4 py-3 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
-                                        <option value="local">Local City Delivery</option>
-                                        <option value="domestic" selected>Domestic Standard</option>
-                                        <option value="express">Priority Express Air</option>
+                                        <option value="local">Printing &amp; Copy Paper (80 GSM)</option>
+                                        <option value="domestic" selected>Writing &amp; Executive Pens</option>
+                                        <option value="express">Filing &amp; Archival Storage</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Package Type</label>
+                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Order Tier</label>
                                     <select id="calc-package" class="w-full px-4 py-3 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
-                                        <option value="parcel">Standard Parcel</option>
-                                        <option value="document">Document / Envelope</option>
-                                        <option value="fragile">Fragile Item</option>
+                                        <option value="parcel">Standard Starter Pack</option>
+                                        <option value="document">Department Bundle (15% Off)</option>
+                                        <option value="fragile">Enterprise Bulk (30% Off)</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Weight (kg)</label>
-                                <input id="calc-weight" type="number" min="0.5" step="0.5" value="2"
+                                <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Quantity (Units / Reams)</label>
+                                <input id="calc-weight" type="number" min="5" step="5" value="25"
                                     class="w-full px-4 py-3 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
                             </div>
 
                             <button type="submit" class="btn-primary w-full py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-calculator"></i> Calculate My Rate
+                                <i class="fa-solid fa-calculator"></i> Calculate Estimate
                             </button>
                         </form>
 
                         <div class="mt-6 pt-6 border-t border-border text-center">
                             <p class="text-xs uppercase tracking-widest text-secondary-text font-semibold">Estimated Total</p>
-                            <p id="calc-price-output" class="text-4xl sm:text-5xl font-extrabold text-accent mt-2">$21.50</p>
-                            <p class="text-xs text-secondary-text mt-2">Includes fuel surcharge &amp; standard insurance</p>
+                            <p id="calc-price-output" class="text-4xl sm:text-5xl font-extrabold text-accent mt-2">$71.00</p>
+                            <p class="text-xs text-secondary-text mt-2">Includes bulk tier discount &amp; free doorstep delivery</p>
                         </div>
                     </div>
 
@@ -635,24 +611,24 @@
                             <div class="w-12 h-12 mx-auto rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center mb-3">
                                 <i class="fa-solid fa-percent"></i>
                             </div>
-                            <h4 class="font-bold text-primary-text">Bulk Discounts</h4>
-                            <p class="text-sm text-secondary-text mt-2">Save up to 30% on volume shipping with monthly billing.</p>
+                            <h4 class="font-bold text-primary-text">Bulk Volume Discounts</h4>
+                            <p class="text-sm text-secondary-text mt-2">Save up to 35% on recurring monthly orders with consolidated business billing.</p>
                         </div>
 
                         <div class="bg-card border border-border rounded-2xl p-6 text-center shadow-sm">
                             <div class="w-12 h-12 mx-auto rounded-xl bg-accent-orange-10 text-accent-light flex items-center justify-center mb-3">
                                 <i class="fa-solid fa-receipt"></i>
                             </div>
-                            <h4 class="font-bold text-primary-text">Transparent Billing</h4>
-                            <p class="text-sm text-secondary-text mt-2">Every invoice downloadable directly from your dashboard.</p>
+                            <h4 class="font-bold text-primary-text">GST &amp; Tax Compliant Invoices</h4>
+                            <p class="text-sm text-secondary-text mt-2">Automated itemized invoices with company registration &amp; GSTIN ready to download.</p>
                         </div>
 
                         <div class="bg-card border border-border rounded-2xl p-6 text-center shadow-sm">
                             <div class="w-12 h-12 mx-auto rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center mb-3">
-                                <i class="fa-solid fa-rotate-left"></i>
+                                <i class="fa-solid fa-box-open"></i>
                             </div>
-                            <h4 class="font-bold text-primary-text">Free Cancellation</h4>
-                            <p class="text-sm text-secondary-text mt-2">Cancel any pickup anytime before the courier arrives — no charge.</p>
+                            <h4 class="font-bold text-primary-text">Free Sample Kits</h4>
+                            <p class="text-sm text-secondary-text mt-2">Request free paper swatches and writing samples prior to large corporate procurement.</p>
                         </div>
 
                     </div>
@@ -661,7 +637,7 @@
         </section>
 
         <!-- ============================================================
-             SECTION 5 — DASHBOARD PREVIEW (App mockup + feature list)
+             SECTION 5 — CORPORATE ACCOUNT PREVIEW (Mockup + feature list)
              Layout: Split with device mockup (unique)
              ============================================================ -->
         <section id="dashboard" class="py-20 lg:py-24 bg-hover border-y border-border">
@@ -669,9 +645,9 @@
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-14">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Customer Portal</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Manage Every Shipment From One Dashboard</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Book pickups, track live, view history, and download invoices — all in one beautiful, self-service portal.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Corporate Hub</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Manage Office Supplies Seamlessly</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Schedule scheduled auto-restocks, approve purchase orders, track deliveries, and view invoices in one centralized portal.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -681,47 +657,47 @@
 
                         <div class="bg-card border border-border rounded-2xl p-5 flex items-start gap-4 shadow-sm hover:shadow-md transition">
                             <div class="w-11 h-11 rounded-xl bg-accent text-white flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-calendar-check"></i>
+                                <i class="fa-solid fa-cart-flatbed"></i>
                             </div>
                             <div class="text-left">
-                                <h4 class="font-bold text-primary-text">Book a Pickup in 60 Seconds</h4>
-                                <p class="text-sm text-secondary-text mt-1">Choose an address, a time slot, and confirm. A courier is on the way.</p>
+                                <h4 class="font-bold text-primary-text">Automated Monthly Office Restocking</h4>
+                                <p class="text-sm text-secondary-text mt-1">Set monthly re-orders for printer paper, pens, and desk staples in seconds.</p>
                             </div>
                         </div>
 
                         <div class="bg-card border border-border rounded-2xl p-5 flex items-start gap-4 shadow-sm hover:shadow-md transition">
                             <div class="w-11 h-11 rounded-xl bg-accent-light text-white flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-satellite-dish"></i>
+                                <i class="fa-solid fa-truck-ramp-box"></i>
                             </div>
                             <div class="text-left">
-                                <h4 class="font-bold text-primary-text">Live Real-Time Tracking</h4>
-                                <p class="text-sm text-secondary-text mt-1">Follow every parcel on a live map with automatic ETA refresh.</p>
+                                <h4 class="font-bold text-primary-text">Live Order &amp; Delivery Tracking</h4>
+                                <p class="text-sm text-secondary-text mt-1">Track dispatch milestones and warehouse delivery estimates in real time.</p>
                             </div>
                         </div>
 
                         <div class="bg-card border border-border rounded-2xl p-5 flex items-start gap-4 shadow-sm hover:shadow-md transition">
                             <div class="w-11 h-11 rounded-xl bg-accent text-white flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
                             </div>
                             <div class="text-left">
-                                <h4 class="font-bold text-primary-text">Complete Shipment History</h4>
-                                <p class="text-sm text-secondary-text mt-1">Every parcel you've ever shipped, filterable and exportable in one click.</p>
+                                <h4 class="font-bold text-primary-text">Complete Purchase History &amp; Reorders</h4>
+                                <p class="text-sm text-secondary-text mt-1">View past orders by department and repeat your favorite bundles in one tap.</p>
                             </div>
                         </div>
 
                         <div class="bg-card border border-border rounded-2xl p-5 flex items-start gap-4 shadow-sm hover:shadow-md transition">
                             <div class="w-11 h-11 rounded-xl bg-accent-light text-white flex items-center justify-center flex-shrink-0">
-                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                <i class="fa-solid fa-receipt"></i>
                             </div>
                             <div class="text-left">
-                                <h4 class="font-bold text-primary-text">Download Invoices &amp; Reports</h4>
-                                <p class="text-sm text-secondary-text mt-1">Monthly invoices and expense reports ready to download anytime.</p>
+                                <h4 class="font-bold text-primary-text">Download Official Tax Invoices</h4>
+                                <p class="text-sm text-secondary-text mt-1">Instant monthly statement exports and GST breakdown files for accounting.</p>
                             </div>
                         </div>
 
                         <div class="pt-4 text-center lg:text-left">
                             <a href="login.html" class="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm shadow-md">
-                                <i class="fa-solid fa-arrow-right-to-bracket"></i> Open My Dashboard
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i> Open Corporate Portal
                             </a>
                         </div>
                     </div>
@@ -729,18 +705,18 @@
                     <!-- Right: Device mockup with image -->
                     <div class="relative">
                         <div class="rounded-3xl overflow-hidden shadow-2xl border border-border">
-                            <img src="assets/c4.jpg"
-                                alt="Logistics dashboard on laptop screen" class="w-full h-auto object-cover" loading="lazy">
+                            <img src="assets/r1.jpg"
+                                alt="Stationery and office supply portal workspace" class="w-full h-auto object-cover" loading="lazy">
                         </div>
 
                         <!-- Floating mini card -->
                         <div class="absolute -bottom-6 -left-4 sm:left-6 bg-card border border-border rounded-2xl shadow-xl px-5 py-4 flex items-center gap-4">
                             <div class="w-11 h-11 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center">
-                                <i class="fa-solid fa-truck-fast"></i>
+                                <i class="fa-solid fa-boxes-packing"></i>
                             </div>
                             <div class="text-left">
-                                <p class="text-sm font-extrabold text-primary-text leading-none">3 Active</p>
-                                <p class="text-xs text-secondary-text mt-1">Parcels in transit</p>
+                                <p class="text-sm font-extrabold text-primary-text leading-none">24 Orders</p>
+                                <p class="text-xs text-secondary-text mt-1">Dispatched this month</p>
                             </div>
                         </div>
 
@@ -750,8 +726,8 @@
                                 <i class="fa-solid fa-circle-check"></i>
                             </div>
                             <div class="text-left">
-                                <p class="text-sm font-extrabold text-primary-text leading-none">Delivered</p>
-                                <p class="text-[11px] text-secondary-text mt-1">2 mins ago</p>
+                                <p class="text-sm font-extrabold text-primary-text leading-none">Stock Verified</p>
+                                <p class="text-[11px] text-secondary-text mt-1">100% In-Stock</p>
                             </div>
                         </div>
                     </div>
@@ -778,30 +754,30 @@
                     <div class="relative px-6 sm:px-12 lg:px-20 py-14 lg:py-20 text-center text-white">
 
                         <div class="w-16 h-16 mx-auto rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 border border-white/30">
-                            <i class="fa-solid fa-truck-fast text-2xl"></i>
+                            <i class="fa-solid fa-pen-ruler text-2xl"></i>
                         </div>
 
                         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight max-w-3xl mx-auto">
-                            Ship Your Next Parcel the SwiftParcel Way
+                            Equip Your Office with StationeryHub Today
                         </h2>
 
                         <p class="mt-5 text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-                            Join 12,000+ shippers who trust us for fast pickups, transparent pricing, live tracking, and zero headaches. Your first pickup is on us.
+                            Join 12,000+ businesses and creative institutions who rely on us for fast deliveries, bulk volume savings, premium writing tools, and dedicated corporate care.
                         </p>
 
                         <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap xl:flex-nowrap gap-3.5 justify-center items-stretch sm:items-center max-w-lg mx-auto">
                             <a href="#calculator" class="bg-white text-[#0B132B] hover:bg-gray-100 px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition flex-1 sm:flex-initial text-center whitespace-nowrap">
-                                <i class="fa-solid fa-rocket text-accent"></i> <span>Start Shipping Free</span>
+                                <i class="fa-solid fa-cart-shopping text-accent"></i> <span>Order Supplies Now</span>
                             </a>
                             <a href="contact.html" class="border-2 border-white/80 bg-white/10 hover:bg-white hover:text-[#0B132B] px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition flex-1 sm:flex-initial text-center whitespace-nowrap">
-                                <i class="fa-solid fa-headset"></i> <span>Talk to Sales</span>
+                                <i class="fa-solid fa-envelope-open-text"></i> <span>Enquire for Bulk Quote</span>
                             </a>
                         </div>
 
                         <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-white/85">
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> No credit card required</span>
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> Free first pickup</span>
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> Cancel anytime</span>
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> Free delivery over $75</span>
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> 100% Genuine brand guarantee</span>
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> Flexible 30-day net terms</span>
                         </div>
 
                     </div>
@@ -821,16 +797,16 @@
 
             <div class="text-center space-y-2">
                 <div class="w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center mx-auto text-xl shadow-md">
-                    <i class="fa-solid fa-truck-fast"></i>
+                    <i class="fa-solid fa-pen-nib"></i>
                 </div>
-                <h3 class="text-2xl font-extrabold text-primary-text">Customer Portal Login</h3>
-                <p class="text-xs text-secondary-text">Access pickup scheduling, live GPS feeds, and bills</p>
+                <h3 class="text-2xl font-extrabold text-primary-text">StationeryHub Portal Login</h3>
+                <p class="text-xs text-secondary-text">Access corporate orders, restock schedules, and invoices</p>
             </div>
 
             <form onsubmit="handlePortalLogin(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Account ID / Email</label>
-                    <input type="text" value="customer@swiftparcel.com" required
+                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Corporate ID / Email</label>
+                    <input type="text" value="office@company.com" required
                         class="w-full px-4 py-2.5 bg-background rounded-xl border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
                 </div>
                 <div>
@@ -847,87 +823,87 @@
                 </div>
                 <button type="submit" class="btn-primary w-full py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    <span>Log In to Dashboard</span>
+                    <span>Log In to Corporate Account</span>
                 </button>
             </form>
             <p class="text-center text-xs text-secondary-text">
-                Don't have a corporate courier account? <a href="#calculator" onclick="closeLoginModal()" class="text-accent font-semibold hover:underline">Register Today</a>
+                Need a business bulk purchasing account? <a href="#calculator" onclick="closeLoginModal()" class="text-accent font-semibold hover:underline">Register Today</a>
             </p>
         </div>
     </div>
 
-    <!-- MAIN FOOTER (Courier & Parcel Delivery Topic) -->
+    <!-- MAIN FOOTER (Stationery & Office Supplies Store) -->
     <footer id="main-footer" class="pt-16 pb-8 transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
                 
                 <!-- Brand column -->
                 <div class="lg:col-span-2 space-y-4">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md">
-                            <i class="fa-solid fa-truck-fast text-lg"></i>
+                    <a href="index.html" class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-sm">
+                            <i class="fa-solid fa-pen-nib text-sm sm:text-base"></i>
                         </div>
                         <div class="flex flex-col">
-                            <span class="text-xl font-extrabold tracking-tight text-white leading-tight">
-                                Swift<span class="text-blue-400">Parcel</span>
+                            <span class="text-sm sm:text-base font-bold tracking-tight text-white leading-tight">
+                                Stationery<span class="text-blue-400">Hub</span>
                             </span>
-                            <span class="text-[10px] tracking-wider uppercase font-semibold text-gray-400">Courier & Express Delivery</span>
+                            <span class="text-[8.5px] sm:text-[9px] tracking-wider uppercase font-semibold text-gray-400">Office & Stationery</span>
                         </div>
                     </a>
                     <p class="text-sm leading-relaxed max-w-sm text-gray-400">
-                        Pioneering reliable, time-definite door-to-door courier services. Fast parcel pickup, real-time telemetry tracking, nationwide logistics coverage, and seamless digital invoices.
+                        Your trusted one-stop destination for premium writing instruments, notebooks, desktop filing systems, copy papers, and wholesale enterprise supplies.
                     </p>
                     <div class="flex space-x-4 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-twitter text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-whatsapp text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-whatsapp text-sm"></i></a>
                     </div>
                 </div>
 
-                <!-- Shipping Services Column -->
+                <!-- Product Categories Column -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Delivery Services</h4>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Product Categories</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#services" class="footer-link">Local City Courier</a></li>
-                        <li><a href="#services" class="footer-link">Domestic Standard Shipping</a></li>
-                        <li><a href="#services" class="footer-link">Priority Express Air Cargo</a></li>
-                        <li><a href="#services" class="footer-link">Same-Day Critical Drop</a></li>
-                        <li><a href="#coverage" class="footer-link">Heavy Freight Logistics</a></li>
+                        <li><a href="services.html" class="footer-link">Writing Instruments</a></li>
+                        <li><a href="services.html" class="footer-link">Notebooks & Notepads</a></li>
+                        <li><a href="services.html" class="footer-link">Filing & Organization</a></li>
+                        <li><a href="services.html" class="footer-link">Printing & Copy Paper</a></li>
+                        <li><a href="services.html" class="footer-link">Desk Accessories</a></li>
                     </ul>
                 </div>
 
-                <!-- Quick Navigation Column -->
+                <!-- Quick Links Column -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Customer Portal</h4>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#dashboard" onclick="switchDashboardTab('book-pickup')" class="footer-link">Book Doorstep Pickup</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('tracking-tab')" class="footer-link">Live Parcel Tracking</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('history-tab')" class="footer-link">Shipment History</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('invoices-tab')" class="footer-link">Download Invoices</a></li>
-                        <li><a href="#calculator" class="footer-link">Instant Rate Calculator</a></li>
+                        <li><a href="index.html" class="footer-link">Home & Essentials</a></li>
+                        <li><a href="offers.html" class="footer-link">Special Deals & Offers</a></li>
+                        <li><a href="services.html" class="footer-link">New Arrivals</a></li>
+                        <li><a href="coverage.html" class="footer-link">Bulk & Corporate Orders</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact & Enquiries</a></li>
                     </ul>
                 </div>
 
-                <!-- Newsletter & Dispatch Alerts -->
+                <!-- Newsletter & Offers -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Courier Alerts</h4>
-                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">Subscribe for route alerts, holiday shipping schedules, and fuel surcharge updates.</p>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Store Newsletter</h4>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">Subscribe for exclusive office deals, back-to-school offers, and new catalogue alerts.</p>
                     <form onsubmit="handleNewsletter(event)" class="flex flex-col space-y-3">
-                        <input type="email" required placeholder="business@company.com" class="p-3 text-xs rounded-xl bg-gray-900 border border-gray-800 focus:outline-none focus:border-blue-500 text-white" />
-                        <button type="submit" class="btn-primary font-bold py-2.5 rounded-xl text-xs shadow-md">Subscribe to Alerts</button>
+                        <input type="email" required placeholder="office@company.com" class="p-3 text-xs rounded-xl bg-gray-900 border border-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 text-white" />
+                        <button type="submit" class="btn-primary font-bold py-2.5 rounded-xl text-xs shadow-md">Subscribe to Deals</button>
                     </form>
                 </div>
 
             </div>
 
             <!-- Bottom Copyright & Compliance -->
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-xs gap-4">
-                <div>© 2026 SwiftParcel Delivery Services Inc. All rights reserved.</div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-400 text-xs gap-4">
+                <div>© 2026 StationeryHub Supplies & Stationery Store Inc. All rights reserved.</div>
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-300">Terms of Carriage</a>
-                    <a href="#" class="hover:text-gray-300">Security & Compliance</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Corporate Sales Policy</a>
                 </div>
             </div>
         </div>
@@ -970,7 +946,6 @@
                 });
             };
             setupAccordion('mobile-homes-toggle', 'mobile-homes-menu', 'homes-icon');
-            setupAccordion('mobile-dashboard-toggle', 'mobile-dashboard-menu', 'dashboard-icon');
 
             // Theme Toggle
             const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('drawer-theme-toggle')];
@@ -996,146 +971,49 @@
             html.setAttribute('dir', localStorage.getItem('language') === 'ar' ? 'rtl' : 'ltr');
         });
 
-        // Switch between Customer Dashboard and Admin Dashboard views
-        function showDashboardView(view) {
-            const customerContainer = document.getElementById('customer-dashboard-container');
-            const adminContainer = document.getElementById('admin-dashboard-container');
-            const btnCustomer = document.getElementById('btn-view-customer');
-            const btnAdmin = document.getElementById('btn-view-admin');
-            const heading = document.getElementById('dashboard-heading');
-            const subheading = document.getElementById('dashboard-subheading');
-            const badge = document.getElementById('dashboard-badge');
-
-            if (view === 'admin') {
-                customerContainer?.classList.add('hidden');
-                adminContainer?.classList.remove('hidden');
-
-                btnAdmin.className = "px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-accent text-white shadow transition flex items-center gap-2";
-                btnCustomer.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
-
-                heading.innerText = "Admin Fleet & Logistics Control";
-                subheading.innerText = "Monitor live courier dispatch queues, van telemetry, hub status, and daily operations revenue.";
-                badge.innerHTML = `<i class="fa-solid fa-shield-halved"></i> Central Operations Control`;
-            } else {
-                customerContainer?.classList.remove('hidden');
-                adminContainer?.classList.add('hidden');
-
-                btnCustomer.className = "px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-accent text-white shadow transition flex items-center gap-2";
-                btnAdmin.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
-
-                heading.innerText = "Customer Dashboard";
-                subheading.innerText = "Book pickups, track parcels in real time, view shipment history, and download official invoices directly from your self-service portal.";
-                badge.innerHTML = `<i class="fa-solid fa-gauge-high"></i> Customer Portal Hub`;
-            }
-
-            // Scroll to dashboard smoothly
-            const dashElem = document.getElementById('dashboard');
-            dashElem?.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Dashboard Tabs Functionality
-        function switchDashboardTab(tabId) {
-            showDashboardView('customer');
-            const tabs = ['book-pickup', 'tracking-tab', 'history-tab', 'invoices-tab'];
-            tabs.forEach(t => {
-                const content = document.getElementById(`tab-content-${t}`);
-                const btn = document.getElementById(`tab-btn-${t}`);
-                if (content && btn) {
-                    if (t === tabId) {
-                        content.classList.remove('hidden');
-                        btn.className = "dashboard-tab-btn flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm bg-accent text-white shadow-sm transition";
-                    } else {
-                        content.classList.add('hidden');
-                        btn.className = "dashboard-tab-btn flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm text-secondary-text hover:text-accent hover:bg-card transition";
-                    }
-                }
-            });
-        }
-
-        // Quick Track Form
-        function handleQuickTrack(e) {
+        // Product Search Handler
+        function handleProductSearch(e) {
             e.preventDefault();
-            const trackId = document.getElementById('quick-track-input').value.trim();
-            if (trackId) {
-                document.getElementById('dash-track-id').value = trackId;
-                switchDashboardTab('tracking-tab');
-                const target = document.getElementById('dashboard');
-                target.scrollIntoView({ behavior: 'smooth' });
+            const query = document.getElementById('quick-track-input')?.value.trim();
+            if (query) {
+                window.location.href = `services.html?search=${encodeURIComponent(query)}`;
+            } else {
+                window.location.href = 'services.html';
             }
         }
 
-        // Rate Calculator
+        // Quick Track Form fallback
+        function handleQuickTrack(e) {
+            handleProductSearch(e);
+        }
+
+        // Bulk Rate Calculator
         function calculateShippingRate(e) {
             e.preventDefault();
-            const weight = parseFloat(document.getElementById('calc-weight').value) || 1;
+            const qty = parseFloat(document.getElementById('calc-weight').value) || 10;
             const service = document.getElementById('calc-service').value;
             const packageType = document.getElementById('calc-package').value;
 
-            let baseRate = 8.5;
-            let multiplier = 2.5;
-
+            let unitPrice = 3.20;
             if (service === 'local') {
-                baseRate = 6.0;
-                multiplier = 1.8;
+                unitPrice = 4.50; // Paper reams
             } else if (service === 'express') {
-                baseRate = 18.0;
-                multiplier = 4.2;
+                unitPrice = 5.80; // Filing binders
             }
 
-            if (packageType === 'fragile') baseRate += 5.0;
-            if (packageType === 'document') baseRate = Math.max(5.0, baseRate - 3.0);
+            let discount = 0;
+            if (packageType === 'document') discount = 0.15; // 15%
+            if (packageType === 'fragile') discount = 0.30;  // 30%
 
-            const total = (baseRate + (weight * multiplier)).toFixed(2);
+            const subtotal = qty * unitPrice;
+            const total = (subtotal * (1 - discount)).toFixed(2);
             document.getElementById('calc-price-output').innerText = `$${total}`;
         }
 
-        // Book Pickup Handler
-        function handleBookPickup(e) {
-            e.preventDefault();
-            const alertBox = document.getElementById('pickup-alert');
-            alertBox.classList.remove('hidden');
-            setTimeout(() => {
-                alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 100);
-        }
-
-        // Refresh Tracking
-        function refreshTracking() {
-            const btn = event.currentTarget;
-            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Syncing...</span>`;
-            setTimeout(() => {
-                btn.innerHTML = `<i class="fa-solid fa-rotate-right"></i> <span>Refresh</span>`;
-                alert('Live GPS signal updated: Van #42 is 1.8 miles from delivery address.');
-            }, 600);
-        }
-
-        // Download Invoice Simulation
-        function downloadInvoice(invId, trackNo, amount) {
-            const blob = new Blob([
-                `SWIFTPARCEL COURIER & DELIVERY SERVICES\n=========================================\nINVOICE: ${invId}\nTRACKING NO: ${trackNo}\nTOTAL CHARGED: ${amount}\nSTATUS: PAID IN FULL\nDATE: ${new Date().toLocaleDateString()}\n\nThank you for choosing SwiftParcel!`
-            ], { type: 'text/plain;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = `${invId}-SwiftParcel.txt`;
-            link.click();
-        }
-
-        function downloadAllInvoices() {
-            alert('Compressing all customer invoices into SwiftParcel-Billing-Q3.zip...');
-            downloadInvoice('INV-BATCH-2026', 'ALL-SHIPMENTS', '$184.70');
-        }
-
-        // Contact & Newsletter forms
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            const badge = document.getElementById('contact-success');
-            badge.classList.remove('hidden');
-            e.target.reset();
-        }
-
+        // Newsletter subscription
         function handleNewsletter(e) {
             e.preventDefault();
-            alert('Subscribed to SwiftParcel Dispatch & Service Alerts!');
+            alert('Subscribed to StationeryHub office deals, catalogue launches, and discount alerts!');
             e.target.reset();
         }
 
@@ -1153,8 +1031,7 @@
         function handlePortalLogin(e) {
             e.preventDefault();
             closeLoginModal();
-            switchDashboardTab('tracking-tab');
-            document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' });
+            window.location.href = 'coverage.html';
         }
     </script>
 </body>

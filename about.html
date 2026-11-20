@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9 1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>" type="image/svg+xml">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z'/></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>SwiftParcel - Express Logistics</title>
+    <title>Stationery & Office Supplies Store</title>
 
     <script src="tailwind.js"></script>
     <style>
-        /* --- Express Courier & Logistics Theme (Energetic Blue & Express Orange) --- */
+        /* --- Stationery & Office Supplies Theme --- */
         :root, html[data-theme='light'] {
             --color-background: #F8FAFC;
             --color-card-bg: #FFFFFF;
@@ -192,6 +192,22 @@
             visibility: visible !important;
             pointer-events: auto !important;
         }
+    
+        /* Value Cards Hover Contrast Fix */
+        .group:hover .val-icon-box-blue {
+            background-color: var(--color-accent) !important;
+            color: #FFFFFF !important;
+        }
+        .group:hover .val-icon-box-blue i {
+            color: #FFFFFF !important;
+        }
+        .group:hover .val-icon-box-orange {
+            background-color: var(--color-accent-light) !important;
+            color: #FFFFFF !important;
+        }
+        .group:hover .val-icon-box-orange i {
+            color: #FFFFFF !important;
+        }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
@@ -200,21 +216,21 @@
     <header class="sticky top-0 z-50 transition-colors duration-300 shadow-sm border-b border-border bg-card" id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[72px]">
             <!-- Logo Icon & Text -->
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-accent flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200">
-                    <i class="fa-solid fa-truck-fast text-xl"></i>
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-accent flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform duration-200">
+                    <i class="fa-solid fa-pen-nib text-sm sm:text-base"></i>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-xl font-extrabold tracking-tight text-primary-text leading-tight">
-                        Swift<span class="text-accent">Parcel</span>
+                    <span class="text-sm sm:text-base font-bold tracking-tight text-primary-text leading-tight">
+                        Stationery<span class="text-accent">Hub</span>
                     </span>
-                    <span class="text-[10px] tracking-wider uppercase font-semibold text-secondary-text">Courier & Express Delivery</span>
+                    <span class="text-[8.5px] sm:text-[9px] tracking-wider uppercase font-semibold text-secondary-text">Office & Stationery</span>
                 </div>
             </a>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden xl:flex items-center space-x-6">
-                <div class="flex space-x-6 rtl:space-x-reverse rtl:ml-6 text-primary-text font-medium items-center">
+            <!-- Desktop Centered Navigation Links -->
+            <div class="hidden xl:flex items-center justify-center flex-1 mx-6">
+                <div class="flex space-x-7 rtl:space-x-reverse text-primary-text font-medium items-center">
                     
                     <!-- Home Dropdown -->
                     <div class="dropdown-wrapper">
@@ -229,29 +245,17 @@
                     </div>
 
                     <!-- Other Nav Headings -->
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="calculator.html" class="nav-link">Rate Calculator</a>
-                    <a href="coverage.html" class="nav-link">Coverage</a>
+                    <a href="services.html" class="nav-link">Products</a>
+                    <a href="offers.html" class="nav-link">Offers</a>
+                    <a href="coverage.html" class="nav-link">Bulk Orders</a>
                     <a href="about.html" class="nav-link active text-accent font-bold">About Us</a>
                     <a href="contact.html" class="nav-link">Contact</a>
-
-                    <!-- Dashboard Dropdown -->
-                    <div class="dropdown-wrapper">
-                        <button class="nav-link flex items-center">
-                            Dashboard
-                            <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="customer.html" onclick="showDashboardView('customer')"><i class="fa-solid fa-user-gear text-accent text-xs"></i> Customer Dashboard</a>
-                            <a href="admin.html" onclick="showDashboardView('admin')"><i class="fa-solid fa-shield-halved text-accent text-xs"></i> Admin Dashboard</a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="w-px h-6 bg-border mx-3"></div>
-                
-                <!-- Quick Actions: Theme, RTL & Login Portal -->
-                <div class="flex items-center space-x-3">
+            </div>
+
+            <!-- Quick Actions: Theme, RTL & Login Portal -->
+            <div class="hidden xl:flex items-center space-x-3 shrink-0">
                     <button id="theme-toggle" title="Toggle Theme" class="p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
                         <svg class="w-5 h-5 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                         <svg class="w-5 h-5 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
@@ -267,7 +271,6 @@
                             <span>Login Portal</span>
                         </a>
                     </div>
-                </div>
             </div>
 
             <!-- Mobile Hamburger Open Button -->
@@ -286,9 +289,12 @@
             <div class="flex justify-between items-center pb-4 border-b border-border">
                 <a href="index.html" class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-lg bg-accent flex items-center justify-center text-white shadow-sm">
-                        <i class="fa-solid fa-truck-fast text-lg"></i>
+                        <i class="fa-solid fa-pen-nib text-lg"></i>
                     </div>
-                    <span class="text-lg font-bold text-primary-text">Swift<span class="text-accent">Parcel</span></span>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-bold text-primary-text leading-tight">Stationery<span class="text-accent">Hub</span></span>
+                        <span class="text-[9px] tracking-wider uppercase font-semibold text-secondary-text">Office & Stationery</span>
+                    </div>
                 </a>
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent p-2 rounded-lg">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -307,25 +313,11 @@
                     </div>
                 </div>
 
-                <a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Services</a>
-                <a href="calculator.html" class="block text-primary-text font-semibold text-lg py-2">Rate Calculator</a>
-                <a href="coverage.html" class="block text-primary-text font-semibold text-lg py-2">Delivery Coverage</a>
+                <a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Products</a>
+                <a href="offers.html" class="block text-primary-text font-semibold text-lg py-2">Offers</a>
+                <a href="coverage.html" class="block text-primary-text font-semibold text-lg py-2">Bulk Orders</a>
                 <a href="about.html" class="block text-accent font-bold text-lg py-2">About Us</a>
                 <a href="contact.html" class="block text-primary-text font-semibold text-lg py-2">Contact</a>
-
-                <!-- Mobile Dashboard Dropdown -->
-                <div>
-                    <button class="block text-primary-text font-semibold text-lg py-2 w-full text-left flex justify-between items-center" id="mobile-dashboard-toggle">
-                        Dashboard
-                        <svg class="w-4 h-4 transform transition-transform duration-200" id="dashboard-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-dashboard-menu" class="hidden pl-4 flex flex-col space-y-2 mt-1 border-l-2 border-border">
-                        <a href="customer.html" onclick="showDashboardView('customer')" class="block text-secondary-text hover:text-accent text-base py-1">Customer Dashboard</a>
-                        <a href="admin.html" onclick="showDashboardView('admin')" class="block text-secondary-text hover:text-accent text-base py-1">Admin Dashboard</a>
-                    </div>
-                </div>
             </nav>
 
             <div class="pt-4 border-t border-border mt-2 flex justify-around items-center">
@@ -360,8 +352,8 @@
              ============================================================ -->
         <section id="about-hero" class="relative min-h-[560px] lg:min-h-[640px] flex items-center justify-center overflow-hidden">
             <!-- Background Image -->
-            <img src="assets/v1.jpg"
-                alt="SwiftParcel dedicated logistics team and operations specialists"
+            <img src="assets/rtr.jpg"
+                alt="StationeryHub curated office stationery and workspace essentials"
                 class="absolute inset-0 w-full h-full object-cover" loading="eager">
 
             <!-- Premium Dark Gradient Overlay -->
@@ -369,15 +361,15 @@
 
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center text-white py-20 lg:py-24">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6" style="background-color: rgba(59,130,246,0.25); color:#93C5FD; border:1px solid rgba(147,197,253,0.35);">
-                    <i class="fa-solid fa-circle-info"></i> Delivering Trust Since 2012
+                    <i class="fa-solid fa-pen-nib"></i> Empowering Productivity Since 2012
                 </span>
 
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto">
-                    Moving Parcels. <span class="text-accent-light">Connecting People.</span>
+                    Crafting Workspaces. <span class="text-accent-light">Inspiring Ideas.</span>
                 </h1>
 
                 <p class="mt-6 text-base sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
-                    Founded with a single van and one big mission: making courier delivery dependable, transparent, and completely stress-free for businesses and individuals everywhere.
+                    Founded with a passion for exceptional tools and organized offices: delivering fine writing instruments, archival notebooks, ergonomic filing, and mill-certified paper to creators and corporations everywhere.
                 </p>
 
                 <!-- Dual Centered CTA -->
@@ -391,7 +383,7 @@
                 </div>
 
                 <!-- Breadcrumbs -->
-                <div class="mt-10 flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-300">
+                <div class="mt-10 flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-200">
                     <a href="index.html" class="hover:text-blue-300 transition">Home</a>
                     <i class="fa-solid fa-chevron-right text-[10px] opacity-60"></i>
                     <span class="text-white font-semibold">About Us</span>
@@ -413,41 +405,41 @@
                     <!-- Left Column: Story, Highlights & Milestones -->
                     <div class="lg:col-span-6 flex flex-col justify-center text-left">
                         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider w-fit">
-                            <i class="fa-solid fa-route"></i>
-                            <span>Our Journey &amp; Legacy</span>
+                            <i class="fa-solid fa-feather-pointed"></i>
+                            <span>Our Heritage &amp; Vision</span>
                         </div>
 
                         <h2 class="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text leading-tight">
-                            From One Van to a <span class="text-accent">National Network</span>
+                            From a Corner Boutique to a <span class="text-accent">Global Supply Hub</span>
                         </h2>
 
                         <p class="mt-6 text-base sm:text-lg text-secondary-text leading-relaxed font-normal">
-                            What started as a single van operating across one local postal route has evolved into an interconnected nationwide logistics network trusted by millions of senders every day.
+                            What began in 2012 as an artisanal stationery boutique dedicated to fine fountain pens and fountain-safe paper has evolved into an omnichannel supply power-house serving over 120,000 corporate desks, design studios, and institutions.
                         </p>
 
                         <p class="mt-4 text-sm sm:text-base text-secondary-text leading-relaxed font-normal">
-                            Yet our founding pledge remains untouched: treating every parcel with rapid urgency, verified chain-of-custody security, and live telemetry transparency from first mile to doorstep.
+                            Yet our founding ethos remains steadfast: curate only bleed-resistant papers, ergonomic writing tools engineered to endure, and modular organization systems that transform cluttered desks into hubs of productivity.
                         </p>
 
                         <!-- Key Pillars -->
                         <div class="mt-8 space-y-4">
                             <div class="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border shadow-sm">
                                 <div class="w-10 h-10 rounded-xl bg-accent text-white flex items-center justify-center shrink-0 shadow-md">
-                                    <i class="fa-solid fa-shield-halved text-sm"></i>
+                                    <i class="fa-solid fa-circle-check text-sm"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-sm text-primary-text">Guaranteed Integrity</h4>
-                                    <p class="text-xs text-secondary-text mt-0.5">Tamper-evident seals and photo-verified signatures at every exchange.</p>
+                                    <h4 class="font-bold text-sm text-primary-text">Mill-Certified Quality</h4>
+                                    <p class="text-xs text-secondary-text mt-0.5">Acid-free FSC papers, fade-proof archival inks, and commercial-grade heavy polymer binders.</p>
                                 </div>
                             </div>
 
                             <div class="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border shadow-sm">
                                 <div class="w-10 h-10 rounded-xl bg-accent-light text-white flex items-center justify-center shrink-0 shadow-md">
-                                    <i class="fa-solid fa-microchip text-sm"></i>
+                                    <i class="fa-solid fa-boxes-packing text-sm"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-sm text-primary-text">Proprietary Dispatch Intelligence</h4>
-                                    <p class="text-xs text-secondary-text mt-0.5">Automated route optimization cutting delivery delays by over 42%.</p>
+                                    <h4 class="font-bold text-sm text-primary-text">Rapid Wholesale Fulfillment</h4>
+                                    <p class="text-xs text-secondary-text mt-0.5">Automated warehouse palletizing with guaranteed 48-hour corporate dispatch across 50+ cities.</p>
                                 </div>
                             </div>
                         </div>
@@ -455,20 +447,20 @@
                         <!-- 4 Impact Metric Cards -->
                         <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
                             <div class="p-3.5 rounded-2xl bg-card border border-border text-center shadow-sm">
-                                <p class="text-xl sm:text-2xl font-black text-accent">180+</p>
-                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">City Hubs</p>
+                                <p class="text-xl sm:text-2xl font-black text-accent">4,500+</p>
+                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">Products</p>
                             </div>
                             <div class="p-3.5 rounded-2xl bg-card border border-border text-center shadow-sm">
-                                <p class="text-xl sm:text-2xl font-black text-accent-light">500+</p>
-                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">Team Experts</p>
+                                <p class="text-xl sm:text-2xl font-black text-accent-light">3,500+</p>
+                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">B2B Clients</p>
                             </div>
                             <div class="p-3.5 rounded-2xl bg-card border border-border text-center shadow-sm">
                                 <p class="text-xl sm:text-2xl font-black text-accent">2.4M+</p>
-                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">Deliveries</p>
+                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">Orders Sent</p>
                             </div>
                             <div class="p-3.5 rounded-2xl bg-card border border-border text-center shadow-sm">
-                                <p class="text-xl sm:text-2xl font-black text-accent-light">18</p>
-                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">Countries</p>
+                                <p class="text-xl sm:text-2xl font-black text-accent-light">99.8%</p>
+                                <p class="text-[11px] font-semibold text-secondary-text uppercase tracking-wider mt-0.5">Accuracy</p>
                             </div>
                         </div>
                     </div>
@@ -477,7 +469,7 @@
                     <div class="lg:col-span-6 relative">
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3] group">
                             <img src="assets/df.jpg"
-                                alt="SwiftParcel logistics fleet and warehouse operations" 
+                                alt="StationeryHub curated office stationery and warehouse operations" 
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                                 loading="lazy">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
@@ -489,8 +481,8 @@
                                         <i class="fa-solid fa-award"></i>
                                     </div>
                                     <div>
-                                        <p class="text-xs sm:text-sm font-bold text-white tracking-wide">Top-Rated Express Carrier</p>
-                                        <p class="text-[10px] sm:text-[11px] text-gray-300 mt-0.5 font-medium">Recognized for 99.4% on-time SLA fulfillment</p>
+                                        <p class="text-xs sm:text-sm font-bold text-white tracking-wide">Top-Rated Stationery Partner</p>
+                                        <p class="text-[10px] sm:text-[11px] text-gray-200 mt-0.5 font-medium">Recognized for premium quality &amp; on-time office fulfillment</p>
                                     </div>
                                 </div>
                                 <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-extrabold uppercase tracking-wider shrink-0">
@@ -506,7 +498,7 @@
                             </div>
                             <div class="text-left">
                                 <p class="text-base font-extrabold text-primary-text leading-none">12+ Years</p>
-                                <p class="text-[11px] text-secondary-text font-medium mt-1">Operational Excellence</p>
+                                <p class="text-[11px] text-secondary-text font-medium mt-1">Industry Excellence</p>
                             </div>
                         </div>
                     </div>
@@ -524,80 +516,79 @@
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-10">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Our Values</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">What We Stand For</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Three principles guide every decision we make and every parcel we move.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Our Core Pillars</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">What Sets Us Apart</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Six uncompromising principles that guide our product selection, vendor partnerships, and customer support.</p>
                 </div>
 
-                <!-- Values Responsive Tabs: Scrollable or wrap smoothly, centered on md/tablet and desktop -->
-                <div class="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar pb-3 mb-10 gap-2 sm:gap-3 px-1">
-                    <button type="button" onclick="filterValuesTab('all')" id="val-tab-all"
-                        class="val-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap bg-accent text-white shadow-md flex items-center gap-2">
-                        <i class="fa-solid fa-layer-group text-xs"></i>
-                        <span>All Values</span>
-                        <span class="ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-white/20 text-white">3</span>
-                    </button>
-                    <button type="button" onclick="filterValuesTab('speed')" id="val-tab-speed"
-                        class="val-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
-                        <i class="fa-solid fa-bolt text-xs text-accent"></i>
-                        <span>Uncompromised Speed</span>
-                    </button>
-                    <button type="button" onclick="filterValuesTab('transparency')" id="val-tab-transparency"
-                        class="val-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
-                        <i class="fa-solid fa-eye text-xs text-accent-light"></i>
-                        <span>Radical Transparency</span>
-                    </button>
-                    <button type="button" onclick="filterValuesTab('people')" id="val-tab-people"
-                        class="val-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
-                        <i class="fa-solid fa-heart text-xs text-accent"></i>
-                        <span>People First</span>
-                    </button>
-                </div>
+                <!-- Values Grid: 6 Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
 
-                <!-- Values Cards Container (Optimized for Mobile, Tablet md:grid-cols-3, and Desktop lg:gap-8) -->
-                <div id="values-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-5 lg:gap-8 max-w-6xl mx-auto items-stretch transition-all duration-300">
+                    <!-- Card 1 -->
+                    <div class="bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-alpha-10 text-accent flex items-center justify-center text-2xl val-icon-box-blue transition duration-300 shrink-0">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-extrabold text-primary-text">Precision &amp; Ergonomics</h3>
+                        <p class="mt-3 text-sm text-secondary-text leading-relaxed flex-1">
+                            Every pen, rollerball, mechanical pencil, and cutting tool undergoes rigorous balance and flow testing to eliminate user fatigue during work.
+                        </p>
+                    </div>
 
-                    <!-- Value 1: Uncompromised Speed -->
-                    <article data-value-type="speed" class="value-card bg-card border border-border rounded-3xl p-6 sm:p-7 md:p-6 lg:p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
-                        <div>
-                            <div class="w-14 h-14 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5 md:mb-5 lg:mb-6">
-                                <i class="fa-solid fa-bolt text-xl lg:text-2xl"></i>
-                            </div>
-                            <h3 class="text-lg md:text-lg lg:text-xl font-extrabold text-primary-text">Uncompromised Speed</h3>
-                            <p class="mt-3 md:mt-3 lg:mt-4 text-xs sm:text-sm md:text-xs lg:text-sm text-secondary-text leading-relaxed">We obsess over every minute. Faster pickups, smarter routes, and next-day delivery — without ever sacrificing safety or care.</p>
+                    <!-- Card 2 -->
+                    <div class="bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-orange-10 text-accent-light flex items-center justify-center text-2xl val-icon-box-orange transition duration-300 shrink-0">
+                            <i class="fa-solid fa-leaf"></i>
                         </div>
-                        <div class="mt-5 md:mt-5 lg:mt-6 pt-4 border-t border-border/60 text-xs font-semibold text-accent flex items-center justify-center gap-1.5">
-                            <i class="fa-solid fa-circle-check text-xs"></i> 99.8% On-Time Target
-                        </div>
-                    </article>
+                        <h3 class="mt-6 text-xl font-extrabold text-primary-text">Sustainable Paper Sourcing</h3>
+                        <p class="mt-3 text-sm text-secondary-text leading-relaxed flex-1">
+                            We partner exclusively with FSC-certified paper mills, prioritizing chlorine-free stock, plant-based non-toxic inks, and fully recyclable corrugated transport packaging.
+                        </p>
+                    </div>
 
-                    <!-- Value 2: Radical Transparency -->
-                    <article data-value-type="transparency" class="value-card bg-card border border-border rounded-3xl p-6 sm:p-7 md:p-6 lg:p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
-                        <div>
-                            <div class="w-14 h-14 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-accent-light text-white flex items-center justify-center shadow-lg mb-5 md:mb-5 lg:mb-6">
-                                <i class="fa-solid fa-eye text-xl lg:text-2xl"></i>
-                            </div>
-                            <h3 class="text-lg md:text-lg lg:text-xl font-extrabold text-primary-text">Radical Transparency</h3>
-                            <p class="mt-3 md:mt-3 lg:mt-4 text-xs sm:text-sm md:text-xs lg:text-sm text-secondary-text leading-relaxed">No hidden fees, no vague timelines, no "your parcel is delayed" excuses. Every step is tracked, priced, and shared with you.</p>
+                    <!-- Card 3 -->
+                    <div class="bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-alpha-10 text-accent flex items-center justify-center text-2xl val-icon-box-blue transition duration-300 shrink-0">
+                            <i class="fa-solid fa-folder-tree"></i>
                         </div>
-                        <div class="mt-5 md:mt-5 lg:mt-6 pt-4 border-t border-border/60 text-xs font-semibold text-accent-light flex items-center justify-center gap-1.5">
-                            <i class="fa-solid fa-circle-check text-xs"></i> Live Milestones &amp; GPS
-                        </div>
-                    </article>
+                        <h3 class="mt-6 text-xl font-extrabold text-primary-text">Organized Simplicity</h3>
+                        <p class="mt-3 text-sm text-secondary-text leading-relaxed flex-1">
+                            From color-coded lever arch files to modular desktop sorters, our filing solutions are engineered to make document organization rapid and intuitive.
+                        </p>
+                    </div>
 
-                    <!-- Value 3: People First -->
-                    <article data-value-type="people" class="value-card bg-card border border-border rounded-3xl p-6 sm:p-7 md:p-6 lg:p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
-                        <div>
-                            <div class="w-14 h-14 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5 md:mb-5 lg:mb-6">
-                                <i class="fa-solid fa-heart text-xl lg:text-2xl"></i>
-                            </div>
-                            <h3 class="text-lg md:text-lg lg:text-xl font-extrabold text-primary-text">People First</h3>
-                            <p class="mt-3 md:mt-3 lg:mt-4 text-xs sm:text-sm md:text-xs lg:text-sm text-secondary-text leading-relaxed">Behind every parcel is a customer, a courier, and a community. We invest in our team and treat every shipment like it's our own.</p>
+                    <!-- Card 4 -->
+                    <div class="bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-orange-10 text-accent-light flex items-center justify-center text-2xl val-icon-box-orange transition duration-300 shrink-0">
+                            <i class="fa-solid fa-handshake"></i>
                         </div>
-                        <div class="mt-5 md:mt-5 lg:mt-6 pt-4 border-t border-border/60 text-xs font-semibold text-accent flex items-center justify-center gap-1.5">
-                            <i class="fa-solid fa-circle-check text-xs"></i> 24/7 Dedicated Support
+                        <h3 class="mt-6 text-xl font-extrabold text-primary-text">Wholesale Transparency</h3>
+                        <p class="mt-3 text-sm text-secondary-text leading-relaxed flex-1">
+                            Clear tiered pricing with zero hidden fees, automated volume discounts, free evaluation sample kits, and convenient 30-day corporate payment terms.
+                        </p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-alpha-10 text-accent flex items-center justify-center text-2xl val-icon-box-blue transition duration-300 shrink-0">
+                            <i class="fa-solid fa-truck-fast"></i>
                         </div>
-                    </article>
+                        <h3 class="mt-6 text-xl font-extrabold text-primary-text">Rapid Desk Delivery</h3>
+                        <p class="mt-3 text-sm text-secondary-text leading-relaxed flex-1">
+                            Running out of essential paper or notebooks shouldn't halt workdays. We maintain strategic hubs for reliable same-day and 48-hour delivery nationwide.
+                        </p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-orange-10 text-accent-light flex items-center justify-center text-2xl val-icon-box-orange transition duration-300 shrink-0">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="mt-6 text-xl font-extrabold text-primary-text">Dedicated Supply Specialists</h3>
+                        <p class="mt-3 text-sm text-secondary-text leading-relaxed flex-1">
+                            Every corporate client is paired with a direct account manager who understands your exact brand specifications, paper GSM, and restock schedules.
+                        </p>
+                    </div>
 
                 </div>
             </div>
@@ -613,82 +604,72 @@
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-16">
                     <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Milestones</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Our Journey So Far</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Twelve years of growth, one parcel at a time.</p>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Our Growth Timeline</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">From a local shopfront to one of the region's largest independent stationery distributors.</p>
                 </div>
 
-                <!-- Timeline -->
+                <!-- Timeline Container -->
                 <div class="relative max-w-4xl mx-auto">
+                    <!-- Vertical Line -->
+                    <div class="hidden md:block absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-0.5 bg-border"></div>
 
-                    <!-- Center line -->
-                    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-border"></div>
+                    <div class="space-y-12 relative">
 
-                    <!-- Milestone 1 -->
-                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16">
-                        <div class="md:text-right md:pr-10 text-center">
-                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold uppercase tracking-wider mb-3">2012</span>
-                            <h3 class="text-lg font-extrabold text-primary-text">Humble Beginnings</h3>
-                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">SwiftParcel launches with one van, two couriers, and a promise: same-day delivery done right.</p>
+                        <!-- Item 1 -->
+                        <div class="relative flex flex-col md:flex-row items-center gap-8">
+                            <div class="md:w-1/2 md:text-right order-2 md:order-1">
+                                <span class="text-xs font-bold text-accent uppercase tracking-wider">2012 — The Founding</span>
+                                <h3 class="text-xl font-extrabold text-primary-text mt-1">Boutique Stationery Studio</h3>
+                                <p class="text-sm text-secondary-text mt-2">Started with a single brick-and-mortar storefront offering imported writing pens, handmade paper, and custom bookbinding services.</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm shrink-0 order-1 md:order-2 shadow-lg ring-4 ring-card z-10">
+                                '12
+                            </div>
+                            <div class="md:w-1/2 order-3 hidden md:block"></div>
                         </div>
-                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent text-white items-center justify-center shadow-lg border-4 border-hover">
-                            <i class="fa-solid fa-flag text-sm"></i>
+
+                        <!-- Item 2 -->
+                        <div class="relative flex flex-col md:flex-row items-center gap-8">
+                            <div class="md:w-1/2 order-3 md:order-1 hidden md:block"></div>
+                            <div class="w-12 h-12 rounded-full bg-accent-light text-white flex items-center justify-center font-bold text-sm shrink-0 order-1 md:order-2 shadow-lg ring-4 ring-card z-10">
+                                '16
+                            </div>
+                            <div class="md:w-1/2 md:text-left order-2 md:order-3">
+                                <span class="text-xs font-bold text-accent-light uppercase tracking-wider">2016 — B2B Expansion</span>
+                                <h3 class="text-xl font-extrabold text-primary-text mt-1">Corporate Procurement Division</h3>
+                                <p class="text-sm text-secondary-text mt-2">Launched our commercial supplies desk, supplying high-speed copy paper, custom logo binders, and desktop supplies to 500+ enterprises.</p>
+                            </div>
                         </div>
-                        <div class="md:pl-10"></div>
+
+                        <!-- Item 3 -->
+                        <div class="relative flex flex-col md:flex-row items-center gap-8">
+                            <div class="md:w-1/2 md:text-right order-2 md:order-1">
+                                <span class="text-xs font-bold text-accent uppercase tracking-wider">2020 — Digital Overhaul</span>
+                                <h3 class="text-xl font-extrabold text-primary-text mt-1">Omnichannel &amp; Automated Hubs</h3>
+                                <p class="text-sm text-secondary-text mt-2">Introduced smart automated pallet packaging, real-time RFQ estimation, and next-day office desktop replenishments across 35 metropolitan regions.</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm shrink-0 order-1 md:order-2 shadow-lg ring-4 ring-card z-10">
+                                '20
+                            </div>
+                            <div class="md:w-1/2 order-3 hidden md:block"></div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="relative flex flex-col md:flex-row items-center gap-8">
+                            <div class="md:w-1/2 order-3 md:order-1 hidden md:block"></div>
+                            <div class="w-12 h-12 rounded-full bg-accent-light text-white flex items-center justify-center font-bold text-sm shrink-0 order-1 md:order-2 shadow-lg ring-4 ring-card z-10">
+                                '26
+                            </div>
+                            <div class="md:w-1/2 md:text-left order-2 md:order-3">
+                                <span class="text-xs font-bold text-accent-light uppercase tracking-wider">2026 — Present Day</span>
+                                <h3 class="text-xl font-extrabold text-primary-text mt-1">3,500+ Institutional Partners</h3>
+                                <p class="text-sm text-secondary-text mt-2">Today StationeryHub stocks over 4,500 active catalog items with zero-carbon packaging, educational scholarships, and seamless bulk contract supply.</p>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <!-- Milestone 2 -->
-                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16">
-                        <div class="md:text-right md:pr-10 md:order-1 text-center"></div>
-                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent-light text-white items-center justify-center shadow-lg border-4 border-hover">
-                            <i class="fa-solid fa-truck text-sm"></i>
-                        </div>
-                        <div class="md:pl-10 md:order-2 text-center md:text-left">
-                            <span class="inline-block px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-extrabold uppercase tracking-wider mb-3">2016</span>
-                            <h3 class="text-lg font-extrabold text-primary-text">National Expansion</h3>
-                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">We cross 50+ cities, opening regional hubs and launching our first nationwide domestic service.</p>
-                        </div>
-                    </div>
-
-                    <!-- Milestone 3 -->
-                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16">
-                        <div class="md:text-right md:pr-10 text-center">
-                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold uppercase tracking-wider mb-3">2019</span>
-                            <h3 class="text-lg font-extrabold text-primary-text">Real-Time Tracking Launch</h3>
-                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">We roll out live GPS tracking on every parcel — a first for our industry in the region.</p>
-                        </div>
-                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent text-white items-center justify-center shadow-lg border-4 border-hover">
-                            <i class="fa-solid fa-satellite-dish text-sm"></i>
-                        </div>
-                        <div class="md:pl-10"></div>
-                    </div>
-
-                    <!-- Milestone 4 -->
-                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-10 md:mb-16">
-                        <div class="md:text-right md:pr-10 md:order-1 text-center"></div>
-                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent-light text-white items-center justify-center shadow-lg border-4 border-hover">
-                            <i class="fa-solid fa-plane text-sm"></i>
-                        </div>
-                        <div class="md:pl-10 md:order-2 text-center md:text-left">
-                            <span class="inline-block px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-extrabold uppercase tracking-wider mb-3">2022</span>
-                            <h3 class="text-lg font-extrabold text-primary-text">Going International</h3>
-                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">We extend our network to 18 countries, offering express air freight on every continent.</p>
-                        </div>
-                    </div>
-
-                    <!-- Milestone 5 -->
-                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-                        <div class="md:text-right md:pr-10 text-center">
-                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold uppercase tracking-wider mb-3">2026</span>
-                            <h3 class="text-lg font-extrabold text-primary-text">2.4M Parcels and Counting</h3>
-                            <p class="mt-2 text-sm text-secondary-text leading-relaxed">Today we serve over 12,000 businesses and individuals, with 500+ team members across 180+ cities.</p>
-                        </div>
-                        <div class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-accent text-white items-center justify-center shadow-lg border-4 border-hover">
-                            <i class="fa-solid fa-trophy text-sm"></i>
-                        </div>
-                        <div class="md:pl-10"></div>
-                    </div>
-
                 </div>
+
             </div>
         </section>
 
@@ -702,75 +683,59 @@
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-14">
                     <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Leadership</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Meet the People Behind SwiftParcel</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">A passionate team of logistics veterans, engineers, and customer champions.</p>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Meet Our Curators &amp; Leaders</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Stationery purists, logistics coordinators, and paper craft connoisseurs powering StationeryHub.</p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto items-stretch">
 
-                    <!-- Team 1 -->
-                    <article class="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                        <div class="aspect-square overflow-hidden">
-                            <img src="assets/f1.jpg"
-                                alt="CEO portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <!-- Member 1 -->
+                    <div class="bg-card border border-border rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="aspect-[4/5] overflow-hidden shrink-0">
+                            <img src="assets/4.jpg" alt="Arthur Vance - Founder & CEO" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
-                        <div class="p-5 text-center">
-                            <h3 class="font-extrabold text-primary-text text-lg">Arjun Mehta</h3>
-                            <p class="text-xs text-accent font-semibold uppercase tracking-wider mt-1">Founder &amp; CEO</p>
-                            <div class="flex justify-center gap-3 mt-4 text-secondary-text text-sm">
-                                <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter"></i></a>
-                            </div>
+                        <div class="p-6 text-center flex flex-col flex-1">
+                            <h3 class="text-lg font-extrabold text-primary-text">Arthur Vance</h3>
+                            <p class="text-xs font-semibold text-accent mt-1 h-5 flex items-center justify-center">Founder &amp; Chief Curator</p>
+                            <p class="text-xs text-secondary-text mt-3 leading-relaxed flex-1 flex items-center justify-center">Directs fine writing curation, heritage collections, and paper craft standards.</p>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- Team 2 -->
-                    <article class="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                        <div class="aspect-square overflow-hidden">
-                            <img src="assets/f2.jpg"
-                                alt="COO portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <!-- Member 2 -->
+                    <div class="bg-card border border-border rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="aspect-[4/5] overflow-hidden shrink-0">
+                            <img src="assets/1.jpg" alt="Elena Rodriguez - Head of B2B Procurement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
-                        <div class="p-5 text-center">
-                            <h3 class="font-extrabold text-primary-text text-lg">Priya Sharma</h3>
-                            <p class="text-xs text-accent font-semibold uppercase tracking-wider mt-1">Chief Operating Officer</p>
-                            <div class="flex justify-center gap-3 mt-4 text-secondary-text text-sm">
-                                <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter"></i></a>
-                            </div>
+                        <div class="p-6 text-center flex flex-col flex-1">
+                            <h3 class="text-lg font-extrabold text-primary-text">Elena Rodriguez</h3>
+                            <p class="text-xs font-semibold text-accent-light mt-1 h-5 flex items-center justify-center">Head of B2B Procurement</p>
+                            <p class="text-xs text-secondary-text mt-3 leading-relaxed flex-1 flex items-center justify-center">Oversees sustainable mill sourcing, quality standards, and bulk enterprise pricing.</p>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- Team 3 -->
-                    <article class="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                        <div class="aspect-square overflow-hidden">
-                            <img src="assets/f3.jpg"
-                                alt="CTO portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <!-- Member 3 -->
+                    <div class="bg-card border border-border rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="aspect-[4/5] overflow-hidden shrink-0">
+                            <img src="assets/2.jpg" alt="Marcus Chen - Supply Chain Director" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
-                        <div class="p-5 text-center">
-                            <h3 class="font-extrabold text-primary-text text-lg">Rahul Verma</h3>
-                            <p class="text-xs text-accent font-semibold uppercase tracking-wider mt-1">Chief Technology Officer</p>
-                            <div class="flex justify-center gap-3 mt-4 text-secondary-text text-sm">
-                                <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="hover:text-accent transition"><i class="fab fa-github"></i></a>
-                            </div>
+                        <div class="p-6 text-center flex flex-col flex-1">
+                            <h3 class="text-lg font-extrabold text-primary-text">Marcus Chen</h3>
+                            <p class="text-xs font-semibold text-accent mt-1 h-5 flex items-center justify-center">Supply Chain Director</p>
+                            <p class="text-xs text-secondary-text mt-3 leading-relaxed flex-1 flex items-center justify-center">Coordinates regional warehouse logistics and nationwide 48-hour delivery fulfillment guarantees.</p>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- Team 4 -->
-                    <article class="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                        <div class="aspect-square overflow-hidden">
-                            <img src="assets/f4.jpg"
-                                alt="Customer Success Lead portrait" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <!-- Member 4 -->
+                    <div class="bg-card border border-border rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col h-full">
+                        <div class="aspect-[4/5] overflow-hidden shrink-0">
+                            <img src="assets/3.jpg" alt="Sarah Jenkins - Head of Customer Experience" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         </div>
-                        <div class="p-5 text-center">
-                            <h3 class="font-extrabold text-primary-text text-lg">Aisha Kapoor</h3>
-                            <p class="text-xs text-accent font-semibold uppercase tracking-wider mt-1">Customer Success Lead</p>
-                            <div class="flex justify-center gap-3 mt-4 text-secondary-text text-sm">
-                                <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter"></i></a>
-                            </div>
+                        <div class="p-6 text-center flex flex-col flex-1">
+                            <h3 class="text-lg font-extrabold text-primary-text">Sarah Jenkins</h3>
+                            <p class="text-xs font-semibold text-accent-light mt-1 h-5 flex items-center justify-center">Client Relations Lead</p>
+                            <p class="text-xs text-secondary-text mt-3 leading-relaxed flex-1 flex items-center justify-center">Guides enterprise supply accounts, customer relations, and custom corporate packages.</p>
                         </div>
-                    </article>
+                    </div>
 
                 </div>
             </div>
@@ -787,39 +752,30 @@
                     <!-- Gradient background -->
                     <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 60%, var(--color-accent-light) 100%);"></div>
 
-                    <!-- Decorative circles -->
-                    <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 pointer-events-none"></div>
-                    <div class="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-white/10 pointer-events-none"></div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
 
-                    <div class="relative px-6 sm:px-12 lg:px-20 py-14 lg:py-20 text-center text-white">
+                    <div class="relative z-10 px-8 py-16 sm:px-12 sm:py-20 lg:px-16 text-center text-white">
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold uppercase tracking-wider mb-6">
+                            <i class="fa-solid fa-sparkles text-[11px]"></i> Premium Workplace Essentials
+                        </span>
 
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 border border-white/30">
-                            <i class="fa-solid fa-handshake text-2xl"></i>
-                        </div>
-
-                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight max-w-3xl mx-auto">
-                            Join the SwiftParcel Family Today
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight max-w-2xl mx-auto leading-tight">
+                            Elevate Your Team's Daily Work Experience
                         </h2>
 
-                        <p class="mt-5 text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-                            Whether you're shipping one parcel or a thousand, we'd love to help. Get in touch or book your first pickup — your first shipment is on us.
+                        <p class="mt-5 text-base sm:text-lg text-white/90 max-w-xl mx-auto leading-relaxed">
+                            Browse thousands of premium writing instruments, notebooks, desktop filing, and mill-certified paper. Get customized wholesale rates for your office.
                         </p>
 
-                        <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap xl:flex-nowrap gap-3.5 justify-center items-stretch sm:items-center max-w-lg mx-auto">
-                            <a href="#calculator" class="bg-white text-[#0B132B] hover:bg-gray-100 px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition flex-1 sm:flex-initial text-center whitespace-nowrap">
-                                <i class="fa-solid fa-rocket text-accent"></i> <span>Start Shipping Free</span>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                            <a href="services.html" class="px-8 py-4 rounded-xl font-extrabold text-sm bg-white text-[#0B132B] hover:bg-gray-100 transition shadow-xl flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-shapes"></i> Browse Catalog
                             </a>
-                            <a href="contact.html" class="border-2 border-white/80 bg-white/10 hover:bg-white hover:text-[#0B132B] px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition flex-1 sm:flex-initial text-center whitespace-nowrap">
-                                <i class="fa-solid fa-envelope"></i> <span>Contact Our Team</span>
+                            <a href="coverage.html" class="px-8 py-4 rounded-xl font-extrabold text-sm border-2 border-white/80 text-white hover:bg-white hover:text-[#0B132B] transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-boxes-stacked"></i> Bulk Orders
                             </a>
                         </div>
-
-                        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-white/90">
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> 12+ years trusted</span>
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> 500+ team members</span>
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> 2.4M+ deliveries</span>
-                        </div>
-
                     </div>
                 </div>
 
@@ -839,13 +795,13 @@
                     <i class="fa-solid fa-truck-fast"></i>
                 </div>
                 <h3 class="text-2xl font-extrabold text-primary-text">Customer Portal Login</h3>
-                <p class="text-xs text-secondary-text">Access pickup scheduling, live GPS feeds, and bills</p>
+                <p class="text-xs text-secondary-text">Access corporate discounts, order tracking, and invoices</p>
             </div>
 
             <form onsubmit="handlePortalLogin(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Account ID / Email</label>
-                    <input type="text" value="customer@swiftparcel.com" required
+                    <input type="text" value="buyer@company.com" required
                         class="w-full px-4 py-2.5 bg-background rounded-xl border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
                 </div>
                 <div>
@@ -866,83 +822,84 @@
                 </button>
             </form>
             <p class="text-center text-xs text-secondary-text">
-                Don't have a corporate courier account? <a href="#calculator" onclick="closeLoginModal()" class="text-accent font-semibold hover:underline">Register Today</a>
+                Need a wholesale corporate purchasing account? <a href="coverage.html" onclick="closeLoginModal()" class="text-accent font-semibold hover:underline">Register Today</a>
             </p>
         </div>
     </div>
 
-    <!-- MAIN FOOTER (Courier & Parcel Delivery Topic) -->
+    <!-- MAIN FOOTER (Stationery & Office Supplies Topic) -->
+    <!-- MAIN FOOTER (Stationery & Office Supplies Store) -->
     <footer id="main-footer" class="pt-16 pb-8 transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
                 
                 <!-- Brand column -->
                 <div class="lg:col-span-2 space-y-4">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md">
-                            <i class="fa-solid fa-truck-fast text-lg"></i>
+                    <a href="index.html" class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-sm">
+                            <i class="fa-solid fa-pen-nib text-sm sm:text-base"></i>
                         </div>
                         <div class="flex flex-col">
-                            <span class="text-xl font-extrabold tracking-tight text-white leading-tight">
-                                Swift<span class="text-blue-400">Parcel</span>
+                            <span class="text-sm sm:text-base font-bold tracking-tight text-white leading-tight">
+                                Stationery<span class="text-blue-400">Hub</span>
                             </span>
-                            <span class="text-[10px] tracking-wider uppercase font-semibold text-gray-400">Courier & Express Delivery</span>
+                            <span class="text-[8.5px] sm:text-[9px] tracking-wider uppercase font-semibold text-gray-400">Office & Stationery</span>
                         </div>
                     </a>
                     <p class="text-sm leading-relaxed max-w-sm text-gray-400">
-                        Pioneering reliable, time-definite door-to-door courier services. Fast parcel pickup, real-time telemetry tracking, nationwide logistics coverage, and seamless digital invoices.
+                        Your trusted one-stop destination for premium writing instruments, notebooks, desktop filing systems, copy papers, and wholesale enterprise supplies.
                     </p>
                     <div class="flex space-x-4 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-twitter text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-whatsapp text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-whatsapp text-sm"></i></a>
                     </div>
                 </div>
 
-                <!-- Shipping Services Column -->
+                <!-- Product Categories Column -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Delivery Services</h4>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Product Categories</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#services" class="footer-link">Local City Courier</a></li>
-                        <li><a href="#services" class="footer-link">Domestic Standard Shipping</a></li>
-                        <li><a href="#services" class="footer-link">Priority Express Air Cargo</a></li>
-                        <li><a href="#services" class="footer-link">Same-Day Critical Drop</a></li>
-                        <li><a href="#coverage" class="footer-link">Heavy Freight Logistics</a></li>
+                        <li><a href="services.html" class="footer-link">Writing Instruments</a></li>
+                        <li><a href="services.html" class="footer-link">Notebooks & Notepads</a></li>
+                        <li><a href="services.html" class="footer-link">Filing & Organization</a></li>
+                        <li><a href="services.html" class="footer-link">Printing & Copy Paper</a></li>
+                        <li><a href="services.html" class="footer-link">Desk Accessories</a></li>
                     </ul>
                 </div>
 
-                <!-- Quick Navigation Column -->
+                <!-- Quick Links Column -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Customer Portal</h4>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#dashboard" onclick="switchDashboardTab('book-pickup')" class="footer-link">Book Doorstep Pickup</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('tracking-tab')" class="footer-link">Live Parcel Tracking</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('history-tab')" class="footer-link">Shipment History</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('invoices-tab')" class="footer-link">Download Invoices</a></li>
-                        <li><a href="#calculator" class="footer-link">Instant Rate Calculator</a></li>
+                        <li><a href="index.html" class="footer-link">Home & Essentials</a></li>
+                        <li><a href="offers.html" class="footer-link">Special Deals & Offers</a></li>
+                        <li><a href="services.html" class="footer-link">New Arrivals</a></li>
+                        <li><a href="coverage.html" class="footer-link">Bulk & Corporate Orders</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact & Enquiries</a></li>
                     </ul>
                 </div>
 
-                <!-- Newsletter & Dispatch Alerts -->
+                <!-- Newsletter & Offers -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Courier Alerts</h4>
-                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">Subscribe for route alerts, holiday shipping schedules, and fuel surcharge updates.</p>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Store Newsletter</h4>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">Subscribe for exclusive office deals, back-to-school offers, and new catalogue alerts.</p>
                     <form onsubmit="handleNewsletter(event)" class="flex flex-col space-y-3">
-                        <input type="email" required placeholder="business@company.com" class="p-3 text-xs rounded-xl bg-gray-900 border border-gray-800 focus:outline-none focus:border-blue-500 text-white" />
-                        <button type="submit" class="btn-primary font-bold py-2.5 rounded-xl text-xs shadow-md">Subscribe to Alerts</button>
+                        <input type="email" required placeholder="office@company.com" class="p-3 text-xs rounded-xl bg-gray-900 border border-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 text-white" />
+                        <button type="submit" class="btn-primary font-bold py-2.5 rounded-xl text-xs shadow-md">Subscribe to Deals</button>
                     </form>
                 </div>
 
             </div>
 
             <!-- Bottom Copyright & Compliance -->
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-xs gap-4">
-                <div>© 2026 SwiftParcel Delivery Services Inc. All rights reserved.</div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-400 text-xs gap-4">
+                <div>© 2026 StationeryHub Supplies & Stationery Store Inc. All rights reserved.</div>
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-300">Terms of Carriage</a>
-                    <a href="#" class="hover:text-gray-300">Security & Compliance</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Corporate Sales Policy</a>
                 </div>
             </div>
         </div>
@@ -985,7 +942,6 @@
                 });
             };
             setupAccordion('mobile-homes-toggle', 'mobile-homes-menu', 'homes-icon');
-            setupAccordion('mobile-dashboard-toggle', 'mobile-dashboard-menu', 'dashboard-icon');
 
             // Theme Toggle
             const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('drawer-theme-toggle')];
@@ -1029,7 +985,7 @@
                 btnCustomer.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
 
                 heading.innerText = "Admin Fleet & Logistics Control";
-                subheading.innerText = "Monitor live courier dispatch queues, van telemetry, hub status, and daily operations revenue.";
+                subheading.innerText = "Monitor live warehouse stock levels, purchase orders, corporate discounts, and daily procurement revenue.";
                 badge.innerHTML = `<i class="fa-solid fa-shield-halved"></i> Central Operations Control`;
             } else {
                 customerContainer?.classList.remove('hidden');
@@ -1039,7 +995,7 @@
                 btnAdmin.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
 
                 heading.innerText = "Customer Dashboard";
-                subheading.innerText = "Book pickups, track parcels in real time, view shipment history, and download official invoices directly from your self-service portal.";
+                subheading.innerText = "Place replenishment orders, track pallet dispatches, access wholesale rate-cards, and download official invoices directly from your portal.";
                 badge.innerHTML = `<i class="fa-solid fa-gauge-high"></i> Customer Portal Hub`;
             }
 
@@ -1167,16 +1123,16 @@
         // Download Invoice Simulation
         function downloadInvoice(invId, trackNo, amount) {
             const blob = new Blob([
-                `SWIFTPARCEL COURIER & DELIVERY SERVICES\n=========================================\nINVOICE: ${invId}\nTRACKING NO: ${trackNo}\nTOTAL CHARGED: ${amount}\nSTATUS: PAID IN FULL\nDATE: ${new Date().toLocaleDateString()}\n\nThank you for choosing SwiftParcel!`
+                `STATIONERYHUB WHOLESALE & OFFICE SUPPLIES\n=========================================\nINVOICE: ${invId}\nTRACKING NO: ${trackNo}\nTOTAL CHARGED: ${amount}\nSTATUS: PAID IN FULL\nDATE: ${new Date().toLocaleDateString()}\n\nThank you for choosing StationeryHub!`
             ], { type: 'text/plain;charset=utf-8' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = `${invId}-SwiftParcel.txt`;
+            link.download = `${invId}-StationeryHub.txt`;
             link.click();
         }
 
         function downloadAllInvoices() {
-            alert('Compressing all customer invoices into SwiftParcel-Billing-Q3.zip...');
+            alert('Exporting all procurement invoices into StationeryHub-Billing-Q3.zip...');
             downloadInvoice('INV-BATCH-2026', 'ALL-SHIPMENTS', '$184.70');
         }
 
@@ -1190,7 +1146,7 @@
 
         function handleNewsletter(e) {
             e.preventDefault();
-            alert('Subscribed to SwiftParcel Dispatch & Service Alerts!');
+            alert('Subscribed to StationeryHub Wholesale & Office Supply Alerts!');
             e.target.reset();
         }
 

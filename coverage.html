@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9 1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>" type="image/svg+xml">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z'/></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>SwiftParcel - Express Logistics</title>
+    <title>Stationery & Office Supplies Store</title>
 
     <script src="tailwind.js"></script>
     <style>
-        /* --- Express Courier & Logistics Theme (Energetic Blue & Express Orange) --- */
+        /* --- Stationery & Office Supplies Theme --- */
         :root, html[data-theme='light'] {
             --color-background: #F8FAFC;
             --color-card-bg: #FFFFFF;
@@ -200,21 +200,21 @@
     <header class="sticky top-0 z-50 transition-colors duration-300 shadow-sm border-b border-border bg-card" id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[72px]">
             <!-- Logo Icon & Text -->
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-accent flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200">
-                    <i class="fa-solid fa-truck-fast text-xl"></i>
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-accent flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform duration-200">
+                    <i class="fa-solid fa-pen-nib text-sm sm:text-base"></i>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-xl font-extrabold tracking-tight text-primary-text leading-tight">
-                        Swift<span class="text-accent">Parcel</span>
+                    <span class="text-sm sm:text-base font-bold tracking-tight text-primary-text leading-tight">
+                        Stationery<span class="text-accent">Hub</span>
                     </span>
-                    <span class="text-[10px] tracking-wider uppercase font-semibold text-secondary-text">Courier & Express Delivery</span>
+                    <span class="text-[8.5px] sm:text-[9px] tracking-wider uppercase font-semibold text-secondary-text">Office & Stationery</span>
                 </div>
             </a>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden xl:flex items-center space-x-6">
-                <div class="flex space-x-6 rtl:space-x-reverse rtl:ml-6 text-primary-text font-medium items-center">
+            <!-- Desktop Centered Navigation Links -->
+            <div class="hidden xl:flex items-center justify-center flex-1 mx-6">
+                <div class="flex space-x-7 rtl:space-x-reverse text-primary-text font-medium items-center">
                     
                     <!-- Home Dropdown -->
                     <div class="dropdown-wrapper">
@@ -229,29 +229,17 @@
                     </div>
 
                     <!-- Other Nav Headings -->
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="calculator.html" class="nav-link">Rate Calculator</a>
-                    <a href="coverage.html" class="nav-link active text-accent font-bold">Coverage</a>
+                    <a href="services.html" class="nav-link">Products</a>
+                    <a href="offers.html" class="nav-link">Offers</a>
+                    <a href="coverage.html" class="nav-link active text-accent font-bold">Bulk Orders</a>
                     <a href="about.html" class="nav-link">About Us</a>
                     <a href="contact.html" class="nav-link">Contact</a>
-
-                    <!-- Dashboard Dropdown -->
-                    <div class="dropdown-wrapper">
-                        <button class="nav-link flex items-center">
-                            Dashboard
-                            <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="customer.html" onclick="showDashboardView('customer')"><i class="fa-solid fa-user-gear text-accent text-xs"></i> Customer Dashboard</a>
-                            <a href="admin.html" onclick="showDashboardView('admin')"><i class="fa-solid fa-shield-halved text-accent text-xs"></i> Admin Dashboard</a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="w-px h-6 bg-border mx-3"></div>
-                
-                <!-- Quick Actions: Theme, RTL & Login Portal -->
-                <div class="flex items-center space-x-3">
+            </div>
+
+            <!-- Quick Actions: Theme, RTL & Login Portal -->
+            <div class="hidden xl:flex items-center space-x-3 shrink-0">
                     <button id="theme-toggle" title="Toggle Theme" class="p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
                         <svg class="w-5 h-5 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                         <svg class="w-5 h-5 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
@@ -267,7 +255,6 @@
                             <span>Login Portal</span>
                         </a>
                     </div>
-                </div>
             </div>
 
             <!-- Mobile Hamburger Open Button -->
@@ -286,9 +273,12 @@
             <div class="flex justify-between items-center pb-4 border-b border-border">
                 <a href="index.html" class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-lg bg-accent flex items-center justify-center text-white shadow-sm">
-                        <i class="fa-solid fa-truck-fast text-lg"></i>
+                        <i class="fa-solid fa-pen-nib text-lg"></i>
                     </div>
-                    <span class="text-lg font-bold text-primary-text">Swift<span class="text-accent">Parcel</span></span>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-bold text-primary-text leading-tight">Stationery<span class="text-accent">Hub</span></span>
+                        <span class="text-[9px] tracking-wider uppercase font-semibold text-secondary-text">Office & Stationery</span>
+                    </div>
                 </a>
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent p-2 rounded-lg">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -307,25 +297,11 @@
                     </div>
                 </div>
 
-                <a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Services</a>
-                <a href="calculator.html" class="block text-primary-text font-semibold text-lg py-2">Rate Calculator</a>
-                <a href="coverage.html" class="block text-accent font-bold text-lg py-2">Delivery Coverage</a>
+                <a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Products</a>
+                <a href="offers.html" class="block text-primary-text font-semibold text-lg py-2">Offers</a>
+                <a href="coverage.html" class="block text-accent font-bold text-lg py-2">Bulk Orders</a>
                 <a href="about.html" class="block text-primary-text font-semibold text-lg py-2">About Us</a>
                 <a href="contact.html" class="block text-primary-text font-semibold text-lg py-2">Contact</a>
-
-                <!-- Mobile Dashboard Dropdown -->
-                <div>
-                    <button class="block text-primary-text font-semibold text-lg py-2 w-full text-left flex justify-between items-center" id="mobile-dashboard-toggle">
-                        Dashboard
-                        <svg class="w-4 h-4 transform transition-transform duration-200" id="dashboard-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-dashboard-menu" class="hidden pl-4 flex flex-col space-y-2 mt-1 border-l-2 border-border">
-                        <a href="customer.html" onclick="showDashboardView('customer')" class="block text-secondary-text hover:text-accent text-base py-1">Customer Dashboard</a>
-                        <a href="admin.html" onclick="showDashboardView('admin')" class="block text-secondary-text hover:text-accent text-base py-1">Admin Dashboard</a>
-                    </div>
-                </div>
             </nav>
 
             <div class="pt-4 border-t border-border mt-2 flex justify-around items-center">
@@ -351,7 +327,7 @@
         </div>
     </div>
 
-      <!-- MAIN CONTENT — COVERAGE PAGE -->
+      <!-- MAIN CONTENT — BULK & CORPORATE ORDERS PAGE -->
     <main class="flex-grow">
 
         <!-- ============================================================
@@ -360,7 +336,7 @@
              ============================================================ -->
         <section id="coverage-hero" class="relative min-h-[560px] lg:min-h-[640px] flex items-center justify-center overflow-hidden">
             <!-- Background Image -->
-            <img src="assets/rt.jpg"
+            <img src="assets/er.jpg"
                 alt="World map logistics coverage"
                 class="absolute inset-0 w-full h-full object-cover" loading="eager">
 
@@ -369,111 +345,111 @@
 
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center text-white py-20 lg:py-24">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6" style="background-color: rgba(59,130,246,0.25); color:#93C5FD; border:1px solid rgba(147,197,253,0.35);">
-                    <i class="fa-solid fa-globe"></i> Nationwide Delivery Network
+                    <i class="fa-solid fa-boxes-stacked"></i> Wholesale Procurement &amp; Enterprise Contracts
                 </span>
 
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto">
-                    We Deliver to <span class="text-accent-light">180+ Cities</span> Across the Country
+                    Corporate &amp; Institutional <span class="text-accent-light">Bulk Orders</span>
                 </h1>
 
                 <p class="mt-6 text-base sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
-                    From bustling metro hubs to remote regional towns — SwiftParcel's logistics network reaches almost everywhere, with real-time tracking on every mile.
+                    Equip your corporate branches, schools, universities, and commercial offices with volume discounts up to 40%, dedicated account reps, and customized billing terms.
                 </p>
 
                 <!-- Quick stats row -->
                 <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
                     <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl py-4 px-3 shadow-lg">
-                        <p class="text-2xl sm:text-3xl font-extrabold text-white">180+</p>
-                        <p class="text-[11px] sm:text-xs text-gray-300 uppercase tracking-wider font-semibold mt-1">Cities</p>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-white">40%</p>
+                        <p class="text-[11px] sm:text-xs text-gray-200 uppercase tracking-wider font-semibold mt-1">Max Bulk Savings</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl py-4 px-3 shadow-lg">
-                        <p class="text-2xl sm:text-3xl font-extrabold text-white">12K+</p>
-                        <p class="text-[11px] sm:text-xs text-gray-300 uppercase tracking-wider font-semibold mt-1">Pincodes</p>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-white">5,000+</p>
+                        <p class="text-[11px] sm:text-xs text-gray-200 uppercase tracking-wider font-semibold mt-1">SKUs In-Stock</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl py-4 px-3 shadow-lg">
-                        <p class="text-2xl sm:text-3xl font-extrabold text-white">95%</p>
-                        <p class="text-[11px] sm:text-xs text-gray-300 uppercase tracking-wider font-semibold mt-1">Population</p>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-white">Net-30</p>
+                        <p class="text-[11px] sm:text-xs text-gray-200 uppercase tracking-wider font-semibold mt-1">Credit Terms</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl py-4 px-3 shadow-lg">
-                        <p class="text-2xl sm:text-3xl font-extrabold text-white">24/7</p>
-                        <p class="text-[11px] sm:text-xs text-gray-300 uppercase tracking-wider font-semibold mt-1">Service</p>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-white">24h</p>
+                        <p class="text-[11px] sm:text-xs text-gray-200 uppercase tracking-wider font-semibold mt-1">RFQ Response</p>
                     </div>
                 </div>
 
                 <!-- Breadcrumbs -->
-                <div class="mt-10 flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-300">
+                <div class="mt-10 flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-200">
                     <a href="index.html" class="hover:text-blue-300 transition">Home</a>
                     <i class="fa-solid fa-chevron-right text-[10px] opacity-60"></i>
-                    <span class="text-white font-semibold">Coverage</span>
+                    <span class="text-white font-semibold">Bulk Orders</span>
                 </div>
             </div>
         </section>
 
         <!-- ============================================================
-             SECTION 2 — COVERAGE ZONES
-             Layout: 4-column zone cards with icons & descriptions
+             SECTION 2 — BULK PROCUREMENT TIERS
+             Layout: 4-column tier cards with icons & descriptions
              ============================================================ -->
         <section id="zones" class="py-20 lg:py-24 bg-background border-b border-border">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-14">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Coverage Zones</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Every Zone, Every Service</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Our network is organized into four delivery zones, each with a tailored set of services and delivery times.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Wholesale Tiers</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Tailored Bulk Order Solutions</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Whether you need 20 cartons of A4 paper or custom-branded writing kits for 1,000 employees, we have a tier designed for you.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                    <!-- Zone 1 -->
+                    <!-- Tier 1 -->
                     <article class="bg-card border border-border rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                         <div class="w-16 h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5">
-                            <i class="fa-solid fa-city text-2xl"></i>
+                            <i class="fa-solid fa-briefcase text-2xl"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-primary-text">Metro Zone</h3>
-                        <p class="mt-2 text-sm text-secondary-text leading-relaxed">Our fastest zone — inside major city limits with same-day and evening delivery options.</p>
+                        <h3 class="text-lg font-bold text-primary-text">Department Pack</h3>
+                        <p class="mt-2 text-sm text-secondary-text leading-relaxed">Ideal for branch offices and teams of 10–50 members requiring quarterly office stationery.</p>
                         <div class="mt-5 pt-5 border-t border-border space-y-2 text-xs">
-                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-bolt text-accent"></i> Same-day available</p>
-                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-clock text-accent"></i> 2–4 hour window</p>
+                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-tag text-accent"></i> 15% Wholesale Discount</p>
+                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-truck text-accent"></i> Free Standard Delivery</p>
                         </div>
                     </article>
 
-                    <!-- Zone 2 -->
+                    <!-- Tier 2 -->
                     <article class="bg-card border border-border rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                         <div class="w-16 h-16 mx-auto rounded-2xl bg-accent-light text-white flex items-center justify-center shadow-lg mb-5">
-                            <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                            <i class="fa-solid fa-school text-2xl"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-primary-text">Suburban Zone</h3>
-                        <p class="mt-2 text-sm text-secondary-text leading-relaxed">Surrounding towns and suburbs with reliable next-day and 2-day delivery coverage.</p>
+                        <h3 class="text-lg font-bold text-primary-text">Educational Institution</h3>
+                        <p class="mt-2 text-sm text-secondary-text leading-relaxed">Bulk school notebooks, drawing reams, geometry kits, and exam materials for academies and colleges.</p>
                         <div class="mt-5 pt-5 border-t border-border space-y-2 text-xs">
-                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-truck text-accent"></i> Next-day standard</p>
-                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-clock text-accent"></i> 24–48 hours</p>
+                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-tag text-accent-light"></i> 25% Institutional Discount</p>
+                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-boxes-stacked text-accent-light"></i> Staggered Term Deliveries</p>
                         </div>
                     </article>
 
-                    <!-- Zone 3 -->
+                    <!-- Tier 3 -->
                     <article class="bg-card border border-border rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                         <div class="w-16 h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5">
-                            <i class="fa-solid fa-mountain-sun text-2xl"></i>
+                            <i class="fa-solid fa-building text-2xl"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-primary-text">Regional Zone</h3>
-                        <p class="mt-2 text-sm text-secondary-text leading-relaxed">Smaller cities, towns, and semi-rural areas served through our regional hub network.</p>
+                        <h3 class="text-lg font-bold text-primary-text">Corporate Enterprise</h3>
+                        <p class="mt-2 text-sm text-secondary-text leading-relaxed">Full-scale corporate headquarters supply, pallet-load paper orders, and customized branding equipment.</p>
                         <div class="mt-5 pt-5 border-t border-border space-y-2 text-xs">
-                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-truck text-accent"></i> 2–3 day standard</p>
-                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-clock text-accent"></i> 48–72 hours</p>
+                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-tag text-accent"></i> 35% Enterprise Contract</p>
+                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-handshake text-accent"></i> Dedicated Account Rep</p>
                         </div>
                     </article>
 
-                    <!-- Zone 4 -->
+                    <!-- Tier 4 -->
                     <article class="bg-card border border-border rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                         <div class="w-16 h-16 mx-auto rounded-2xl bg-accent-light text-white flex items-center justify-center shadow-lg mb-5">
-                            <i class="fa-solid fa-tree text-2xl"></i>
+                            <i class="fa-solid fa-pen-fancy text-2xl"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-primary-text">Remote Zone</h3>
-                        <p class="mt-2 text-sm text-secondary-text leading-relaxed">Extended reach to remote communities via partner last-mile carriers and scheduled routes.</p>
+                        <h3 class="text-lg font-bold text-primary-text">Custom Swag &amp; Gifting</h3>
+                        <p class="mt-2 text-sm text-secondary-text leading-relaxed">Personalized company executive pens, leather-bound embossed journals, and branded welcome kits.</p>
                         <div class="mt-5 pt-5 border-t border-border space-y-2 text-xs">
-                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-truck text-accent"></i> 4–6 day standard</p>
-                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-clock text-accent"></i> 3–5 days</p>
+                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-stamp text-accent-light"></i> Laser Engraving &amp; Foil</p>
+                            <p class="flex items-center justify-center gap-2 text-secondary-text"><i class="fa-solid fa-box-open text-accent-light"></i> Custom Gift Packaging</p>
                         </div>
                     </article>
 
@@ -482,60 +458,60 @@
         </section>
 
         <!-- ============================================================
-             SECTION 3 — STATE-BY-STATE NETWORK
-             Layout: Compact state chips in grouped columns
+             SECTION 3 — SUPPLY DISPATCH HUBS & NETWORK
+             Layout: Compact network chips in grouped columns
              ============================================================ -->
         <section id="regions" class="py-20 lg:py-24 bg-hover border-b border-border">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-10">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Regional Network</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Where We Deliver</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Explore our regional hubs and city coverage across the country.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Fulfillment Network</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Nationwide Warehouse Hubs</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Strategically placed regional warehouses guaranteeing next-day bulk dispatch across all major economic centers.</p>
                 </div>
 
-                <!-- Where We Deliver Responsive Tabs (Scrollable on mobile, centered on tablet/desktop) -->
+                <!-- Where We Deliver Responsive Tabs -->
                 <div class="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar pb-3 mb-10 gap-2 sm:gap-2.5 px-1">
                     <button type="button" onclick="filterCoverageRegion('all')" id="cov-tab-all"
                         class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap bg-accent text-white shadow-md flex items-center gap-2">
                         <i class="fa-solid fa-layer-group text-xs"></i>
-                        <span>All Regions</span>
+                        <span>All Hubs</span>
                         <span class="ml-1 px-1.5 py-0.5 rounded-full text-[10px] bg-white/20 text-white">6</span>
                     </button>
                     <button type="button" onclick="filterCoverageRegion('north')" id="cov-tab-north"
                         class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
                         <i class="fa-solid fa-compass text-xs text-accent"></i>
-                        <span>North</span>
+                        <span>North Region</span>
                     </button>
                     <button type="button" onclick="filterCoverageRegion('west')" id="cov-tab-west"
                         class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
                         <i class="fa-solid fa-sun text-xs text-accent-light"></i>
-                        <span>West</span>
+                        <span>West Region</span>
                     </button>
                     <button type="button" onclick="filterCoverageRegion('south')" id="cov-tab-south"
                         class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
                         <i class="fa-solid fa-umbrella-beach text-xs text-accent"></i>
-                        <span>South</span>
+                        <span>South Region</span>
                     </button>
                     <button type="button" onclick="filterCoverageRegion('east')" id="cov-tab-east"
                         class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
                         <i class="fa-solid fa-water text-xs text-accent-light"></i>
-                        <span>East</span>
+                        <span>East Region</span>
                     </button>
                     <button type="button" onclick="filterCoverageRegion('central')" id="cov-tab-central"
                         class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
                         <i class="fa-solid fa-location-dot text-xs text-accent"></i>
-                        <span>Central</span>
+                        <span>Central Region</span>
                     </button>
                     <button type="button" onclick="filterCoverageRegion('international')" id="cov-tab-international"
                         class="cov-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap bg-card border border-border text-secondary-text hover:text-accent hover:border-accent flex items-center gap-2">
                         <i class="fa-solid fa-globe text-xs text-accent-light"></i>
-                        <span>International</span>
+                        <span>Export &amp; Global</span>
                     </button>
                 </div>
 
-                <!-- Regional Network Cards (Responsive: 1 col on mobile, 2 cols on tablet, 3 cols on desktop) -->
+                <!-- Regional Network Cards -->
                 <div id="coverage-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto transition-all duration-300">
 
                     <!-- North -->
@@ -546,8 +522,8 @@
                                     <i class="fa-solid fa-compass"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-extrabold text-primary-text">North Region</h3>
-                                    <p class="text-xs text-secondary-text">28 cities · 4 major hubs</p>
+                                    <h3 class="font-extrabold text-primary-text">Northern Logistics Hub</h3>
+                                    <p class="text-xs text-secondary-text">Delhi NCR Central Depot · 24h dispatch</p>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-2">
@@ -556,7 +532,7 @@
                                 <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Jaipur</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Lucknow</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Dehradun</span>
-                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+23 more</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+23 cities</span>
                             </div>
                         </div>
                     </div>
@@ -569,8 +545,8 @@
                                     <i class="fa-solid fa-sun"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-extrabold text-primary-text">West Region</h3>
-                                    <p class="text-xs text-secondary-text">34 cities · 5 major hubs</p>
+                                    <h3 class="font-extrabold text-primary-text">Western Logistics Hub</h3>
+                                    <p class="text-xs text-secondary-text">Mumbai &amp; Pune Fulfillment · Pallet facility</p>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-2">
@@ -579,7 +555,7 @@
                                 <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Ahmedabad</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Surat</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Goa</span>
-                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+29 more</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+29 cities</span>
                             </div>
                         </div>
                     </div>
@@ -592,8 +568,8 @@
                                     <i class="fa-solid fa-umbrella-beach"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-extrabold text-primary-text">South Region</h3>
-                                    <p class="text-xs text-secondary-text">42 cities · 6 major hubs</p>
+                                    <h3 class="font-extrabold text-primary-text">Southern Logistics Hub</h3>
+                                    <p class="text-xs text-secondary-text">Bengaluru Tech Park Depot · 42 corporate hubs</p>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-2">
@@ -602,7 +578,7 @@
                                 <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Hyderabad</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Kochi</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Coimbatore</span>
-                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+37 more</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+37 cities</span>
                             </div>
                         </div>
                     </div>
@@ -615,8 +591,8 @@
                                     <i class="fa-solid fa-water"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-extrabold text-primary-text">East Region</h3>
-                                    <p class="text-xs text-secondary-text">26 cities · 4 major hubs</p>
+                                    <h3 class="font-extrabold text-primary-text">Eastern Logistics Hub</h3>
+                                    <p class="text-xs text-secondary-text">Kolkata Central Warehouse · Paper depot</p>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-2">
@@ -625,7 +601,7 @@
                                 <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Patna</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Guwahati</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Ranchi</span>
-                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+21 more</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+21 cities</span>
                             </div>
                         </div>
                     </div>
@@ -638,8 +614,8 @@
                                     <i class="fa-solid fa-location-dot"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-extrabold text-primary-text">Central Region</h3>
-                                    <p class="text-xs text-secondary-text">31 cities · 4 major hubs</p>
+                                    <h3 class="font-extrabold text-primary-text">Central Logistics Hub</h3>
+                                    <p class="text-xs text-secondary-text">Indore &amp; Nagpur Multi-Modal Hub</p>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-2">
@@ -648,7 +624,7 @@
                                 <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Nagpur</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Raipur</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-xs font-semibold">Gwalior</span>
-                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+26 more</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+26 cities</span>
                             </div>
                         </div>
                     </div>
@@ -661,8 +637,8 @@
                                     <i class="fa-solid fa-globe"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-extrabold text-primary-text">International</h3>
-                                    <p class="text-xs text-secondary-text">18 countries served</p>
+                                    <h3 class="font-extrabold text-primary-text">Export &amp; Global Procurement</h3>
+                                    <p class="text-xs text-secondary-text">Cross-border bulk commercial shipments</p>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-2">
@@ -671,7 +647,7 @@
                                 <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">UAE</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Singapore</span>
                                 <span class="px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-xs font-semibold">Australia</span>
-                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+13 more</span>
+                                <span class="px-3 py-1 rounded-full bg-background text-secondary-text text-xs font-semibold border border-border">+13 countries</span>
                             </div>
                         </div>
                     </div>
@@ -681,58 +657,112 @@
         </section>
 
         <!-- ============================================================
-             SECTION 4 — COVERAGE MAP + CHECKER
-             Layout: Large image with floating pincode checker card
+             SECTION 4 — BULK ORDER QUOTE REQUEST / ENQUIRY
+             Layout: Large interactive RFQ / Quotation form with map
              ============================================================ -->
         <section id="coverage-check" class="py-20 lg:py-24 bg-background border-b border-border">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-14">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Check Your Area</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Is Your Pincode Covered?</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Enter your pincode and instantly find out if we deliver to your doorstep.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Fast RFQ</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Request a Bulk Order Quotation</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Submit your supply requirements and receive an itemized quotation with wholesale pricing within 2 business hours.</p>
                 </div>
 
-                <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
-                    <!-- Interactive Real Map (Iframe) -->
-                    <div class="lg:col-span-3 relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] border border-border bg-card">
+                    <!-- Interactive Real Map (Iframe) with Equal Height & Polish -->
+                    <div class="lg:col-span-5 flex flex-col h-full rounded-3xl overflow-hidden shadow-lg border border-border bg-card relative min-h-[420px] lg:min-h-0">
                         <iframe 
-                            title="SwiftParcel Nationwide Logistics Coverage Map"
-                            class="w-full h-full border-0"
+                            title="StationeryHub Supply Warehouse Network"
+                            class="w-full h-full flex-1 border-0 min-h-[360px] lg:min-h-full"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15551944.372551484!2d72.8776559!3d20.593684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin"
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
-                        <!-- Real-time hub indicator pill overlay -->
-                        <div class="absolute bottom-4 left-4 z-10 px-3.5 py-1.5 rounded-full bg-card/90 backdrop-blur-md border border-border shadow-md flex items-center gap-2 text-xs font-bold text-primary-text">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span>Live Regional Network Map</span>
+                        <div class="absolute bottom-4 left-4 right-4 z-10 px-4 py-2.5 rounded-2xl bg-card/95 backdrop-blur-md border border-border shadow-lg flex items-center justify-between text-xs font-bold text-primary-text">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span>National Dispatch Network</span>
+                            </div>
+                            <span class="text-[11px] font-semibold text-accent">50+ Hubs</span>
                         </div>
                     </div>
 
-                    <!-- Pincode checker -->
-                    <div class="lg:col-span-2 bg-card border border-border rounded-3xl p-6 sm:p-8 shadow-lg text-center lg:text-left">
-                        <div class="w-14 h-14 mx-auto lg:mx-0 rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5">
-                            <i class="fa-solid fa-magnifying-glass-location text-xl"></i>
+                    <!-- RFQ Enquiry Form with Equal Height Flex -->
+                    <div class="lg:col-span-7 bg-card border border-border rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg flex flex-col justify-between">
+                        <div class="w-14 h-14 rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5">
+                            <i class="fa-solid fa-file-invoice-dollar text-xl"></i>
                         </div>
 
-                        <h3 class="text-xl sm:text-2xl font-extrabold text-primary-text">Check Delivery Availability</h3>
-                        <p class="mt-3 text-sm text-secondary-text leading-relaxed">Enter your pincode to see if we deliver to your area and get an estimated delivery window.</p>
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-primary-text">Instant Corporate RFQ Form</h3>
+                        <p class="mt-2 text-sm text-secondary-text leading-relaxed">Tell us about your organization and stationery inventory needs.</p>
 
-                        <form onsubmit="event.preventDefault(); alert('Great news! We deliver to this pincode. Standard delivery: 24-48 hours.');" class="mt-6 space-y-3">
-                            <input type="text" placeholder="Enter 6-digit pincode" maxlength="6"
-                                class="w-full px-4 py-3 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent text-center">
-                            <button type="submit" class="btn-primary w-full py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-circle-check"></i> Check Coverage
+                        <form onsubmit="event.preventDefault(); alert('Thank you! Your bulk quotation request has been submitted. A dedicated corporate account manager will contact you within 2 hours.'); this.reset();" class="mt-6 space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Company / Institution Name</label>
+                                    <input type="text" required placeholder="e.g. Apex Global Corp"
+                                        class="w-full px-4 py-2.5 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Contact Person &amp; Title</label>
+                                    <input type="text" required placeholder="e.g. Sarah Jenkins (Procurement)"
+                                        class="w-full px-4 py-2.5 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Corporate Email</label>
+                                    <input type="email" required placeholder="procurement@company.com"
+                                        class="w-full px-4 py-2.5 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Phone / WhatsApp</label>
+                                    <input type="tel" required placeholder="+1 (555) 000-0000"
+                                        class="w-full px-4 py-2.5 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Primary Products Needed</label>
+                                    <select class="w-full px-4 py-2.5 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
+                                        <option>Printing &amp; Copy Paper Reams</option>
+                                        <option>Writing Instruments &amp; Pens</option>
+                                        <option>Office Filing &amp; Archival Systems</option>
+                                        <option>Complete Office Restock Package</option>
+                                        <option>Custom Branded Executive Gifting</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Expected Order Volume</label>
+                                    <select class="w-full px-4 py-2.5 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
+                                        <option>Small Bulk (50–200 Units / 10 Boxes)</option>
+                                        <option>Medium Bulk (200–1,000 Units / Half Pallet)</option>
+                                        <option>Large Enterprise (1,000+ Units / Multiple Pallets)</option>
+                                        <option>Recurring Monthly Contract</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Specific Requirements / SKU Details</label>
+                                <textarea rows="3" placeholder="Specify paper GSM, binder spine sizes, ink color breakdown, or special delivery instructions..."
+                                    class="w-full px-4 py-2.5 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary w-full py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Submit Quotation Request
                             </button>
                         </form>
 
-                        <div class="mt-6 pt-6 border-t border-border flex items-center gap-3 text-xs text-secondary-text">
-                            <i class="fa-solid fa-circle-info text-accent text-base"></i>
-                            <p>Not sure about your pincode? <a href="contact.html" class="text-accent font-semibold hover:underline">Contact our team</a></p>
+                        <div class="mt-4 pt-4 border-t border-border flex items-center gap-3 text-xs text-secondary-text">
+                            <i class="fa-solid fa-shield-halved text-accent text-base"></i>
+                            <p>All quotes are confidential and guaranteed for 30 calendar days. Need urgent assistance? Call our corporate desk at +1 (800) 555-STATIONERY.</p>
                         </div>
                     </div>
                 </div>
@@ -740,17 +770,17 @@
         </section>
 
         <!-- ============================================================
-             SECTION 5 — DELIVERY TIMELINE BY REGION
-             Layout: Horizontal timeline with image split
+             SECTION 5 — HOW BULK PROCUREMENT WORKS
+             Layout: Horizontal step timeline with image split
              ============================================================ -->
         <section id="timelines" class="py-20 lg:py-24 bg-hover border-b border-border">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-14">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Delivery Timelines</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">How Fast We Reach Each Zone</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">A quick reference for expected delivery times depending on your location.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Ordering Flow</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Simple 4-Step Bulk Ordering</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">From your initial inquiry to pallet unloading at your loading dock.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
@@ -763,10 +793,10 @@
                                 1
                             </div>
                             <div class="flex-grow text-left">
-                                <h4 class="font-bold text-primary-text">Metro Zone</h4>
-                                <p class="text-sm text-secondary-text mt-1">Booked before 2 PM → delivered same day</p>
+                                <h4 class="font-bold text-primary-text">Submit Inquiry or Purchase Order</h4>
+                                <p class="text-sm text-secondary-text mt-1">Upload your requisition list or fill out our online RFQ form.</p>
                             </div>
-                            <span class="px-3 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold whitespace-nowrap">2–4 hrs</span>
+                            <span class="px-3 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold whitespace-nowrap">&lt; 2 hrs</span>
                         </div>
 
                         <div class="bg-card border border-border rounded-2xl p-5 flex items-center gap-5 shadow-sm hover:shadow-lg transition">
@@ -774,10 +804,10 @@
                                 2
                             </div>
                             <div class="flex-grow text-left">
-                                <h4 class="font-bold text-primary-text">Suburban Zone</h4>
-                                <p class="text-sm text-secondary-text mt-1">Reliable overnight and next-business-day service</p>
+                                <h4 class="font-bold text-primary-text">Review Quote &amp; Free Samples</h4>
+                                <p class="text-sm text-secondary-text mt-1">Receive customized wholesale pricing and sample swatch packs.</p>
                             </div>
-                            <span class="px-3 py-1.5 rounded-full bg-accent-orange-10 text-accent-light text-xs font-extrabold whitespace-nowrap">24 hrs</span>
+                            <span class="px-3 py-1.5 rounded-full bg-accent-orange-10 text-accent-light text-xs font-extrabold whitespace-nowrap">Same Day</span>
                         </div>
 
                         <div class="bg-card border border-border rounded-2xl p-5 flex items-center gap-5 shadow-sm hover:shadow-lg transition">
@@ -785,10 +815,10 @@
                                 3
                             </div>
                             <div class="flex-grow text-left">
-                                <h4 class="font-bold text-primary-text">Regional Zone</h4>
-                                <p class="text-sm text-secondary-text mt-1">2–3 business days via regional hub routing</p>
+                                <h4 class="font-bold text-primary-text">Warehouse Packing &amp; Dispatch</h4>
+                                <p class="text-sm text-secondary-text mt-1">Items are palletized, wrapped in moisture-resistant film, and dispatched.</p>
                             </div>
-                            <span class="px-3 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold whitespace-nowrap">48–72 hrs</span>
+                            <span class="px-3 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-extrabold whitespace-nowrap">24 hrs</span>
                         </div>
 
                         <div class="bg-card border border-border rounded-2xl p-5 flex items-center gap-5 shadow-sm hover:shadow-lg transition">
@@ -796,10 +826,10 @@
                                 4
                             </div>
                             <div class="flex-grow text-left">
-                                <h4 class="font-bold text-primary-text">Remote Zone</h4>
-                                <p class="text-sm text-secondary-text mt-1">Extended routes via partner carriers</p>
+                                <h4 class="font-bold text-primary-text">Doorstep Delivery &amp; Invoicing</h4>
+                                <p class="text-sm text-secondary-text mt-1">Offloaded directly to your department with GST invoice &amp; net-30 terms.</p>
                             </div>
-                            <span class="px-3 py-1.5 rounded-full bg-accent-orange-10 text-accent-light text-xs font-extrabold whitespace-nowrap">3–5 days</span>
+                            <span class="px-3 py-1.5 rounded-full bg-accent-orange-10 text-accent-light text-xs font-extrabold whitespace-nowrap">Delivered</span>
                         </div>
 
                     </div>
@@ -807,27 +837,27 @@
                     <!-- Image with floating stat -->
                     <div class="relative">
                         <div class="rounded-3xl overflow-hidden shadow-xl aspect-[4/3] border border-border">
-                            <img src="assets/tt.jpg"
+                            <img src="assets/gg.jpg"
                                 alt="Delivery truck on route" class="w-full h-full object-cover" loading="lazy">
                         </div>
 
                         <div class="absolute -bottom-6 left-4 sm:left-6 bg-card border border-border rounded-2xl shadow-xl px-5 py-4 flex items-center gap-4">
                             <div class="w-11 h-11 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center">
-                                <i class="fa-solid fa-stopwatch"></i>
+                                <i class="fa-solid fa-boxes-packing"></i>
                             </div>
                             <div class="text-left">
-                                <p class="text-sm font-extrabold text-primary-text leading-none">99.2%</p>
-                                <p class="text-xs text-secondary-text mt-1">On-time delivery</p>
+                                <p class="text-sm font-extrabold text-primary-text leading-none">99.8%</p>
+                                <p class="text-xs text-secondary-text mt-1">Order accuracy rate</p>
                             </div>
                         </div>
 
                         <div class="hidden sm:flex absolute -top-4 -right-4 bg-card border border-border rounded-2xl shadow-xl px-4 py-3 items-center gap-3">
                             <div class="w-10 h-10 rounded-xl bg-accent-light text-white flex items-center justify-center">
-                                <i class="fa-solid fa-truck-fast"></i>
+                                <i class="fa-solid fa-building-circle-check"></i>
                             </div>
                             <div class="text-left">
-                                <p class="text-sm font-extrabold text-primary-text leading-none">180+</p>
-                                <p class="text-[11px] text-secondary-text mt-1">Cities reached</p>
+                                <p class="text-sm font-extrabold text-primary-text leading-none">3,500+</p>
+                                <p class="text-[11px] text-secondary-text mt-1">Corporate clients</p>
                             </div>
                         </div>
                     </div>
@@ -850,39 +880,39 @@
                         <div class="lg:col-span-7 p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-center text-center lg:text-left bg-card z-10">
                             <div>
                                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
-                                    <i class="fa-solid fa-earth-americas text-[11px]"></i> Coverage Nationwide
+                                    <i class="fa-solid fa-handshake text-[11px]"></i> Partnership &amp; Supplies
                                 </span>
                             </div>
 
                             <h2 class="mt-4 text-3xl sm:text-4xl lg:text-[40px] font-extrabold tracking-tight text-primary-text leading-[1.18]">
-                                Wherever You Are, <span class="text-accent">We'll Reach You</span>
+                                Optimize Your Office <span class="text-accent">Procurement Budget</span>
                             </h2>
 
                             <p class="mt-4 text-sm sm:text-base text-secondary-text leading-relaxed max-w-lg mx-auto lg:mx-0">
-                                With 180+ cities and 12,000+ pincodes covered, SwiftParcel connects every corner of the country — and 18 countries abroad — right to your doorstep.
+                                Connect with our dedicated B2B sales team today to setup recurring restock schedules, customized pricing sheets, and unified enterprise billing.
                             </p>
 
                             <!-- CTA Buttons -->
                             <div class="mt-7 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start items-stretch sm:items-center">
-                                <a href="calculator.html" class="btn-primary px-6 py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2 hover:shadow-lg transition">
-                                    <i class="fa-solid fa-calculator text-xs"></i> <span>Get Instant Quote</span>
+                                <a href="#coverage-check" class="btn-primary px-6 py-3 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2 hover:shadow-lg transition">
+                                    <i class="fa-solid fa-file-invoice text-xs"></i> <span>Get Bulk Quote</span>
                                 </a>
                                 <a href="contact.html" class="btn-outline px-6 py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition">
-                                    <i class="fa-solid fa-headset text-xs"></i> <span>Contact Support</span>
+                                    <i class="fa-solid fa-headset text-xs"></i> <span>Speak to Sales Rep</span>
                                 </a>
                             </div>
 
                             <!-- Highlights Checkmarks -->
                             <div class="mt-7 pt-6 border-t border-border/70 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs font-medium text-secondary-text">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-accent text-xs"></i> 12,000+ pincodes</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-accent text-xs"></i> 18 countries</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-accent text-xs"></i> 24/7 dispatch</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-accent text-xs"></i> Free sample swatches</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-accent text-xs"></i> 30-day net terms</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-accent text-xs"></i> Dedicated account rep</span>
                             </div>
                         </div>
 
                         <!-- Image side -->
                         <div class="lg:col-span-5 relative min-h-[260px] sm:min-h-[320px] lg:min-h-full overflow-hidden order-first lg:order-last">
-                            <img src="assets/tt2.jpg"
+                            <img src="assets/df.jpg"
                                 alt="Express delivery truck on highway"
                                 class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy">
                             <!-- Subtle left overlay gradient on desktop for smooth transition into card -->
@@ -908,13 +938,13 @@
                     <i class="fa-solid fa-truck-fast"></i>
                 </div>
                 <h3 class="text-2xl font-extrabold text-primary-text">Customer Portal Login</h3>
-                <p class="text-xs text-secondary-text">Access pickup scheduling, live GPS feeds, and bills</p>
+                <p class="text-xs text-secondary-text">Access corporate discounts, order tracking, and invoices</p>
             </div>
 
             <form onsubmit="handlePortalLogin(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Account ID / Email</label>
-                    <input type="text" value="customer@swiftparcel.com" required
+                    <input type="text" value="buyer@company.com" required
                         class="w-full px-4 py-2.5 bg-background rounded-xl border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
                 </div>
                 <div>
@@ -935,83 +965,84 @@
                 </button>
             </form>
             <p class="text-center text-xs text-secondary-text">
-                Don't have a corporate courier account? <a href="#calculator" onclick="closeLoginModal()" class="text-accent font-semibold hover:underline">Register Today</a>
+                Need a wholesale corporate purchasing account? <a href="#coverage-check" onclick="closeLoginModal()" class="text-accent font-semibold hover:underline">Register Today</a>
             </p>
         </div>
     </div>
 
-    <!-- MAIN FOOTER (Courier & Parcel Delivery Topic) -->
+    <!-- MAIN FOOTER (Stationery & Office Supplies Topic) -->
+    <!-- MAIN FOOTER (Stationery & Office Supplies Store) -->
     <footer id="main-footer" class="pt-16 pb-8 transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
                 
                 <!-- Brand column -->
                 <div class="lg:col-span-2 space-y-4">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md">
-                            <i class="fa-solid fa-truck-fast text-lg"></i>
+                    <a href="index.html" class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-sm">
+                            <i class="fa-solid fa-pen-nib text-sm sm:text-base"></i>
                         </div>
                         <div class="flex flex-col">
-                            <span class="text-xl font-extrabold tracking-tight text-white leading-tight">
-                                Swift<span class="text-blue-400">Parcel</span>
+                            <span class="text-sm sm:text-base font-bold tracking-tight text-white leading-tight">
+                                Stationery<span class="text-blue-400">Hub</span>
                             </span>
-                            <span class="text-[10px] tracking-wider uppercase font-semibold text-gray-400">Courier & Express Delivery</span>
+                            <span class="text-[8.5px] sm:text-[9px] tracking-wider uppercase font-semibold text-gray-400">Office & Stationery</span>
                         </div>
                     </a>
                     <p class="text-sm leading-relaxed max-w-sm text-gray-400">
-                        Pioneering reliable, time-definite door-to-door courier services. Fast parcel pickup, real-time telemetry tracking, nationwide logistics coverage, and seamless digital invoices.
+                        Your trusted one-stop destination for premium writing instruments, notebooks, desktop filing systems, copy papers, and wholesale enterprise supplies.
                     </p>
                     <div class="flex space-x-4 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-twitter text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-whatsapp text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-whatsapp text-sm"></i></a>
                     </div>
                 </div>
 
-                <!-- Shipping Services Column -->
+                <!-- Product Categories Column -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Delivery Services</h4>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Product Categories</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#services" class="footer-link">Local City Courier</a></li>
-                        <li><a href="#services" class="footer-link">Domestic Standard Shipping</a></li>
-                        <li><a href="#services" class="footer-link">Priority Express Air Cargo</a></li>
-                        <li><a href="#services" class="footer-link">Same-Day Critical Drop</a></li>
-                        <li><a href="#coverage" class="footer-link">Heavy Freight Logistics</a></li>
+                        <li><a href="services.html" class="footer-link">Writing Instruments</a></li>
+                        <li><a href="services.html" class="footer-link">Notebooks & Notepads</a></li>
+                        <li><a href="services.html" class="footer-link">Filing & Organization</a></li>
+                        <li><a href="services.html" class="footer-link">Printing & Copy Paper</a></li>
+                        <li><a href="services.html" class="footer-link">Desk Accessories</a></li>
                     </ul>
                 </div>
 
-                <!-- Quick Navigation Column -->
+                <!-- Quick Links Column -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Customer Portal</h4>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#dashboard" onclick="switchDashboardTab('book-pickup')" class="footer-link">Book Doorstep Pickup</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('tracking-tab')" class="footer-link">Live Parcel Tracking</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('history-tab')" class="footer-link">Shipment History</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('invoices-tab')" class="footer-link">Download Invoices</a></li>
-                        <li><a href="#calculator" class="footer-link">Instant Rate Calculator</a></li>
+                        <li><a href="index.html" class="footer-link">Home & Essentials</a></li>
+                        <li><a href="offers.html" class="footer-link">Special Deals & Offers</a></li>
+                        <li><a href="services.html" class="footer-link">New Arrivals</a></li>
+                        <li><a href="coverage.html" class="footer-link">Bulk & Corporate Orders</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact & Enquiries</a></li>
                     </ul>
                 </div>
 
-                <!-- Newsletter & Dispatch Alerts -->
+                <!-- Newsletter & Offers -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Courier Alerts</h4>
-                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">Subscribe for route alerts, holiday shipping schedules, and fuel surcharge updates.</p>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Store Newsletter</h4>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">Subscribe for exclusive office deals, back-to-school offers, and new catalogue alerts.</p>
                     <form onsubmit="handleNewsletter(event)" class="flex flex-col space-y-3">
-                        <input type="email" required placeholder="business@company.com" class="p-3 text-xs rounded-xl bg-gray-900 border border-gray-800 focus:outline-none focus:border-blue-500 text-white" />
-                        <button type="submit" class="btn-primary font-bold py-2.5 rounded-xl text-xs shadow-md">Subscribe to Alerts</button>
+                        <input type="email" required placeholder="office@company.com" class="p-3 text-xs rounded-xl bg-gray-900 border border-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 text-white" />
+                        <button type="submit" class="btn-primary font-bold py-2.5 rounded-xl text-xs shadow-md">Subscribe to Deals</button>
                     </form>
                 </div>
 
             </div>
 
             <!-- Bottom Copyright & Compliance -->
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-xs gap-4">
-                <div>© 2026 SwiftParcel Delivery Services Inc. All rights reserved.</div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-400 text-xs gap-4">
+                <div>© 2026 StationeryHub Supplies & Stationery Store Inc. All rights reserved.</div>
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-300">Terms of Carriage</a>
-                    <a href="#" class="hover:text-gray-300">Security & Compliance</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Corporate Sales Policy</a>
                 </div>
             </div>
         </div>
@@ -1054,7 +1085,6 @@
                 });
             };
             setupAccordion('mobile-homes-toggle', 'mobile-homes-menu', 'homes-icon');
-            setupAccordion('mobile-dashboard-toggle', 'mobile-dashboard-menu', 'dashboard-icon');
 
             // Theme Toggle
             const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('drawer-theme-toggle')];
@@ -1098,7 +1128,7 @@
                 btnCustomer.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
 
                 heading.innerText = "Admin Fleet & Logistics Control";
-                subheading.innerText = "Monitor live courier dispatch queues, van telemetry, hub status, and daily operations revenue.";
+                subheading.innerText = "Monitor live warehouse stock levels, purchase orders, corporate discounts, and daily procurement revenue.";
                 badge.innerHTML = `<i class="fa-solid fa-shield-halved"></i> Central Operations Control`;
             } else {
                 customerContainer?.classList.remove('hidden');
@@ -1108,7 +1138,7 @@
                 btnAdmin.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
 
                 heading.innerText = "Customer Dashboard";
-                subheading.innerText = "Book pickups, track parcels in real time, view shipment history, and download official invoices directly from your self-service portal.";
+                subheading.innerText = "Place replenishment orders, track pallet dispatches, access wholesale rate-cards, and download official invoices directly from your portal.";
                 badge.innerHTML = `<i class="fa-solid fa-gauge-high"></i> Customer Portal Hub`;
             }
 
@@ -1236,16 +1266,16 @@
         // Download Invoice Simulation
         function downloadInvoice(invId, trackNo, amount) {
             const blob = new Blob([
-                `SWIFTPARCEL COURIER & DELIVERY SERVICES\n=========================================\nINVOICE: ${invId}\nTRACKING NO: ${trackNo}\nTOTAL CHARGED: ${amount}\nSTATUS: PAID IN FULL\nDATE: ${new Date().toLocaleDateString()}\n\nThank you for choosing SwiftParcel!`
+                `STATIONERYHUB WHOLESALE & OFFICE SUPPLIES\n=========================================\nINVOICE: ${invId}\nTRACKING NO: ${trackNo}\nTOTAL CHARGED: ${amount}\nSTATUS: PAID IN FULL\nDATE: ${new Date().toLocaleDateString()}\n\nThank you for choosing StationeryHub!`
             ], { type: 'text/plain;charset=utf-8' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = `${invId}-SwiftParcel.txt`;
+            link.download = `${invId}-StationeryHub.txt`;
             link.click();
         }
 
         function downloadAllInvoices() {
-            alert('Compressing all customer invoices into SwiftParcel-Billing-Q3.zip...');
+            alert('Exporting all procurement invoices into StationeryHub-Billing-Q3.zip...');
             downloadInvoice('INV-BATCH-2026', 'ALL-SHIPMENTS', '$184.70');
         }
 
@@ -1259,7 +1289,7 @@
 
         function handleNewsletter(e) {
             e.preventDefault();
-            alert('Subscribed to SwiftParcel Dispatch & Service Alerts!');
+            alert('Subscribed to StationeryHub Wholesale & Office Supply Alerts!');
             e.target.reset();
         }
 

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9 1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>" type="image/svg+xml">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><path d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z'/></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>SwiftParcel - Express Logistics</title>
+    <title>Stationery & Office Supplies Store</title>
 
     <script src="tailwind.js"></script>
     <style>
-        /* --- Express Courier & Logistics Theme (Energetic Blue & Express Orange) --- */
+        /* --- Stationery & Office Supplies Theme --- */
         :root, html[data-theme='light'] {
             --color-background: #F8FAFC;
             --color-card-bg: #FFFFFF;
@@ -192,6 +192,22 @@
             visibility: visible !important;
             pointer-events: auto !important;
         }
+    
+        /* Department Cards Hover Contrast Fix */
+        .group:hover .val-icon-box-blue {
+            background-color: var(--color-accent) !important;
+            color: #FFFFFF !important;
+        }
+        .group:hover .val-icon-box-blue i {
+            color: #FFFFFF !important;
+        }
+        .group:hover .val-icon-box-orange {
+            background-color: var(--color-accent-light) !important;
+            color: #FFFFFF !important;
+        }
+        .group:hover .val-icon-box-orange i {
+            color: #FFFFFF !important;
+        }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
@@ -200,21 +216,21 @@
     <header class="sticky top-0 z-50 transition-colors duration-300 shadow-sm border-b border-border bg-card" id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[72px]">
             <!-- Logo Icon & Text -->
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-accent flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-200">
-                    <i class="fa-solid fa-truck-fast text-xl"></i>
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-accent flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform duration-200">
+                    <i class="fa-solid fa-pen-nib text-sm sm:text-base"></i>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-xl font-extrabold tracking-tight text-primary-text leading-tight">
-                        Swift<span class="text-accent">Parcel</span>
+                    <span class="text-sm sm:text-base font-bold tracking-tight text-primary-text leading-tight">
+                        Stationery<span class="text-accent">Hub</span>
                     </span>
-                    <span class="text-[10px] tracking-wider uppercase font-semibold text-secondary-text">Courier & Express Delivery</span>
+                    <span class="text-[8.5px] sm:text-[9px] tracking-wider uppercase font-semibold text-secondary-text">Office & Stationery</span>
                 </div>
             </a>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden xl:flex items-center space-x-6">
-                <div class="flex space-x-6 rtl:space-x-reverse rtl:ml-6 text-primary-text font-medium items-center">
+            <!-- Desktop Centered Navigation Links -->
+            <div class="hidden xl:flex items-center justify-center flex-1 mx-6">
+                <div class="flex space-x-7 rtl:space-x-reverse text-primary-text font-medium items-center">
                     
                     <!-- Home Dropdown -->
                     <div class="dropdown-wrapper">
@@ -229,29 +245,17 @@
                     </div>
 
                     <!-- Other Nav Headings -->
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="calculator.html" class="nav-link">Rate Calculator</a>
-                    <a href="coverage.html" class="nav-link">Coverage</a>
+                    <a href="services.html" class="nav-link">Products</a>
+                    <a href="offers.html" class="nav-link">Offers</a>
+                    <a href="coverage.html" class="nav-link">Bulk Orders</a>
                     <a href="about.html" class="nav-link">About Us</a>
                     <a href="contact.html" class="nav-link active text-accent font-bold">Contact</a>
-
-                    <!-- Dashboard Dropdown -->
-                    <div class="dropdown-wrapper">
-                        <button class="nav-link flex items-center">
-                            Dashboard
-                            <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="customer.html" onclick="showDashboardView('customer')"><i class="fa-solid fa-user-gear text-accent text-xs"></i> Customer Dashboard</a>
-                            <a href="admin.html" onclick="showDashboardView('admin')"><i class="fa-solid fa-shield-halved text-accent text-xs"></i> Admin Dashboard</a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="w-px h-6 bg-border mx-3"></div>
-                
-                <!-- Quick Actions: Theme, RTL & Login Portal -->
-                <div class="flex items-center space-x-3">
+            </div>
+
+            <!-- Quick Actions: Theme, RTL & Login Portal -->
+            <div class="hidden xl:flex items-center space-x-3 shrink-0">
                     <button id="theme-toggle" title="Toggle Theme" class="p-2 rounded-xl border border-border text-primary-text hover:text-accent hover:bg-hover transition duration-200">
                         <svg class="w-5 h-5 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                         <svg class="w-5 h-5 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
@@ -267,7 +271,6 @@
                             <span>Login Portal</span>
                         </a>
                     </div>
-                </div>
             </div>
 
             <!-- Mobile Hamburger Open Button -->
@@ -286,9 +289,12 @@
             <div class="flex justify-between items-center pb-4 border-b border-border">
                 <a href="index.html" class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-lg bg-accent flex items-center justify-center text-white shadow-sm">
-                        <i class="fa-solid fa-truck-fast text-lg"></i>
+                        <i class="fa-solid fa-pen-nib text-lg"></i>
                     </div>
-                    <span class="text-lg font-bold text-primary-text">Swift<span class="text-accent">Parcel</span></span>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-bold text-primary-text leading-tight">Stationery<span class="text-accent">Hub</span></span>
+                        <span class="text-[9px] tracking-wider uppercase font-semibold text-secondary-text">Office & Stationery</span>
+                    </div>
                 </a>
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent p-2 rounded-lg">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -307,25 +313,11 @@
                     </div>
                 </div>
 
-                <a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Services</a>
-                <a href="calculator.html" class="block text-primary-text font-semibold text-lg py-2">Rate Calculator</a>
-                <a href="coverage.html" class="block text-primary-text font-semibold text-lg py-2">Delivery Coverage</a>
+                <a href="services.html" class="block text-primary-text font-semibold text-lg py-2">Products</a>
+                <a href="offers.html" class="block text-primary-text font-semibold text-lg py-2">Offers</a>
+                <a href="coverage.html" class="block text-primary-text font-semibold text-lg py-2">Bulk Orders</a>
                 <a href="about.html" class="block text-primary-text font-semibold text-lg py-2">About Us</a>
                 <a href="contact.html" class="block text-accent font-bold text-lg py-2">Contact</a>
-
-                <!-- Mobile Dashboard Dropdown -->
-                <div>
-                    <button class="block text-primary-text font-semibold text-lg py-2 w-full text-left flex justify-between items-center" id="mobile-dashboard-toggle">
-                        Dashboard
-                        <svg class="w-4 h-4 transform transition-transform duration-200" id="dashboard-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-dashboard-menu" class="hidden pl-4 flex flex-col space-y-2 mt-1 border-l-2 border-border">
-                        <a href="customer.html" onclick="showDashboardView('customer')" class="block text-secondary-text hover:text-accent text-base py-1">Customer Dashboard</a>
-                        <a href="admin.html" onclick="showDashboardView('admin')" class="block text-secondary-text hover:text-accent text-base py-1">Admin Dashboard</a>
-                    </div>
-                </div>
             </nav>
 
             <div class="pt-4 border-t border-border mt-2 flex justify-around items-center">
@@ -361,7 +353,7 @@
         <section id="contact-hero" class="relative min-h-[560px] lg:min-h-[640px] flex items-center justify-center overflow-hidden">
             <!-- Background Image -->
             <img src="assets/rr.jpg"
-                alt="24/7 dedicated courier customer support team"
+                alt="StationeryHub corporate customer support and order enquiry desk"
                 class="absolute inset-0 w-full h-full object-cover" loading="eager">
 
             <!-- Premium Dark Gradient Overlay -->
@@ -369,42 +361,29 @@
 
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative text-center text-white py-20 lg:py-24">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6" style="background-color: rgba(59,130,246,0.25); color:#93C5FD; border:1px solid rgba(147,197,253,0.35);">
-                    <i class="fa-solid fa-headset"></i> 24/7 Priority Logistics Assistance
+                    <i class="fa-solid fa-headset"></i> We're Here to Help
                 </span>
 
                 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto">
-                    We'd Love to <span class="text-accent-light">Hear From You</span>
+                    Let's Connect &amp; <span class="text-accent-light">Equip Your Office</span>
                 </h1>
 
                 <p class="mt-6 text-base sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
-                    Have questions about pickup timings, corporate freight rates, or parcel telemetry? Our logistics coordinators are standing by 24/7 to help you.
+                    Have questions about paper GSM specs, custom notebook embossing, or corporate bulk pricing? Reach out to our dedicated stationery specialists today.
                 </p>
 
-                <!-- Centered Contact Channels Row -->
-                <div class="mt-8 flex flex-wrap justify-center gap-4 max-w-xl mx-auto">
-                    <a href="tel:+18005551234" class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-3.5 flex items-center gap-3 hover:bg-white/20 transition shadow-lg">
-                        <div class="w-9 h-9 rounded-xl bg-blue-500 text-white flex items-center justify-center text-sm">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div class="text-left">
-                            <p class="text-[10px] text-gray-300 uppercase tracking-wider font-semibold">Toll-Free Dispatch</p>
-                            <p class="text-sm font-bold text-white">+1 (800) 555-1234</p>
-                        </div>
+                <!-- Dual Centered CTA -->
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+                    <a href="#contact-form-section" class="btn-orange px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-envelope"></i> Send an Enquiry
                     </a>
-
-                    <a href="mailto:hello@swiftparcel.com" class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-3.5 flex items-center gap-3 hover:bg-white/20 transition shadow-lg">
-                        <div class="w-9 h-9 rounded-xl bg-orange-500 text-white flex items-center justify-center text-sm">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div class="text-left">
-                            <p class="text-[10px] text-gray-300 uppercase tracking-wider font-semibold">Email Support</p>
-                            <p class="text-sm font-bold text-white">hello@swiftparcel.com</p>
-                        </div>
+                    <a href="tel:+18005551234" class="px-7 py-3.5 rounded-xl font-bold text-sm border-2 border-white/70 text-white hover:bg-white hover:text-[#0B132B] transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone"></i> +1 (800) 555-1234
                     </a>
                 </div>
 
                 <!-- Breadcrumbs -->
-                <div class="mt-10 flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-300">
+                <div class="mt-10 flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-200">
                     <a href="index.html" class="hover:text-blue-300 transition">Home</a>
                     <i class="fa-solid fa-chevron-right text-[10px] opacity-60"></i>
                     <span class="text-white font-semibold">Contact Us</span>
@@ -422,10 +401,10 @@
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-10 sm:mb-14">
                     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">
-                        <i class="fa-solid fa-paper-plane text-[10px]"></i> Send a Message
+                        <i class="fa-solid fa-paper-plane text-[10px]"></i> Send an Enquiry
                     </span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Let's Talk About Your Shipment</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Fill out the form below and our team will get back to you as soon as possible.</p>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Let's Discuss Your Supply Needs</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Fill out the enquiry form below and our stationery consulting team will respond within 2 business hours.</p>
                 </div>
 
                 <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -438,7 +417,7 @@
                                 <div>
                                     <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Full Name</label>
                                     <div class="relative">
-                                        <input type="text" required placeholder="John Doe"
+                                        <input type="text" required placeholder="Sarah Jenkins"
                                             class="w-full pl-4 pr-10 py-3 rounded-xl bg-background border border-border text-sm text-primary-text placeholder-secondary-text/60 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all">
                                         <i class="fa-regular fa-user absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary-text/50 text-sm"></i>
                                     </div>
@@ -446,7 +425,7 @@
                                 <div>
                                     <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Email Address</label>
                                     <div class="relative">
-                                        <input type="email" required placeholder="you@example.com"
+                                        <input type="email" required placeholder="sarah@company.com"
                                             class="w-full pl-4 pr-10 py-3 rounded-xl bg-background border border-border text-sm text-primary-text placeholder-secondary-text/60 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all">
                                         <i class="fa-regular fa-envelope absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary-text/50 text-sm"></i>
                                     </div>
@@ -457,20 +436,21 @@
                                 <div>
                                     <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Phone Number</label>
                                     <div class="relative">
-                                        <input type="tel" placeholder="+1 (555) 000-0000"
+                                        <input type="tel" placeholder="+1 (555) 019-2834"
                                             class="w-full pl-4 pr-10 py-3 rounded-xl bg-background border border-border text-sm text-primary-text placeholder-secondary-text/60 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all">
                                         <i class="fa-solid fa-phone absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary-text/50 text-sm"></i>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Subject</label>
+                                    <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Enquiry Category</label>
                                     <div class="relative">
                                         <select class="w-full pl-4 pr-10 py-3 rounded-xl bg-background border border-border text-sm text-primary-text focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all appearance-none cursor-pointer">
-                                            <option>General Enquiry</option>
-                                            <option>Shipping Quote</option>
-                                            <option>Track My Parcel</option>
-                                            <option>Business Partnership</option>
-                                            <option>Complaint / Feedback</option>
+                                            <option>General Stationery Enquiry</option>
+                                            <option>Bulk Order &amp; Quotation</option>
+                                            <option>Writing Instruments &amp; Inks</option>
+                                            <option>Printing Paper &amp; Pallet Supplies</option>
+                                            <option>Filing &amp; Archival Storage</option>
+                                            <option>Custom Corporate Branding &amp; Gifting</option>
                                         </select>
                                         <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary-text/60 text-xs pointer-events-none"></i>
                                     </div>
@@ -478,18 +458,18 @@
                             </div>
 
                             <div>
-                                <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Message</label>
-                                <textarea required rows="5" placeholder="Tell us how we can help…"
+                                <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Message &amp; Specifications</label>
+                                <textarea required rows="5" placeholder="Specify product models, estimated quantities, preferred delivery timeline, or request free sample kits…"
                                     class="w-full p-4 rounded-xl bg-background border border-border text-sm text-primary-text placeholder-secondary-text/60 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all resize-none"></textarea>
                             </div>
 
                             <button type="submit" class="btn-primary w-full py-3.5 rounded-xl font-bold text-sm shadow-md flex items-center justify-center gap-2 hover:shadow-lg transition-all">
-                                <i class="fa-solid fa-paper-plane text-xs"></i> <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane text-xs"></i> <span>Submit Enquiry</span>
                             </button>
 
                             <!-- Success badge (toggled by handleContactSubmit) -->
                             <div id="contact-success" class="hidden text-center p-3 rounded-xl bg-accent-alpha-10 text-accent text-sm font-semibold border border-accent/20 animate-fade-in">
-                                <i class="fa-solid fa-circle-check mr-1.5"></i> Message sent successfully! Our logistics team will reply within 2 hours.
+                                <i class="fa-solid fa-circle-check mr-1.5"></i> Enquiry submitted successfully! Our stationery procurement specialist will get in touch shortly.
                             </div>
 
                             <!-- Dedicated Quick Support & Reassurance Card (Fills bottom space neatly) -->
@@ -500,14 +480,14 @@
                                             <i class="fa-solid fa-shield-halved"></i>
                                         </div>
                                         <div>
-                                            <h5 class="text-xs font-bold text-primary-text uppercase tracking-wider">Fast Courier Response</h5>
-                                            <p class="text-xs text-secondary-text mt-0.5">Average dispatch callback in &lt; 15 minutes</p>
+                                            <h5 class="text-xs font-bold text-primary-text uppercase tracking-wider">Fast Corporate Callback</h5>
+                                            <p class="text-xs text-secondary-text mt-0.5">Average consultation response in &lt; 30 minutes</p>
                                         </div>
                                     </div>
                                     <div class="flex items-center gap-2 text-xs font-bold text-accent self-stretch sm:self-auto justify-end">
                                         <a href="tel:+18005551234" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border hover:border-accent transition text-primary-text hover:text-accent shadow-xs">
                                             <i class="fa-solid fa-phone text-[10px] text-accent"></i>
-                                            <span>Urgent: +1 (800) 555-1234</span>
+                                            <span>Direct Desk: +1 (800) 555-1234</span>
                                         </a>
                                     </div>
                                 </div>
@@ -521,14 +501,14 @@
                         <!-- Card 1: Head Office -->
                         <div class="bg-card border border-border rounded-3xl p-6 sm:p-7 shadow-sm hover:shadow-md hover:border-accent/40 transition-all duration-300 text-center flex flex-col items-center justify-center">
                             <div class="w-12 h-12 rounded-2xl bg-accent-alpha-10 text-accent flex items-center justify-center mb-3 shadow-inner">
-                                <i class="fa-solid fa-location-dot text-lg"></i>
+                                <i class="fa-solid fa-store text-lg"></i>
                             </div>
-                            <h4 class="font-bold text-base text-primary-text mb-1.5">Head Office</h4>
+                            <h4 class="font-bold text-base text-primary-text mb-1.5">Flagship Store &amp; HQ</h4>
                             <p class="text-xs sm:text-sm text-secondary-text leading-relaxed max-w-xs">
-                                SwiftParcel HQ, 42 Logistics Drive,<br> Metro Business Park, MB 10001
+                                StationeryHub Central, 42 Artisan Row,<br> Midtown Commercial Center, NY 10001
                             </p>
                             <a href="#offices" class="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:underline mt-3">
-                                <span>View all hubs</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                <span>View all 4 locations</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </a>
                         </div>
 
@@ -537,19 +517,19 @@
                             <div class="w-12 h-12 rounded-2xl bg-accent-orange-10 text-accent-light flex items-center justify-center mb-3 shadow-inner">
                                 <i class="fa-solid fa-clock text-lg"></i>
                             </div>
-                            <h4 class="font-bold text-base text-primary-text mb-2.5">Business Hours</h4>
+                            <h4 class="font-bold text-base text-primary-text mb-2.5">Store &amp; Support Hours</h4>
                             <div class="space-y-1.5 text-xs sm:text-sm w-full max-w-[240px]">
                                 <div class="flex items-center justify-between gap-3 pb-1 border-b border-border/50">
                                     <span class="text-secondary-text">Mon – Fri</span>
-                                    <span class="text-primary-text font-bold">8 AM – 8 PM</span>
+                                    <span class="text-primary-text font-bold">8:30 AM – 7:30 PM</span>
                                 </div>
                                 <div class="flex items-center justify-between gap-3 pb-1 border-b border-border/50">
                                     <span class="text-secondary-text">Saturday</span>
-                                    <span class="text-primary-text font-bold">9 AM – 6 PM</span>
+                                    <span class="text-primary-text font-bold">9:00 AM – 6:00 PM</span>
                                 </div>
                                 <div class="flex items-center justify-between gap-3">
                                     <span class="text-secondary-text">Sunday</span>
-                                    <span class="text-accent font-bold px-2 py-0.5 rounded-full bg-accent-alpha-10 text-[11px]">Support only</span>
+                                    <span class="text-accent font-bold px-2 py-0.5 rounded-full bg-accent-alpha-10 text-[11px]">Showroom open</span>
                                 </div>
                             </div>
                         </div>
@@ -559,14 +539,14 @@
                             <div class="w-12 h-12 rounded-2xl bg-accent-alpha-10 text-accent flex items-center justify-center mb-3 shadow-inner">
                                 <i class="fa-solid fa-share-nodes text-lg"></i>
                             </div>
-                            <h4 class="font-bold text-base text-primary-text mb-1.5">Follow Us</h4>
-                            <p class="text-xs text-secondary-text mb-3.5">Stay updated with live logistics alerts</p>
+                            <h4 class="font-bold text-base text-primary-text mb-1.5">Connect With Us</h4>
+                            <p class="text-xs text-secondary-text mb-3.5">Follow for deals, new arrivals &amp; stationery tips</p>
                             <div class="flex justify-center items-center gap-2 sm:gap-2.5">
                                 <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center hover:bg-accent hover:text-white hover:scale-105 transition-all shadow-sm">
                                     <i class="fab fa-facebook-f text-xs"></i>
                                 </a>
                                 <a href="#" aria-label="Twitter" class="w-9 h-9 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center hover:bg-accent hover:text-white hover:scale-105 transition-all shadow-sm">
-                                    <i class="fab fa-twitter text-xs"></i>
+                                    <i class="fa-brands fa-x-twitter text-xs"></i>
                                 </a>
                                 <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center hover:bg-accent hover:text-white hover:scale-105 transition-all shadow-sm">
                                     <i class="fab fa-linkedin-in text-xs"></i>
@@ -591,54 +571,54 @@
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-14">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Departments</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Reach the Right Team Faster</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Skip the queue — contact the department that best fits your query.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Specialized Desks</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Reach the Right Department</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Connect directly with our specialized teams for faster assistance and tailored recommendations.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
                     <!-- Dept 1 -->
-                    <article class="bg-card border border-border rounded-3xl p-7 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5 shrink-0">
-                            <i class="fa-solid fa-box text-2xl"></i>
+                    <div class="bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-alpha-10 text-accent flex items-center justify-center text-2xl val-icon-box-blue transition duration-300">
+                            <i class="fa-solid fa-cart-shopping"></i>
                         </div>
-                        <h3 class="text-lg font-extrabold text-primary-text">Shipping Support</h3>
-                        <p class="mt-3 text-sm text-secondary-text leading-relaxed flex-1">Help with bookings, pickups, delivery issues, and parcel tracking queries.</p>
-                        <div class="mt-auto pt-4">
-                            <a href="mailto:shipping@swiftparcel.com" class="inline-flex items-center gap-2 text-sm font-bold text-accent hover:underline">
-                                shipping@swiftparcel.com <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                    </article>
+                        <h3 class="mt-6 text-xl font-extrabold text-primary-text">Retail &amp; Store Inquiries</h3>
+                        <p class="mt-3 text-sm text-secondary-text leading-relaxed">
+                            Questions about individual products, store stock availability, returns, gift vouchers, or home deliveries.
+                        </p>
+                        <a href="mailto:support@stationeryhub.com" class="inline-flex items-center gap-2 text-xs font-bold text-accent hover:underline mt-6">
+                            <span>retail@stationeryhub.com</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
 
                     <!-- Dept 2 -->
-                    <article class="bg-card border border-border rounded-3xl p-7 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-accent-light text-white flex items-center justify-center shadow-lg mb-5 shrink-0">
-                            <i class="fa-solid fa-briefcase text-2xl"></i>
+                    <div class="bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-orange-10 text-accent-light flex items-center justify-center text-2xl val-icon-box-orange transition duration-300">
+                            <i class="fa-solid fa-boxes-stacked"></i>
                         </div>
-                        <h3 class="text-lg font-extrabold text-primary-text">Business &amp; Sales</h3>
-                        <p class="mt-3 text-sm text-secondary-text leading-relaxed flex-1">Volume pricing, API access, warehousing, and enterprise partnerships.</p>
-                        <div class="mt-auto pt-4">
-                            <a href="mailto:sales@swiftparcel.com" class="inline-flex items-center gap-2 text-sm font-bold text-accent-light hover:underline">
-                                sales@swiftparcel.com <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                    </article>
+                        <h3 class="mt-6 text-xl font-extrabold text-primary-text">Corporate Bulk &amp; Wholesale</h3>
+                        <p class="mt-3 text-sm text-secondary-text leading-relaxed">
+                            Custom RFQ quotes, corporate contract pricing, GST invoices, school supply orders, and recurring delivery schedules.
+                        </p>
+                        <a href="mailto:wholesale@stationeryhub.com" class="inline-flex items-center gap-2 text-xs font-bold text-accent-light hover:underline mt-6">
+                            <span>wholesale@stationeryhub.com</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
 
                     <!-- Dept 3 -->
-                    <article class="bg-card border border-border rounded-3xl p-7 text-center shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full md:col-span-2 lg:col-span-1">
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-accent text-white flex items-center justify-center shadow-lg mb-5 shrink-0">
-                            <i class="fa-solid fa-life-ring text-2xl"></i>
+                    <div class="bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                        <div class="w-14 h-14 rounded-2xl bg-accent-alpha-10 text-accent flex items-center justify-center text-2xl val-icon-box-blue transition duration-300">
+                            <i class="fa-solid fa-pen-fancy"></i>
                         </div>
-                        <h3 class="text-lg font-extrabold text-primary-text">Customer Care</h3>
-                        <p class="mt-3 text-sm text-secondary-text leading-relaxed flex-1">Complaints, feedback, refunds, and any general customer experience matters.</p>
-                        <div class="mt-auto pt-4">
-                            <a href="mailto:care@swiftparcel.com" class="inline-flex items-center gap-2 text-sm font-bold text-accent hover:underline">
-                                care@swiftparcel.com <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                    </article>
+                        <h3 class="mt-6 text-xl font-extrabold text-primary-text">Custom Print &amp; Branding</h3>
+                        <p class="mt-3 text-sm text-secondary-text leading-relaxed">
+                            Foil-stamping, notebook debossing, laser pen engraving, branded corporate gift kits, and personalized office sets.
+                        </p>
+                        <a href="mailto:custom@stationeryhub.com" class="inline-flex items-center gap-2 text-xs font-bold text-accent hover:underline mt-6">
+                            <span>custom@stationeryhub.com</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
 
                 </div>
             </div>
@@ -653,9 +633,9 @@
 
                 <!-- Centered Heading -->
                 <div class="max-w-2xl mx-auto text-center mb-14">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Our Offices</span>
-                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Find Us Across the Country</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Visit one of our regional hubs — our team is always happy to meet you in person.</p>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Experience Centers &amp; Hubs</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Visit Our Stores &amp; Depots</h2>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Visit our flagship stationery showrooms or corporate distribution centers across the country.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto items-stretch">
@@ -664,16 +644,15 @@
                     <article class="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
                         <div class="aspect-[16/10] overflow-hidden shrink-0">
                             <img src="assets/r1.jpg"
-                                alt="North region office building" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                                alt="Downtown flagship stationery store" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
                         <div class="p-5 text-center flex flex-col flex-1">
-                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-[10px] font-extrabold uppercase tracking-wider mb-3 mx-auto">North HQ</span>
-                            <h3 class="font-bold text-primary-text">Metro Business Park</h3>
-                            <p class="mt-2 text-xs text-secondary-text leading-relaxed flex-1">42 Logistics Drive, MB 10001</p>
-                            <div class="mt-auto pt-3">
-                                <a href="#" class="inline-flex items-center gap-2 text-xs font-bold text-accent hover:underline">
-                                    <i class="fa-solid fa-map-location-dot"></i> Get Directions
-                                </a>
+                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-[10px] font-extrabold uppercase tracking-wider mb-3 mx-auto">Flagship Store</span>
+                            <h3 class="font-bold text-primary-text">Downtown Store &amp; Gallery</h3>
+                            <p class="mt-2 text-xs text-secondary-text leading-relaxed flex-1">42 Artisan Row, Midtown MB 10001</p>
+                            <div class="mt-auto pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                                <span class="text-secondary-text font-medium"><i class="fa-solid fa-phone text-accent mr-1"></i> (212) 555-0144</span>
+                                <span class="text-accent font-semibold">Open Daily</span>
                             </div>
                         </div>
                     </article>
@@ -682,16 +661,15 @@
                     <article class="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
                         <div class="aspect-[16/10] overflow-hidden shrink-0">
                             <img src="assets/r2.jpg"
-                                alt="West region office" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                                alt="West coast supply hub" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
                         <div class="p-5 text-center flex flex-col flex-1">
                             <span class="inline-block px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-[10px] font-extrabold uppercase tracking-wider mb-3 mx-auto">West Hub</span>
-                            <h3 class="font-bold text-primary-text">Sunset Logistics Center</h3>
-                            <p class="mt-2 text-xs text-secondary-text leading-relaxed flex-1">18 Freight Lane, WC 20002</p>
-                            <div class="mt-auto pt-3">
-                                <a href="#" class="inline-flex items-center gap-2 text-xs font-bold text-accent-light hover:underline">
-                                    <i class="fa-solid fa-map-location-dot"></i> Get Directions
-                                </a>
+                            <h3 class="font-bold text-primary-text">West Distribution Center</h3>
+                            <p class="mt-2 text-xs text-secondary-text leading-relaxed flex-1">780 Pacific Pkwy, Bay 4, WC 20002</p>
+                            <div class="mt-auto pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                                <span class="text-secondary-text font-medium"><i class="fa-solid fa-phone text-accent-light mr-1"></i> (415) 555-0198</span>
+                                <span class="text-accent-light font-semibold">B2B Only</span>
                             </div>
                         </div>
                     </article>
@@ -700,16 +678,15 @@
                     <article class="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
                         <div class="aspect-[16/10] overflow-hidden shrink-0">
                             <img src="assets/r3.jpg"
-                                alt="South region office" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                                alt="Midwest stationery warehouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
                         <div class="p-5 text-center flex flex-col flex-1">
-                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-[10px] font-extrabold uppercase tracking-wider mb-3 mx-auto">South Hub</span>
-                            <h3 class="font-bold text-primary-text">Harbor Logistics Tower</h3>
-                            <p class="mt-2 text-xs text-secondary-text leading-relaxed flex-1">7 Port Avenue, SC 30003</p>
-                            <div class="mt-auto pt-3">
-                                <a href="#" class="inline-flex items-center gap-2 text-xs font-bold text-accent hover:underline">
-                                    <i class="fa-solid fa-map-location-dot"></i> Get Directions
-                                </a>
+                            <span class="inline-block px-3 py-1 rounded-full bg-accent-alpha-10 text-accent text-[10px] font-extrabold uppercase tracking-wider mb-3 mx-auto">Midwest Depot</span>
+                            <h3 class="font-bold text-primary-text">Central Pallet Facility</h3>
+                            <p class="mt-2 text-xs text-secondary-text leading-relaxed flex-1">320 Commerce Blvd, Bldg C, SC 30003</p>
+                            <div class="mt-auto pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                                <span class="text-secondary-text font-medium"><i class="fa-solid fa-phone text-accent mr-1"></i> (312) 555-0182</span>
+                                <span class="text-accent font-semibold">Mon – Fri</span>
                             </div>
                         </div>
                     </article>
@@ -718,16 +695,15 @@
                     <article class="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full">
                         <div class="aspect-[16/10] overflow-hidden shrink-0">
                             <img src="assets/r4.jpg"
-                                alt="East region office" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                                alt="East coast print center" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         </div>
                         <div class="p-5 text-center flex flex-col flex-1">
                             <span class="inline-block px-3 py-1 rounded-full bg-accent-orange-10 text-accent-light text-[10px] font-extrabold uppercase tracking-wider mb-3 mx-auto">East Hub</span>
-                            <h3 class="font-bold text-primary-text">Riverside Distribution</h3>
-                            <p class="mt-2 text-xs text-secondary-text leading-relaxed flex-1">23 Harbor Road, EC 40004</p>
-                            <div class="mt-auto pt-3">
-                                <a href="#" class="inline-flex items-center gap-2 text-xs font-bold text-accent-light hover:underline">
-                                    <i class="fa-solid fa-map-location-dot"></i> Get Directions
-                                </a>
+                            <h3 class="font-bold text-primary-text">Print &amp; Emboss Studio</h3>
+                            <p class="mt-2 text-xs text-secondary-text leading-relaxed flex-1">23 Harbor Road, Suite 12, EC 40004</p>
+                            <div class="mt-auto pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                                <span class="text-secondary-text font-medium"><i class="fa-solid fa-phone text-accent-light mr-1"></i> (617) 555-0155</span>
+                                <span class="text-accent-light font-semibold">Custom Orders</span>
                             </div>
                         </div>
                     </article>
@@ -747,7 +723,7 @@
                 <div class="max-w-2xl mx-auto text-center mb-14">
                     <span class="inline-block px-4 py-1.5 rounded-full bg-accent-alpha-10 text-accent text-xs font-bold uppercase tracking-wider">Quick Answers</span>
                     <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-primary-text">Frequently Asked Questions</h2>
-                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Can't find what you're looking for? Reach out — we're happy to help.</p>
+                    <p class="mt-4 text-base sm:text-lg text-secondary-text">Everything you need to know about ordering stationery, paper samples, delivery timelines, and bulk discounts.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
@@ -755,78 +731,78 @@
                     <!-- FAQ 1 -->
                     <details class="group bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">How do I track my parcel in real time?</h3>
+                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">What are the minimum order quantities for wholesale pricing?</h3>
                             <span class="w-9 h-9 flex-shrink-0 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center group-open:rotate-180 transition-transform">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm text-secondary-text leading-relaxed">
-                            Simply log into your customer dashboard and paste your tracking number into the "Track Parcel" field. You'll see the live GPS location, ETA, and full scan history instantly.
+                            Wholesale tier 1 begins at just 50 units (or 10 paper boxes), qualifying for 12% off list price. Larger enterprise tiers go up to 45% off for multi-pallet recurring supply agreements.
                         </p>
                     </details>
 
                     <!-- FAQ 2 -->
                     <details class="group bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">What areas do you deliver to?</h3>
+                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">Can we request free paper and pen sample kits before ordering?</h3>
                             <span class="w-9 h-9 flex-shrink-0 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center group-open:rotate-180 transition-transform">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm text-secondary-text leading-relaxed">
-                            We cover 180+ cities and 12,000+ pincodes nationwide, plus shipping to 18 international countries. Check our Coverage page to see if your pincode is supported.
+                            Yes! For corporate, educational, and institutional buyers, we provide complimentary sample swatches including our 75, 80, and 100 GSM papers, along with sample rollerball and gel pens.
                         </p>
                     </details>
 
                     <!-- FAQ 3 -->
                     <details class="group bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">How much does shipping cost?</h3>
+                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">How fast can emergency office supplies be delivered?</h3>
                             <span class="w-9 h-9 flex-shrink-0 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center group-open:rotate-180 transition-transform">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm text-secondary-text leading-relaxed">
-                            Rates start from $6.00 for local same-day, $8.50 for domestic standard, and $18.50 for express air. Use our Rate Calculator for an instant, exact quote.
+                            Orders placed before 1:00 PM qualify for same-day afternoon dispatch in metropolitan areas. Nationwide standard orders are delivered within 24 to 48 hours directly to your office floor.
                         </p>
                     </details>
 
                     <!-- FAQ 4 -->
                     <details class="group bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">Is my parcel insured during transit?</h3>
+                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">Do you offer custom corporate branding on notebooks and pens?</h3>
                             <span class="w-9 h-9 flex-shrink-0 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center group-open:rotate-180 transition-transform">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm text-secondary-text leading-relaxed">
-                            Yes — every shipment is covered up to $5,000 by default. You can increase coverage to $10,000+ for a small add-on fee during booking.
+                            Absolutely. We provide blind debossing, metallic foil stamping, silk-screen printing, and precision laser engraving with an average turnaround of 5 to 7 business days.
                         </p>
                     </details>
 
                     <!-- FAQ 5 -->
                     <details class="group bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">How do I book a doorstep pickup?</h3>
+                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">What payment terms do you support for registered businesses?</h3>
                             <span class="w-9 h-9 flex-shrink-0 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center group-open:rotate-180 transition-transform">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm text-secondary-text leading-relaxed">
-                            Log into your dashboard, click "Book Pickup", enter the address and time slot, and confirm. A courier will arrive within your chosen window.
+                            We accept all major corporate credit cards, wire transfers, and provide Net-30 and Net-60 credit accounts for verified corporate, university, and government procurement offices.
                         </p>
                     </details>
 
                     <!-- FAQ 6 -->
                     <details class="group bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-all">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
-                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">Can I cancel or reschedule a shipment?</h3>
+                            <h3 class="font-bold text-primary-text text-base sm:text-lg text-left">Can we set up automated recurring monthly restocks?</h3>
                             <span class="w-9 h-9 flex-shrink-0 rounded-xl bg-accent-alpha-10 text-accent flex items-center justify-center group-open:rotate-180 transition-transform">
                                 <i class="fa-solid fa-chevron-down text-xs"></i>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm text-secondary-text leading-relaxed">
-                            Absolutely. You can cancel or reschedule any pickup free of charge before the courier arrives — just manage it from your dashboard.
+                            Yes! Our auto-replenishment service automatically delivers your scheduled paper reams, pens, and toner on your chosen day each month, with flexibility to adjust or pause anytime.
                         </p>
                     </details>
 
@@ -846,38 +822,29 @@
                     <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 60%, var(--color-accent-light) 100%);"></div>
 
                     <!-- Decorative circles -->
-                    <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 pointer-events-none"></div>
-                    <div class="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-white/10 pointer-events-none"></div>
+                    <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
 
-                    <div class="relative px-6 sm:px-12 lg:px-20 py-14 lg:py-20 text-center text-white">
+                    <div class="relative z-10 px-8 py-16 sm:px-12 sm:py-20 lg:px-16 text-center text-white">
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold uppercase tracking-wider mb-6">
+                            <i class="fa-solid fa-pen-nib text-[11px]"></i> Premium Workplace Essentials
+                        </span>
 
-                        <div class="w-16 h-16 mx-auto rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 border border-white/30">
-                            <i class="fa-solid fa-comments text-2xl"></i>
-                        </div>
-
-                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight max-w-3xl mx-auto">
-                            Ready When You Are — Let's Ship Something Today
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight max-w-2xl mx-auto leading-tight">
+                            Ready to Upgrade Your Office Supplies?
                         </h2>
 
-                        <p class="mt-5 text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-                            Need a quick quote, urgent pickup, or business partnership? Our team is on standby 24/7, and your first shipment is on us.
+                        <p class="mt-5 text-base sm:text-lg text-white/90 max-w-xl mx-auto leading-relaxed">
+                            Discover why 3,500+ enterprises, universities, and creative studios trust StationeryHub for everyday essentials and volume contracts.
                         </p>
 
-                        <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap xl:flex-nowrap gap-3.5 justify-center items-stretch sm:items-center max-w-lg mx-auto">
-                            <a href="#calculator" class="bg-white text-[#0B132B] hover:bg-gray-100 px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition flex-1 sm:flex-initial text-center whitespace-nowrap">
-                                <i class="fa-solid fa-rocket text-accent"></i> <span>Get Instant Quote</span>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                            <a href="services.html" class="px-8 py-4 rounded-xl font-extrabold text-sm bg-white text-[#0B132B] hover:bg-gray-100 transition shadow-xl flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-boxes-stacked"></i> Explore Catalog
                             </a>
-                            <a href="login.html" class="border-2 border-white/80 bg-white/10 hover:bg-white hover:text-[#0B132B] px-6 sm:px-7 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition flex-1 sm:flex-initial text-center whitespace-nowrap">
-                                <i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Customer Login</span>
+                            <a href="coverage.html" class="px-8 py-4 rounded-xl font-extrabold text-sm border-2 border-white/80 text-white hover:bg-white hover:text-[#0B132B] transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-invoice"></i> Bulk Order RFQ
                             </a>
                         </div>
-
-                        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-white/90">
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> 24/7 support</span>
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> ~2 min response</span>
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle"></i> Free first pickup</span>
-                        </div>
-
                     </div>
                 </div>
 
@@ -897,13 +864,13 @@
                     <i class="fa-solid fa-truck-fast"></i>
                 </div>
                 <h3 class="text-2xl font-extrabold text-primary-text">Customer Portal Login</h3>
-                <p class="text-xs text-secondary-text">Access pickup scheduling, live GPS feeds, and bills</p>
+                <p class="text-xs text-secondary-text">Access corporate discounts, order tracking, and invoices</p>
             </div>
 
             <form onsubmit="handlePortalLogin(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-primary-text uppercase tracking-wider mb-2">Account ID / Email</label>
-                    <input type="text" value="customer@swiftparcel.com" required
+                    <input type="text" value="buyer@company.com" required
                         class="w-full px-4 py-2.5 bg-background rounded-xl border border-border text-sm text-primary-text focus:outline-none focus:border-accent">
                 </div>
                 <div>
@@ -924,83 +891,84 @@
                 </button>
             </form>
             <p class="text-center text-xs text-secondary-text">
-                Don't have a corporate courier account? <a href="#calculator" onclick="closeLoginModal()" class="text-accent font-semibold hover:underline">Register Today</a>
+                Need a wholesale corporate purchasing account? <a href="coverage.html" onclick="closeLoginModal()" class="text-accent font-semibold hover:underline">Register Today</a>
             </p>
         </div>
     </div>
 
-    <!-- MAIN FOOTER (Courier & Parcel Delivery Topic) -->
+    <!-- MAIN FOOTER (Stationery & Office Supplies Topic) -->
+    <!-- MAIN FOOTER (Stationery & Office Supplies Store) -->
     <footer id="main-footer" class="pt-16 pb-8 transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
                 
                 <!-- Brand column -->
                 <div class="lg:col-span-2 space-y-4">
-                    <a href="index.html" class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md">
-                            <i class="fa-solid fa-truck-fast text-lg"></i>
+                    <a href="index.html" class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-sm">
+                            <i class="fa-solid fa-pen-nib text-sm sm:text-base"></i>
                         </div>
                         <div class="flex flex-col">
-                            <span class="text-xl font-extrabold tracking-tight text-white leading-tight">
-                                Swift<span class="text-blue-400">Parcel</span>
+                            <span class="text-sm sm:text-base font-bold tracking-tight text-white leading-tight">
+                                Stationery<span class="text-blue-400">Hub</span>
                             </span>
-                            <span class="text-[10px] tracking-wider uppercase font-semibold text-gray-400">Courier & Express Delivery</span>
+                            <span class="text-[8.5px] sm:text-[9px] tracking-wider uppercase font-semibold text-gray-400">Office & Stationery</span>
                         </div>
                     </a>
                     <p class="text-sm leading-relaxed max-w-sm text-gray-400">
-                        Pioneering reliable, time-definite door-to-door courier services. Fast parcel pickup, real-time telemetry tracking, nationwide logistics coverage, and seamless digital invoices.
+                        Your trusted one-stop destination for premium writing instruments, notebooks, desktop filing systems, copy papers, and wholesale enterprise supplies.
                     </p>
                     <div class="flex space-x-4 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-twitter text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-whatsapp text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-200 hover:text-white hover:bg-blue-600 transition"><i class="fab fa-whatsapp text-sm"></i></a>
                     </div>
                 </div>
 
-                <!-- Shipping Services Column -->
+                <!-- Product Categories Column -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Delivery Services</h4>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Product Categories</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#services" class="footer-link">Local City Courier</a></li>
-                        <li><a href="#services" class="footer-link">Domestic Standard Shipping</a></li>
-                        <li><a href="#services" class="footer-link">Priority Express Air Cargo</a></li>
-                        <li><a href="#services" class="footer-link">Same-Day Critical Drop</a></li>
-                        <li><a href="#coverage" class="footer-link">Heavy Freight Logistics</a></li>
+                        <li><a href="services.html" class="footer-link">Writing Instruments</a></li>
+                        <li><a href="services.html" class="footer-link">Notebooks & Notepads</a></li>
+                        <li><a href="services.html" class="footer-link">Filing & Organization</a></li>
+                        <li><a href="services.html" class="footer-link">Printing & Copy Paper</a></li>
+                        <li><a href="services.html" class="footer-link">Desk Accessories</a></li>
                     </ul>
                 </div>
 
-                <!-- Quick Navigation Column -->
+                <!-- Quick Links Column -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Customer Portal</h4>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#dashboard" onclick="switchDashboardTab('book-pickup')" class="footer-link">Book Doorstep Pickup</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('tracking-tab')" class="footer-link">Live Parcel Tracking</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('history-tab')" class="footer-link">Shipment History</a></li>
-                        <li><a href="#dashboard" onclick="switchDashboardTab('invoices-tab')" class="footer-link">Download Invoices</a></li>
-                        <li><a href="#calculator" class="footer-link">Instant Rate Calculator</a></li>
+                        <li><a href="index.html" class="footer-link">Home & Essentials</a></li>
+                        <li><a href="offers.html" class="footer-link">Special Deals & Offers</a></li>
+                        <li><a href="services.html" class="footer-link">New Arrivals</a></li>
+                        <li><a href="coverage.html" class="footer-link">Bulk & Corporate Orders</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact & Enquiries</a></li>
                     </ul>
                 </div>
 
-                <!-- Newsletter & Dispatch Alerts -->
+                <!-- Newsletter & Offers -->
                 <div>
-                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Courier Alerts</h4>
-                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">Subscribe for route alerts, holiday shipping schedules, and fuel surcharge updates.</p>
+                    <h4 class="footer-heading font-bold text-base uppercase tracking-wider mb-5">Store Newsletter</h4>
+                    <p class="text-xs text-gray-400 mb-4 leading-relaxed">Subscribe for exclusive office deals, back-to-school offers, and new catalogue alerts.</p>
                     <form onsubmit="handleNewsletter(event)" class="flex flex-col space-y-3">
-                        <input type="email" required placeholder="business@company.com" class="p-3 text-xs rounded-xl bg-gray-900 border border-gray-800 focus:outline-none focus:border-blue-500 text-white" />
-                        <button type="submit" class="btn-primary font-bold py-2.5 rounded-xl text-xs shadow-md">Subscribe to Alerts</button>
+                        <input type="email" required placeholder="office@company.com" class="p-3 text-xs rounded-xl bg-gray-900 border border-gray-700 placeholder-gray-400 focus:outline-none focus:border-blue-500 text-white" />
+                        <button type="submit" class="btn-primary font-bold py-2.5 rounded-xl text-xs shadow-md">Subscribe to Deals</button>
                     </form>
                 </div>
 
             </div>
 
             <!-- Bottom Copyright & Compliance -->
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-xs gap-4">
-                <div>© 2026 SwiftParcel Delivery Services Inc. All rights reserved.</div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-400 text-xs gap-4">
+                <div>© 2026 StationeryHub Supplies & Stationery Store Inc. All rights reserved.</div>
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-300">Terms of Carriage</a>
-                    <a href="#" class="hover:text-gray-300">Security & Compliance</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Corporate Sales Policy</a>
                 </div>
             </div>
         </div>
@@ -1043,7 +1011,6 @@
                 });
             };
             setupAccordion('mobile-homes-toggle', 'mobile-homes-menu', 'homes-icon');
-            setupAccordion('mobile-dashboard-toggle', 'mobile-dashboard-menu', 'dashboard-icon');
 
             // Theme Toggle
             const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('drawer-theme-toggle')];
@@ -1087,7 +1054,7 @@
                 btnCustomer.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
 
                 heading.innerText = "Admin Fleet & Logistics Control";
-                subheading.innerText = "Monitor live courier dispatch queues, van telemetry, hub status, and daily operations revenue.";
+                subheading.innerText = "Monitor live warehouse stock levels, purchase orders, corporate discounts, and daily procurement revenue.";
                 badge.innerHTML = `<i class="fa-solid fa-shield-halved"></i> Central Operations Control`;
             } else {
                 customerContainer?.classList.remove('hidden');
@@ -1097,7 +1064,7 @@
                 btnAdmin.className = "px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-secondary-text hover:text-accent transition flex items-center gap-2";
 
                 heading.innerText = "Customer Dashboard";
-                subheading.innerText = "Book pickups, track parcels in real time, view shipment history, and download official invoices directly from your self-service portal.";
+                subheading.innerText = "Place replenishment orders, track pallet dispatches, access wholesale rate-cards, and download official invoices directly from your portal.";
                 badge.innerHTML = `<i class="fa-solid fa-gauge-high"></i> Customer Portal Hub`;
             }
 
@@ -1185,16 +1152,16 @@
         // Download Invoice Simulation
         function downloadInvoice(invId, trackNo, amount) {
             const blob = new Blob([
-                `SWIFTPARCEL COURIER & DELIVERY SERVICES\n=========================================\nINVOICE: ${invId}\nTRACKING NO: ${trackNo}\nTOTAL CHARGED: ${amount}\nSTATUS: PAID IN FULL\nDATE: ${new Date().toLocaleDateString()}\n\nThank you for choosing SwiftParcel!`
+                `STATIONERYHUB WHOLESALE & OFFICE SUPPLIES\n=========================================\nINVOICE: ${invId}\nTRACKING NO: ${trackNo}\nTOTAL CHARGED: ${amount}\nSTATUS: PAID IN FULL\nDATE: ${new Date().toLocaleDateString()}\n\nThank you for choosing StationeryHub!`
             ], { type: 'text/plain;charset=utf-8' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = `${invId}-SwiftParcel.txt`;
+            link.download = `${invId}-StationeryHub.txt`;
             link.click();
         }
 
         function downloadAllInvoices() {
-            alert('Compressing all customer invoices into SwiftParcel-Billing-Q3.zip...');
+            alert('Exporting all procurement invoices into StationeryHub-Billing-Q3.zip...');
             downloadInvoice('INV-BATCH-2026', 'ALL-SHIPMENTS', '$184.70');
         }
 
@@ -1208,7 +1175,7 @@
 
         function handleNewsletter(e) {
             e.preventDefault();
-            alert('Subscribed to SwiftParcel Dispatch & Service Alerts!');
+            alert('Subscribed to StationeryHub Wholesale & Office Supply Alerts!');
             e.target.reset();
         }
 
